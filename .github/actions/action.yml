@@ -1,0 +1,5 @@
+name: Deploy to GitHub Pages
+description: Publish mkdocs as GitHub Pages static site
+runs:
+  using: docker
+  image: Dockerfile

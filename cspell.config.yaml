@@ -1,0 +1,13 @@
+---
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: '0.2'
+language: en
+languageSettings:
+  - languageId: markdown
+    ignoreRegExpList:
+      - /^\\s*```[\\s\\S]*?^\\s*```/gm
+words:
+  - mkdocs
+flagWords:
+  - hte
+  - teh
