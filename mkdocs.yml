@@ -1,0 +1,63 @@
+site_name: Seillama Docs
+theme:
+  name: material
+  logo: images/logo.png
+  favicon: images/logo.png
+  language: en
+  font:
+    text: IBM Plex Sans
+  features:
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.prune 
+    - navigation.indexes 
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      accent: light green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - scheme: default
+      primary: black
+      accent: green
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+nav:
+  - Home:
+    - index.md
+  - Development:
+    - development/index.md
+extra:
+  consent:
+    title: Cookie consent
+    description: >- 
+      I'm using cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of my documentation and whether users
+      find what they're searching for. With your consent, you're helping me to
+      make our documentation better.
+  analytics:
+    provider: google
+    property: G-VR2WWNJJ7W
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://github.com/Seillama/seillama-docs/issues/new" target="_blank" rel="noopener">feedback form</a>.
