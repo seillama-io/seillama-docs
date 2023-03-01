@@ -8,6 +8,8 @@ languageSettings:
       - /^\\s*```[\\s\\S]*?^\\s*```/gm
 words:
   - mkdocs
+  - wikijs
+  - kubespray
 flagWords:
   - hte
   - teh
