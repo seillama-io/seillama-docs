@@ -1,17 +1,13 @@
 # Home
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welcome to my Wiki!
 
-## Commands
+I try to document whatever I do (mostly to cope with my own unreliable memory 😅), so there you'll find some gists around technical stuff that caught my interest, mostly around the following topics:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- Hybrid Cloud
+- DevSecOps
+- Containers and Container Orchestration
+- Self-Hosted Software
+- Machine Learning
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Hopefully you'll find something helpful.

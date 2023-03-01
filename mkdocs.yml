@@ -1,4 +1,4 @@
-site_name: Seillama Docs
+site_name: Seillama Wiki
 theme:
   name: material
   logo: images/logo.png
@@ -7,13 +7,13 @@ theme:
   font:
     text: IBM Plex Sans
   features:
-    - navigation.top
+    #- navigation.top
     - navigation.instant
     - navigation.tracking
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
+    #- navigation.tabs
+    #- navigation.tabs.sticky
+    #- navigation.sections
+    #- navigation.expand
     - navigation.prune 
     - navigation.indexes 
   palette:
@@ -34,8 +34,21 @@ theme:
 nav:
   - Home:
     - index.md
-  - Development:
-    - development/index.md
+  - Kubernetes:
+    - kubernetes/index.md
+    - Install:
+      - kubernetes/install/k3s.md
+      - kubernetes/install/kubespray.md
+      - kubernetes/install/rpi.md
+    - Operations:
+      - kubernetes/ops/aliases.md
+      - kubernetes/ops/cert-manager.md
+      - kubernetes/ops/docker-registry.md
+      - kubernetes/ops/nginx-ingress.md
+    - Self-Hosted Software:
+      - kubernetes/software/artifactory.md
+      - kubernetes/software/gitlab.md
+      - kubernetes/software/wikijs.md
 extra:
   consent:
     title: Cookie consent
