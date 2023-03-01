@@ -1,0 +1,1316 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../images/logo.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.4">
+    
+    
+      
+        <title>Self-hosting platform on Raspberry Pi - K3s - Seillama Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-VR2WWNJJ7W"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-VR2WWNJJ7W",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-VR2WWNJJ7W",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#self-hosting-platform-on-raspberry-pi-k3s" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Seillama Wiki" class="md-header__button md-logo" aria-label="Seillama Wiki" data-md-component="logo">
+      
+  <img src="../../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Seillama Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Self-hosting platform on Raspberry Pi - K3s
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Seillama Wiki" class="md-nav__button md-logo" aria-label="Seillama Wiki" data-md-component="logo">
+      
+  <img src="../../../images/logo.png" alt="logo">
+
+    </a>
+    Seillama Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../..">Home</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Kubernetes</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Install
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Install" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Install
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k3s/" class="md-nav__link">
+        Kubernetes install - K3s
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubespray/" class="md-nav__link">
+        Kubernetes install - Kubespray
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Self-hosting platform on Raspberry Pi - K3s
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Self-hosting platform on Raspberry Pi - K3s
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap" class="md-nav__link">
+    Roadmap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-set-up-nodes" class="md-nav__link">
+    How to set up nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="How to set up nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-pi-set-up" class="md-nav__link">
+    Base pi set up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-set-up-nfs-disk-share" class="md-nav__link">
+    OPTIONAL: Set up NFS disk share
+  </a>
+  
+    <nav class="md-nav" aria-label="OPTIONAL: Set up NFS disk share">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-nfs-share-on-master-pi" class="md-nav__link">
+    Create NFS Share on Master Pi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-nfs-share-on-workers" class="md-nav__link">
+    Mount NFS share on Worker(s)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-k3s" class="md-nav__link">
+    Setup K3s
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup K3s">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-k3s-on-master-pi" class="md-nav__link">
+    Start K3s on Master pi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-workers" class="md-nav__link">
+    Register workers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-k3s-cluster-from-workstation" class="md-nav__link">
+    Access K3s cluster from workstation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tear-down-k3s" class="md-nav__link">
+    Tear down K3s
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-red-authentication" class="md-nav__link">
+    Node-RED authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Operations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Operations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/aliases/" class="md-nav__link">
+        K8s useful aliases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/cert-manager/" class="md-nav__link">
+        Cert-Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/docker-registry/" class="md-nav__link">
+        Docker Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/nginx-ingress/" class="md-nav__link">
+        NGINX Ingress Controller
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Self-Hosted Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Self-Hosted Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Self-Hosted Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/artifactory/" class="md-nav__link">
+        JFrog Artifactory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/gitlab/" class="md-nav__link">
+        GitLab EE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/wikijs/" class="md-nav__link">
+        Wiki.js
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap" class="md-nav__link">
+    Roadmap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-set-up-nodes" class="md-nav__link">
+    How to set up nodes
+  </a>
+  
+    <nav class="md-nav" aria-label="How to set up nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-pi-set-up" class="md-nav__link">
+    Base pi set up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-set-up-nfs-disk-share" class="md-nav__link">
+    OPTIONAL: Set up NFS disk share
+  </a>
+  
+    <nav class="md-nav" aria-label="OPTIONAL: Set up NFS disk share">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-nfs-share-on-master-pi" class="md-nav__link">
+    Create NFS Share on Master Pi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-nfs-share-on-workers" class="md-nav__link">
+    Mount NFS share on Worker(s)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-k3s" class="md-nav__link">
+    Setup K3s
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup K3s">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-k3s-on-master-pi" class="md-nav__link">
+    Start K3s on Master pi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-workers" class="md-nav__link">
+    Register workers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-k3s-cluster-from-workstation" class="md-nav__link">
+    Access K3s cluster from workstation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tear-down-k3s" class="md-nav__link">
+    Tear down K3s
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-red-authentication" class="md-nav__link">
+    Node-RED authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="self-hosting-platform-on-raspberry-pi-k3s">Self-hosting platform on Raspberry Pi - K3s</h1>
+<p>This doc helps deploy a Kubernetes self-hosting platform on Raspberry Pi devices with <a href="https://k3s.io/">K3s</a>.</p>
+<p>It uses a Terraform modules I have created to deploy the necessary  software in the cluster.</p>
+<h2 id="roadmap">Roadmap</h2>
+<ul>
+<li>[x] Configure Kubernetes cluster</li>
+<li>[x] Self-host password manager: Bitwarden</li>
+<li>[x] Self-host IoT dev platform: Node-RED</li>
+<li>[x] Self-host home cloud: NextCloud</li>
+<li>[x] Self-host home Media Center</li>
+<li>[x] Transmission</li>
+<li>[x] Flaresolverr</li>
+<li>[x] Jackett</li>
+<li>[x] Sonarr</li>
+<li>[x] Radarr</li>
+<li>[ ] Plex</li>
+<li>[ ] Self-host ads/trackers protection: Pi-Hole</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Accessible K8s/K3s cluster on your Pi.</li>
+<li>With <code>cert-manager</code> CustomResourceDefinition installed: <code>kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v0.16.0/cert-manager.crds.yaml</code></li>
+<li>For transmission bittorrent client, an OpenVPN config file stored in <code>openvpn.ignore.ovpn</code>, with <code>auth-user-pass</code> set to <code>/config/openvpn-credentials.txt</code> (auto auth), including cert and key.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Clone the repository:</p>
+<pre><code class="language-sh">$ git clone https://github.com/NoeSamaille/terraform-self-hosting-platform-rpi
+$ cd terraform-self-hosting-platform-rpi
+</code></pre>
+<p>Configure your environment:</p>
+<pre><code class="language-sh">$ mv terraform.tfvars.template terraform.tfvars
+$ vim terraform.tfvars
+</code></pre>
+<p>Once it's done you can start deploying resources:</p>
+<pre><code class="language-sh">$ source scripts/init.sh # Generates service passwords
+$ terraform init
+$ terraform plan
+$ terraform apply --auto-approve
+... output ommited ...
+Apply complete! Resources: 32 added, 0 changed, 0 destroyed.
+</code></pre>
+<p>To destroy all the resources:</p>
+<pre><code class="language-sh">$ terraform destroy --auto-approve
+... output ommited ...
+Apply complete! Resources: 0 added, 0 changed, 32 destroyed.
+</code></pre>
+<h2 id="how-to-set-up-nodes">How to set up nodes</h2>
+<h3 id="base-pi-set-up">Base pi set up</h3>
+<p><strong>Note</strong>: here we'll set up <code>pi-master</code> i.e. our master pi, if you have additional workers (optional) you'll then have to repeat the following steps for each of the workers, replacing references to <code>pi-master</code> by <code>pi-worker-1</code>, <code>pi-worker-2</code>, etc.</p>
+<ol>
+<li>Connect via SSH to the pi:
+    <code>sh
+    user@workstation $ ssh pi@&lt;PI_IP&gt;
+    ... output ommited ...
+    pi@raspberrypi:~ $</code></li>
+<li>Change password:
+    <code>sh
+    pi@raspberrypi:~ $ passwd
+    ... output ommited ...
+    passwd: password updated successfully</code></li>
+<li>Change hostnames:
+    <code>sh
+    pi@raspberrypi:~ $ sudo -i
+    root@raspberrypi:~ $ echo "pi-master" &gt; /etc/hostname
+    root@raspberrypi:~ $ sed -i "s/$HOSTNAME/pi-master/" /etc/hosts</code></li>
+<li>Enable container features:
+    <code>sh
+    root@raspberrypi:~ $ sed -i 's/$/ cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory/' /boot/cmdline.txt</code></li>
+<li>Make sure the system is up-to-date:
+    <code>sh
+    root@raspberrypi:~ $ apt update &amp;&amp; apt upgrade -y</code></li>
+<li>Configure a static IP, <strong>Note</strong> that This could be also done at the network level via the router admin (DHCP):
+    <code>sh
+    root@raspberrypi:~ $ cat &lt;&lt;EOF &gt;&gt; /etc/dhcpcd.conf
+    interface eth0
+    static ip_address=&lt;YOUR_STATIC_IP_HERE&gt;/24
+    static routers=192.168.1.1
+    static domain_name_servers=1.1.1.1
+    EOF</code></li>
+<li>Reboot:
+    <code>sh
+    root@raspberrypi:~ $ reboot</code></li>
+<li>Wait for a few sec, then connect via SSH to the pi using the new static IP you've just configured:
+    <code>sh
+    user@workstation $ ssh pi@&lt;PI_IP&gt;
+    ... output ommited ...
+    pi@pi-master:~ $</code></li>
+</ol>
+<h3 id="optional-set-up-nfs-disk-share">OPTIONAL: Set up NFS disk share</h3>
+<h4 id="create-nfs-share-on-master-pi">Create NFS Share on Master Pi</h4>
+<ol>
+<li>On master pi, run the command <code>fdisk -l</code> to list all the connected disks to the system (includes the RAM) and try to identify the disk.
+    <code>sh
+    pi@pi-master:~ $ sudo fdisk -l</code></li>
+<li>If your disk is new and freshly out of the package, you will need to create a partition.
+    <code>sh
+    pi@pi-master:~ $ sudo mkfs.ext4 /dev/sda</code></li>
+<li>You can manually mount the disk to the directory <code>/mnt/hdd</code>.
+    <code>sh
+    pi@pi-master:~ $ sudo mkdir /mnt/hdd
+    pi@pi-master:~ $ sudo chown -R pi:pi /mnt/hdd/
+    pi@pi-master:~ $ sudo mount /dev/sda /mnt/hdd</code></li>
+<li>
+<p>To automatically mount the disk on startup, you first need to find the Unique ID of the disk using the command <code>blkid</code>:
+    ```sh
+    pi@pi-master:~ $ sudo blkid</p>
+<p>... output ommited ...
+/dev/sda: UUID="0ac98c2c-8c32-476b-9009-ffca123a2654" TYPE="ext4"
+<code>5. Edit the file `/etc/fstab` and add the following line to configure auto-mount of the disk on startup:</code>sh
+pi@pi-master:~ $ sudo -i
+root@pi-master:~ $ echo "UUID=0ac98c2c-8c32-476b-9009-ffca123a2654 /mnt/hdd ext4 defaults 0 0" &gt;&gt; /etc/fstab
+root@pi-master:~ $ exit
+<code>6. Reboot the system</code>sh
+pi@pi-master:~ $ sudo reboot
+<code>7. Verify the disk is correctly mounted on startup with the following command:</code>sh
+pi@pi-master:~ $ df -ha /dev/sda</p>
+<p>Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda        458G   73M  435G   1% /mnt/hdd
+<code>8. Install the required dependencies:</code>sh
+pi@pi-master:~ $ sudo apt install nfs-kernel-server -y
+<code>9. Edit the file `/etc/exports` by running the following command:</code>sh
+pi@pi-master:~ $ sudo -i
+root@pi-master:~ $ echo "/mnt/hdd-2 *(rw,no_root_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)" &gt;&gt; /etc/exports
+root@pi-master:~ $ exit
+<code>10. Start the NFS Server:</code>sh
+pi@pi-master:~ $ sudo exportfs -ra
+```</p>
+</li>
+</ol>
+<h4 id="mount-nfs-share-on-workers">Mount NFS share on Worker(s)</h4>
+<p><strong>Note</strong>: repeat the following steps for each of the workers <code>pi-worker-1</code>, <code>pi-worker-2</code>, etc.</p>
+<ol>
+<li>Install the necessary dependencies:
+    <code>sh
+    pi@pi-worker-x:~ $ sudo apt install nfs-common -y</code></li>
+<li>Create the directory to mount the NFS Share:
+    <code>sh
+    pi@pi-worker-x:~ $ sudo mkdir /mnt/hdd
+    pi@pi-worker-x:~ $ sudo chown -R pi:pi /mnt/hdd</code></li>
+<li>Configure auto-mount of the NFS Share by adding the following line, where <code>&lt;MASTER_IP&gt;:/mnt/hdd</code> is the IP of <code>pi-master</code> followed by the NFS share path:
+    <code>sh
+    pi@pi-worker-x:~ $ sudo -i
+    root@pi-worker-x:~ $ echo "&lt;MASTER_IP&gt;:/mnt/hdd   /mnt/hdd   nfs    rw  0  0" &gt;&gt; /etc/fstab
+    root@pi-worker-x:~ $ exit</code></li>
+<li>Reboot the system
+    <code>sh
+    pi@pi-worker-x:~ $ sudo reboot</code></li>
+<li><strong>Optional</strong>: to mount manually you can run the following command, where <code>&lt;MASTER_IP&gt;:/mnt/hdd</code> is the IP of <code>pi-master</code> followed by the NFS share path:
+    <code>sh
+    pi@pi-worker-x:~ $ sudo mount -t nfs &lt;MASTER_IP&gt;:/mnt/hdd /mnt/hdd</code></li>
+</ol>
+<h3 id="setup-k3s">Setup K3s</h3>
+<h4 id="start-k3s-on-master-pi">Start K3s on Master pi</h4>
+<pre><code class="language-sh">pi@pi-master:~ $ curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=&quot;644&quot; INSTALL_K3S_EXEC=&quot; --no-deploy servicelb --no-deploy traefik&quot; sh -
+</code></pre>
+<h4 id="register-workers">Register workers</h4>
+<ol>
+<li>Get K3s token on master pi, copy the result:
+    <code>sh
+    pi@pi-master:~ $ sudo cat /var/lib/rancher/k3s/server/node-token
+    K103166a17...eebca269271</code></li>
+<li>Run K3s installer on worker (repeat on each worker):
+    <code>sh
+    pi@pi-worker-x:~ $ curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE="644" K3S_URL="https://&lt;MASTER_IP&gt;:6443" K3S_TOKEN="K103166a17...eebca269271" sh -</code></li>
+</ol>
+<h4 id="access-k3s-cluster-from-workstation">Access K3s cluster from workstation</h4>
+<ol>
+<li>Copy kube config file from master pi:
+    <code>sh
+    user@workstation:~ $ scp pi@&lt;MASTER_IP&gt;:/etc/rancher/k3s/k3s.yaml ~/.kube/config</code></li>
+<li>Edit kube config file to replace <code>127.0.0.1</code> with <code>&lt;MASTER_IP&gt;</code>:
+    <code>sh
+    user@workstation:~ $ vim ~/.kube/config</code></li>
+<li>Test everything by running a <code>kubectl</code> command:
+    <code>sh
+    user@workstation:~ $ kubectl get nodes -o wide</code></li>
+</ol>
+<h3 id="tear-down-k3s">Tear down K3s</h3>
+<ol>
+<li>Worker(s)</li>
+</ol>
+<pre><code class="language-sh">user@workstation:~ $ sudo /usr/local/bin/k3s-agent-uninstall.sh
+</code></pre>
+<ol>
+<li>Master</li>
+</ol>
+<pre><code class="language-sh">pi@pi-master:~ $ sudo /usr/local/bin/k3s-uninstall.sh
+</code></pre>
+<h2 id="known-issues">Known issues</h2>
+<h3 id="node-red-authentication">Node-RED authentication</h3>
+<p>Node-RED authentication isn't set up by default atm, you can set it up by scaling the deployment down, editing the <code>settings.js</code> file to enable authentication and scaling the deployment back up:</p>
+<pre><code>pi@pi-master:~ $ kubectl scale deployment/node-red --replicas=0 -n node-red
+pi@pi-master:~ $ vim /path/to/node-red/settings.js
+pi@pi-master:~ $ kubectl scale deployment/node-red --replicas=1 -n node-red
+</code></pre>
+<p>You can either set up authentication through GitHub (<a href="https://github.com/node-red/node-red-auth-github">Documentation</a>):</p>
+<pre><code class="language-js"># settings.js
+... Ommited ...
+    adminAuth: require('node-red-auth-github')({
+        clientID: &quot;&lt;GITHUB_CLIENT_ID&gt;&quot;,
+        clientSecret: &quot;&lt;GITHUB_CLIENT_SECRET&gt;&quot;,
+        baseURL: &quot;https://node-red.&lt;DOMAIN&gt;/&quot;,
+        users: [
+            { username: &quot;&lt;GITHUB_USERNAME&gt;&quot;, permissions: [&quot;*&quot;]}
+        ]
+    }),
+... Ommited ...
+</code></pre>
+<p>Or classic user-pass authentication (generate a password hash using <code>node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" &lt;your-password-here&gt;</code>):</p>
+<pre><code class="language-js"># settings.js
+... Ommited ...
+    adminAuth: {
+        type: &quot;credentials&quot;,
+        users: [
+            {
+                username: &quot;admin&quot;,
+                password: &quot;$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.&quot;,
+                permissions: &quot;*&quot;
+            },
+            {
+                username: &quot;guest&quot;,
+                password: &quot;$2b$08$wuAqPiKJlVN27eF5qJp.RuQYuy6ZYONW7a/UWYxDTtwKFCdB8F19y&quot;,
+                permissions: &quot;read&quot;
+            }
+        ]
+    },
+... Ommited ...
+</code></pre>
+<p>More information in the <a href="https://nodered.org/docs/user-guide/runtime/securing-node-red">Docs: Securing Node-RED</a>.</p>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+                Thanks for your feedback!
+              
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+                Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/Seillama/seillama-docs/issues/new" target="_blank" rel="noopener">feedback form</a>.
+              
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../kubespray/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kubernetes install - Kubespray" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Kubernetes install - Kubespray
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../ops/aliases/" class="md-footer__link md-footer__link--next" aria-label="Next: K8s useful aliases" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              K8s useful aliases
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+
+  
+
+<h4>Cookie consent</h4>
+<p>I'm using cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of my documentation and whether users find what they're searching for. With your consent, you're helping me to make our documentation better.</p>
+<input type="checkbox" class="md-toggle" id="__settings">
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        <label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);console.log(new FormData(form)),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.prune", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      
+    
+  </body>
+</html>
