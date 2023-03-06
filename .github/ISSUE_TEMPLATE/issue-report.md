@@ -1,5 +1,5 @@
 ---
-name: Issue Report
+name: Issue with the Docs
 about: Create a report to help me improve my docs
 title: ''
 labels: documentation, enhancement
