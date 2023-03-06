@@ -5,8 +5,8 @@
 ## Prereqs
 
 - Kubernetes cluster accessible with `kubectl` CLI
-- Install [Helm](https://helm.sh/docs/intro/install/)
-- Install [CFSSL](https://github.com/cloudflare/cfssl/releases/latest) CLI (at least ``
+- [Helm](https://helm.sh/docs/intro/install/) CLI
+- [CFSSL](https://github.com/cloudflare/cfssl/releases/latest) CLI
 
 ## Install (Helm)
 

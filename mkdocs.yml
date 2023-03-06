@@ -1,4 +1,9 @@
 site_name: Seillama Wiki
+site_author: Seillama
+repo_name: seillama-docs
+repo_url: https://github.com/seillama-io/seillama-docs
+extra_css:
+  - custom.css
 theme:
   name: material
   logo: images/logo.png
@@ -6,6 +11,7 @@ theme:
   language: en
   font:
     text: IBM Plex Sans
+    #code: IBM Plex Mono
   features:
     #- navigation.top
     - navigation.instant
@@ -15,7 +21,12 @@ theme:
     #- navigation.sections
     #- navigation.expand
     - navigation.prune 
-    - navigation.indexes 
+    - navigation.indexes
+    #- content.action.edit
+    #- content.action.view
+    - content.code.copy
+    - navigation.header
+    - navigation.footer
   palette:
     # Palette toggle for dark mode
     - scheme: slate
@@ -31,9 +42,21 @@ theme:
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences 
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 nav:
-  - Home:
-    - index.md
+  - Home: index.md
   - Kubernetes:
     - kubernetes/index.md
     - Install:
@@ -42,6 +65,7 @@ nav:
       - kubernetes/install/rpi.md
     - Operations:
       - kubernetes/ops/aliases.md
+      - kubernetes/ops/plugins.md
       - kubernetes/ops/cert-manager.md
       - kubernetes/ops/docker-registry.md
       - kubernetes/ops/nginx-ingress.md
@@ -73,4 +97,9 @@ extra:
           data: 0
           note: >- 
             Thanks for your feedback! Help us improve this page by
-            using our <a href="https://github.com/Seillama/seillama-docs/issues/new" target="_blank" rel="noopener">feedback form</a>.
+            using our <a href="https://github.com/seillama-io/seillama-docs/issues/new" target="_blank" rel="noopener">feedback form</a>.
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/seillama-io
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/seillama

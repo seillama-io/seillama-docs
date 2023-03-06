@@ -1,0 +1,52 @@
+/*
+    Global
+*/
+
+/*
+    Header
+*/
+
+.md-header__inner {
+    height: 3rem;
+}
+
+.md-header__button.md-logo img {
+    height: 1.5rem;
+}
+
+/*
+    Content
+*/
+
+.md-main__inner {
+    margin-top: unset;
+}
+
+/* Removes max width of overall grid */
+.md-grid {
+    max-width: unset;
+}
+
+/*
+    Navigation 
+*/
+
+.md-nav {
+    font-size: .8rem;
+}
+
+.md-nav.md-nav--primary+.md-nav__title {
+    display: none;
+}
+
+.md-nav .md-nav__link {
+    margin-top: unset;
+    padding: .4rem 0;
+}
+
+@media screen and (max-width: 76.1875em) {
+    .md-nav--primary .md-nav__link {
+        margin-top: 0;
+        padding: 0.6rem 0.8rem;
+    }
+}
