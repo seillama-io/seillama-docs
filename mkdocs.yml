@@ -2,6 +2,7 @@ site_name: Seillama Wiki
 site_author: Seillama
 repo_name: seillama-docs
 repo_url: https://github.com/seillama-io/seillama-docs
+edit_uri: edit/main/docs/
 extra_css:
   - custom.css
 theme:
@@ -22,11 +23,11 @@ theme:
     #- navigation.expand
     - navigation.prune 
     - navigation.indexes
-    #- content.action.edit
-    #- content.action.view
+    - content.action.edit
+    - content.action.view
     - content.code.copy
-    - navigation.header
-    - navigation.footer
+    #- navigation.header
+    #- navigation.footer
   palette:
     # Palette toggle for dark mode
     - scheme: slate
@@ -96,8 +97,7 @@ extra:
           name: This page could be improved
           data: 0
           note: >- 
-            Thanks for your feedback! Help us improve this page by
-            using our <a href="https://github.com/seillama-io/seillama-docs/issues/new" target="_blank" rel="noopener">feedback form</a>.
+            Thanks for your feedback! Help me improve this doc by openning a <a href="https://github.com/seillama-io/seillama-docs/issues/new?assignees=NoeSamaille&labels=documentation%2C+enhancement&template=issue-report.md&title=" target="_blank" rel="noopener">new issue</a>.
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/seillama-io
