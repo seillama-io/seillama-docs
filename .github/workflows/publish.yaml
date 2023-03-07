@@ -14,7 +14,7 @@ jobs:
       - name: generate site
         uses: ./.github/actions/
       - name: Set CNAME
-        run: sudo chmod 777 ./site/CNAME && echo "docs.seillama.dev" > ./site/CNAME
+        run: echo "docs.seillama.dev" > ./site/CNAME
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
