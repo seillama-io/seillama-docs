@@ -13,7 +13,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: generate site
         uses: ./.github/actions/
-        
+      - name: Set CNAME
+        run: sudo chmod 777 ./public/CNAME && echo "docs.seillama.dev" > ./public/CNAME
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
