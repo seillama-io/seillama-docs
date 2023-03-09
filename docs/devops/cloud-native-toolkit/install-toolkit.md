@@ -6,7 +6,7 @@
 
 ### Components
 
-As the name suggests, the Cloud-Native Toolkit provides a collection of tools that can be used in part or in whole to support the activities of software development life-cycle. The following provides a listing of the assets that make up the Cloud-Native Toolkit:
+As the name suggests, the Cloud-Native Toolkit provides a collection of tools that can be used in part or in whole to support the activities of software development life cycle. The following provides a listing of the assets that make up the Cloud-Native Toolkit:
 
 ![Cloud-Native Toolkit Components](../../images/toolkit/cntk-in-the-toolkit.png)
 
@@ -24,7 +24,7 @@ This diagram illustrates the environment:
 
 The diagram shows the components in the environment: the cluster, the deployment target environments, the cloud services, and the tools.
 
-The following best-of-breed open source software tools are installed in the cluster's *tools* namespace:
+The following best-of-breed open-source software tools are installed in the cluster's *tools* namespace:
 
 | Capability                  | Tool           |Description |
 | --------------------------- |:-------------- |------------|

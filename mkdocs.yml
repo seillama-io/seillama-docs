@@ -62,7 +62,6 @@ nav:
     - Cloud-Native Toolkit:
       - devops/cloud-native-toolkit/install-toolkit.md
   - Kubernetes:
-    - kubernetes/index.md
     - Install:
       - kubernetes/install/k3s.md
       - kubernetes/install/kubespray.md
