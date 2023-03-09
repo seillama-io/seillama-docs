@@ -47,9 +47,13 @@ The following best-of-breed open source software tools are installed in the clus
 ### On OpenShift Console
 
 1. On the OpenShift console, click "Copy login command" on the top right corner:
+
     ![OpenShift copy login command](../../images/toolkit/ocp-login-command.jpg)
+
 2. Click "Display Token":
+
     ![OpenShift Display Token](../../images/toolkit/ocp-display-token.jpg)
+
 3. Copy the `token` and `server` URL available in the provided `oc login` command
 
 ### On your workstation
@@ -90,7 +94,7 @@ The following best-of-breed open source software tools are installed in the clus
         - `TF_VAR_server_url` is the OpenShift server URL you retrieved in the [first step](#on-openshift-console)
         - `TF_VAR_cluster_login_token` is the OpenShift login token you retrieved in the [first step](#on-openshift-console)
 
-7. Navigate to `200-openshift-gitops` terarform module and run the automation:
+7. Navigate to `200-openshift-gitops` terraform module and run the automation:
     ```sh
     cd 200-openshift-gitops/terraform/
     terraform init
@@ -104,7 +108,7 @@ The following best-of-breed open source software tools are installed in the clus
     ```sh
     oc login --token=${LOGIN_TOKEN} --server=${SERVER_URL}
     ```
-9.  Navigate to `220-dev-tools` terarform module and run the automation:
+9.  Navigate to `220-dev-tools` terraform module and run the automation:
     ```sh
     cd ../../220-dev-tools/terraform
     export TF_VAR_gitops_repo_gitea_host=$(oc get route -n gitea gitea -o yaml | yq .spec.host)
@@ -169,7 +173,7 @@ The following best-of-breed open source software tools are installed in the clus
    
     ![OpenShift toolkit menu](../../image/../images/toolkit/ocp-toolkit-menu.jpg)
 
-3. Click "Sonarqube".
+3. Click "Sonarqube"
 4. Log in using default username `admin` and password `admin`. 
 5. Reset the default admin password by putting a custom one, save it for next step.
 6. Create the `sonarqube-access` secret in OpenShift `tools` namespace with your newly created admin password:

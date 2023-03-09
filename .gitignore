@@ -1,5 +1,6 @@
 .vscode
 site
+*.pdf
 
 # Logs
 logs
