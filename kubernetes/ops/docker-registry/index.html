@@ -594,8 +594,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prereqs" class="md-nav__link">
-    Prereqs
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
@@ -622,8 +622,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optionnal-registry-access-from-external-k8s-cluster" class="md-nav__link">
-    Optionnal: Registry access from external K8s cluster
+  <a href="#optional-registry-access-from-external-k8s-cluster" class="md-nav__link">
+    Optional: Registry access from external K8s cluster
   </a>
   
 </li>
@@ -774,8 +774,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prereqs" class="md-nav__link">
-    Prereqs
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
@@ -802,8 +802,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optionnal-registry-access-from-external-k8s-cluster" class="md-nav__link">
-    Optionnal: Registry access from external K8s cluster
+  <a href="#optional-registry-access-from-external-k8s-cluster" class="md-nav__link">
+    Optional: Registry access from external K8s cluster
   </a>
   
 </li>
@@ -829,7 +829,7 @@
 
 <h1 id="docker-registry">Docker Registry</h1>
 <p>This document shows how to deploy an on-prem private Docker Registry on Kubernetes, using Helm.</p>
-<h2 id="prereqs">Prereqs</h2>
+<h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Kubernetes cluster accessible with <code>kubectl</code> CLI</li>
 <li><a href="https://helm.sh/docs/intro/install/">Helm</a> CLI</li>
@@ -931,7 +931,7 @@
 <p>Apply ingress configuration:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl apply -f ingress.yaml
 </code></pre></div>
-<h2 id="optionnal-registry-access-from-external-k8s-cluster"><em>Optionnal</em>: Registry access from external K8s cluster</h2>
+<h2 id="optional-registry-access-from-external-k8s-cluster"><em>Optional</em>: Registry access from external K8s cluster</h2>
 <p>On each worker node of your K8s cluster that will need access to this private registry, put the content of your <code>ca.pem</code> in a file <code>/usr/local/share/ca-certificates/private-docker-registry.crt</code> and restart your container runtime <em>e.g.</em> on Ubuntu with <code>docker</code> runtime:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo su -
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>cat <span class="s">&lt;&lt;EOF &gt; /usr/local/share/ca-certificates/private-docker-registry.crt</span>

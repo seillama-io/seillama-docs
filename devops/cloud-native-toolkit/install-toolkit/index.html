@@ -391,8 +391,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prereqs" class="md-nav__link">
-    Prereqs
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
@@ -849,8 +849,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prereqs" class="md-nav__link">
-    Prereqs
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
@@ -971,7 +971,7 @@
 </tbody>
 </table>
 <h2 id="install-the-toolkit">Install the Toolkit</h2>
-<h3 id="prereqs">Prereqs</h3>
+<h3 id="prerequisites">Prerequisites</h3>
 <ul>
 <li>OpenShift Cluster available with admin access</li>
 <li><code>docker</code> CLI available on your workstation</li>
@@ -1035,7 +1035,7 @@
 </code></pre></div></p>
 <div class="admonition info">
 <p class="admonition-title">NOTE</p>
-<p>By default, when not providing a <code>gitops_repo_host</code> terraform variable, a <a href="https://gitea.io/en-us/">Gitea</a> instance is being deployed in the cluster to host the GitOps reposirory, to install the developer tools we'll need to retrieve the provisionned Gitea host, username and token.</p>
+<p>By default, when not providing a <code>gitops_repo_host</code> terraform variable, a <a href="https://gitea.io/en-us/">Gitea</a> instance is being deployed in the cluster to host the GitOps repository, to install the developer tools we'll need to retrieve the provisioned Gitea host, username and token.</p>
 </div>
 </li>
 <li>
@@ -1061,22 +1061,22 @@
 </li>
 <li>
 <p>Click "Artifactory"</p>
-<p><img alt="OpenShift artifcatory" src="../../../images/toolkit/ocp-jfrog.jpg" /></p>
+<p><img alt="OpenShift artifactory" src="../../../images/toolkit/ocp-jfrog.jpg" /></p>
 </li>
 <li>
 <p>Log in using default username <code>admin</code> and password <code>password</code>.</p>
 </li>
 <li>
 <p>Click "Get Started".</p>
-<p><img alt="OpenShift artifcatory getting started" src="../../../images/toolkit/ocp-jfrog-get-started.jpg" /></p>
+<p><img alt="OpenShift artifactory getting started" src="../../../images/toolkit/ocp-jfrog-get-started.jpg" /></p>
 </li>
 <li>
 <p>Reset password following Artifactory requirements, and save it somewhere safe (e.g. 1Password password manager). Then click "Next".</p>
-<p><img alt="OpenShift artifcatory reset password" src="../../../images/toolkit/ocp-jfrog-reset-pwd.jpg" /></p>
+<p><img alt="OpenShift artifactory reset password" src="../../../images/toolkit/ocp-jfrog-reset-pwd.jpg" /></p>
 </li>
 <li>
 <p>Paste the URL into the Select Base URL form and remove any trailing context roots, similar to the one in this view.</p>
-<p><img alt="OpenShift artifcatory set base URL" src="../../../images/toolkit/ocp-jfrog-base-url.jpg" /></p>
+<p><img alt="OpenShift artifactory set base URL" src="../../../images/toolkit/ocp-jfrog-base-url.jpg" /></p>
 </li>
 <li>
 <p>The next page in the wizard is the Configure a Proxy Server page. This is to setup a proxy for external resources. You can click Next to skip this step.</p>
@@ -1085,23 +1085,23 @@
 <li>The next page in the wizard is the Onboarding Complete page. Press "Finish".</li>
 <li>
 <p>Allow Anonymous Access to Artifactory: Click on the Settings tab on the left menu (the one with the gear icon), and then select Security</p>
-<p><img alt="OpenShift artifcatory anonymous access" src="../../../images/toolkit/ocp-jfrog-anonymous-access.jpg" /></p>
+<p><img alt="OpenShift artifactory anonymous access" src="../../../images/toolkit/ocp-jfrog-anonymous-access.jpg" /></p>
 </li>
 <li>
 <p>Obtain the encrypted password: In the Artifactory console, press the "Welcome, admin" menu button in the top right corner of the console and select "Edit profile"</p>
-<p><img alt="OpenShift artifcatory edit profile" src="../../../images/toolkit/ocp-jfrog-edit-profile.jpg" /></p>
+<p><img alt="OpenShift artifactory edit profile" src="../../../images/toolkit/ocp-jfrog-edit-profile.jpg" /></p>
 </li>
 <li>
 <p>In the User Profile: admin page, enter you Artifactory password and press <strong>Unlock</strong>:</p>
-<p><img alt="OpenShift artifcatory unlock edit profile" src="../../../images/toolkit/ocp-jfrog-unlock-edit-profile.jpg" /></p>
+<p><img alt="OpenShift artifactory unlock edit profile" src="../../../images/toolkit/ocp-jfrog-unlock-edit-profile.jpg" /></p>
 </li>
 <li>
 <p>Below, in the <strong>Authentication Settings</strong> section, is the <strong>Encrypted Password</strong> field Press the <strong>Eye</strong> icon to view the encrypted password and press the <strong>Cut &amp; Paste</strong> icon to copy it:</p>
-<p><img alt="OpenShift artifcatory copy encrypted password" src="../../../images/toolkit/ocp-jfrog-view-apikey.png" /></p>
+<p><img alt="OpenShift artifactory copy encrypted password" src="../../../images/toolkit/ocp-jfrog-view-apikey.png" /></p>
 </li>
 <li>
 <p>In the OpenShift 4 console, go to <strong>Administrator &gt; Workloads &gt; Secrets</strong>. At the top, select the tools project and filter for <strong>artifactory</strong>. Select <strong>Edit Secret</strong> on <strong>artifactory-access</strong>. Add a key/value for <code>ARTIFACTORY_ENCRYPT</code> and set the value to your encrypt key value:</p>
-<p><img alt="OpenShift artifcatory copy encrypted password" src="../../../images/toolkit/ocp-jfrog-update-secret.jpg" /></p>
+<p><img alt="OpenShift artifactory copy encrypted password" src="../../../images/toolkit/ocp-jfrog-update-secret.jpg" /></p>
 </li>
 </ol>
 <h3 id="sonarqube-initial-setup">Sonarqube initial setup</h3>
