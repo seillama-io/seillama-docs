@@ -58,6 +58,9 @@ markdown_extensions:
       custom_checkbox: true
 nav:
   - Home: index.md
+  - DevSecOps:
+    - Cloud-Native Toolkit:
+      - devops/cloud-native-toolkit/install-toolkit.md
   - Kubernetes:
     - kubernetes/index.md
     - Install:
