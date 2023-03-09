@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Cloud-Native Toolkit](https://cloudnativetoolkit.dev) is an open-source collection of assets that provide an environment for developing cloud-native applications for deployment within Red Hat OpenShift. It embodies IBM Garage Method principles and practices for consistently developed applications, incorporating best practices that increase developer velocity for efficient delivery of business value.
+[Cloud-Native Toolkit](https://cloudnativetoolkit.dev) is an open-source collection of assets that provide an environment for developing cloud-native applications for deployment within Red Hat OpenShift.
 
 ### Components
 
@@ -42,7 +42,7 @@ The following best-of-breed open source software tools are installed in the clus
 
 - OpenShift Cluster available with admin access
 - `docker` CLI available on your workstation
-- [GitHub](https://github.com/) user
+- [GitHub](https://github.com/) account
 
 ### On OpenShift Console
 
