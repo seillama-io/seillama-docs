@@ -979,11 +979,17 @@
 </ul>
 <h3 id="on-openshift-console">On OpenShift Console</h3>
 <ol>
-<li>On the OpenShift console, click "Copy login command" on the top right corner:
-    <img alt="OpenShift copy login command" src="../../../images/toolkit/ocp-login-command.jpg" /></li>
-<li>Click "Display Token":
-    <img alt="OpenShift Display Token" src="../../../images/toolkit/ocp-display-token.jpg" /></li>
-<li>Copy the <code>token</code> and <code>server</code> URL available in the provided <code>oc login</code> command</li>
+<li>
+<p>On the OpenShift console, click "Copy login command" on the top right corner:</p>
+<p><img alt="OpenShift copy login command" src="../../../images/toolkit/ocp-login-command.jpg" /></p>
+</li>
+<li>
+<p>Click "Display Token":</p>
+<p><img alt="OpenShift Display Token" src="../../../images/toolkit/ocp-display-token.jpg" /></p>
+</li>
+<li>
+<p>Copy the <code>token</code> and <code>server</code> URL available in the provided <code>oc login</code> command</p>
+</li>
 </ol>
 <h3 id="on-your-workstation">On your workstation</h3>
 <ol>
@@ -1022,7 +1028,7 @@
 </details>
 </li>
 <li>
-<p>Navigate to <code>200-openshift-gitops</code> terarform module and run the automation:
+<p>Navigate to <code>200-openshift-gitops</code> terraform module and run the automation:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span> <span class="m">200</span>-openshift-gitops/terraform/
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>terraform init
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>terraform apply --auto-approve
@@ -1037,7 +1043,7 @@
     <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>oc login --token<span class="o">=</span><span class="si">${</span><span class="nv">LOGIN_TOKEN</span><span class="si">}</span> --server<span class="o">=</span><span class="si">${</span><span class="nv">SERVER_URL</span><span class="si">}</span>
 </code></pre></div></p>
 </li>
-<li>Navigate to <code>220-dev-tools</code> terarform module and run the automation:
+<li>Navigate to <code>220-dev-tools</code> terraform module and run the automation:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span> ../../220-dev-tools/terraform
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">export</span> <span class="nv">TF_VAR_gitops_repo_gitea_host</span><span class="o">=</span><span class="k">$(</span>oc get route -n gitea gitea -o yaml <span class="p">|</span> yq .spec.host<span class="k">)</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">export</span> <span class="nv">TF_VAR_gitops_repo_gitea_username</span><span class="o">=</span><span class="k">$(</span>oc get secret -n gitea gitea-access -o yaml <span class="p">|</span> yq .data.username <span class="p">|</span> base64 -d<span class="k">)</span>
@@ -1106,7 +1112,7 @@
 <p><img alt="OpenShift toolkit menu" src="../../../images/toolkit/ocp-toolkit-menu.jpg" /></p>
 </li>
 <li>
-<p>Click "Sonarqube".</p>
+<p>Click "Sonarqube"</p>
 </li>
 <li>Log in using default username <code>admin</code> and password <code>admin</code>. </li>
 <li>Reset the default admin password by putting a custom one, save it for next step.</li>
