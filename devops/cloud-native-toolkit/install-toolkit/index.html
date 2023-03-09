@@ -15,7 +15,7 @@
     
     
       
-        <title>JFrog Artifactory - Seillama Wiki</title>
+        <title>Cloud-Native Toolkit - GitOps Install - Seillama Wiki</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jfrog-artifactory" class="md-skip">
+        <a href="#cloud-native-toolkit-gitops-install" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JFrog Artifactory
+              Cloud-Native Toolkit - GitOps Install
             
           </span>
         </div>
@@ -256,12 +256,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -286,12 +288,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
       
       
       
@@ -316,11 +320,120 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../devops/cloud-native-toolkit/install-toolkit/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Cloud-Native Toolkit - GitOps Install
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Cloud-Native Toolkit - GitOps Install
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-components" class="md-nav__link">
+    Environment components
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-toolkit" class="md-nav__link">
+    Install the Toolkit
+  </a>
+  
+    <nav class="md-nav" aria-label="Install the Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prereqs" class="md-nav__link">
+    Prereqs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-openshift-console" class="md-nav__link">
+    On OpenShift Console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-your-workstation" class="md-nav__link">
+    On your workstation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifactory-initial-setup" class="md-nav__link">
+    Artifactory initial setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonarqube-initial-setup" class="md-nav__link">
+    Sonarqube initial setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -345,14 +458,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -372,7 +483,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Kubernetes</a>
+          <a href="../../../kubernetes/">Kubernetes</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -429,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install/k3s/" class="md-nav__link">
+      <a href="../../../kubernetes/install/k3s/" class="md-nav__link">
         Kubernetes install - K3s
       </a>
     </li>
@@ -443,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install/kubespray/" class="md-nav__link">
+      <a href="../../../kubernetes/install/kubespray/" class="md-nav__link">
         Kubernetes install - Kubespray
       </a>
     </li>
@@ -457,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install/rpi/" class="md-nav__link">
+      <a href="../../../kubernetes/install/rpi/" class="md-nav__link">
         Self-hosting platform on Raspberry Pi - K3s
       </a>
     </li>
@@ -516,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/aliases/" class="md-nav__link">
+      <a href="../../../kubernetes/ops/aliases/" class="md-nav__link">
         Useful aliases
       </a>
     </li>
@@ -530,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/plugins/" class="md-nav__link">
+      <a href="../../../kubernetes/ops/plugins/" class="md-nav__link">
         Useful plugins
       </a>
     </li>
@@ -544,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/cert-manager/" class="md-nav__link">
+      <a href="../../../kubernetes/ops/cert-manager/" class="md-nav__link">
         Cert-Manager
       </a>
     </li>
@@ -558,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/docker-registry/" class="md-nav__link">
+      <a href="../../../kubernetes/ops/docker-registry/" class="md-nav__link">
         Docker Registry
       </a>
     </li>
@@ -572,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/nginx-ingress/" class="md-nav__link">
+      <a href="../../../kubernetes/ops/nginx-ingress/" class="md-nav__link">
         NGINX Ingress Controller
       </a>
     </li>
@@ -591,14 +702,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
       
       
       
@@ -627,66 +736,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          JFrog Artifactory
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../kubernetes/software/artifactory/" class="md-nav__link">
         JFrog Artifactory
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prereqs" class="md-nav__link">
-    Prereqs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supporting-docs" class="md-nav__link">
-    Supporting Docs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#artifactory" class="md-nav__link">
-    Artifactory
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -698,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gitlab/" class="md-nav__link">
+      <a href="../../../kubernetes/software/gitlab/" class="md-nav__link">
         GitLab EE
       </a>
     </li>
@@ -712,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wikijs/" class="md-nav__link">
+      <a href="../../../kubernetes/software/wikijs/" class="md-nav__link">
         Wiki.js
       </a>
     </li>
@@ -760,23 +814,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-components" class="md-nav__link">
+    Environment components
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-toolkit" class="md-nav__link">
+    Install the Toolkit
+  </a>
+  
+    <nav class="md-nav" aria-label="Install the Toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#prereqs" class="md-nav__link">
     Prereqs
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#supporting-docs" class="md-nav__link">
-    Supporting Docs
+        
+          <li class="md-nav__item">
+  <a href="#on-openshift-console" class="md-nav__link">
+    On OpenShift Console
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#artifactory" class="md-nav__link">
-    Artifactory
+        
+          <li class="md-nav__item">
+  <a href="#on-your-workstation" class="md-nav__link">
+    On your workstation
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifactory-initial-setup" class="md-nav__link">
+    Artifactory initial setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sonarqube-initial-setup" class="md-nav__link">
+    Sonarqube initial setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -793,30 +901,219 @@
               
                 
 
-  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/software/artifactory.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/devops/cloud-native-toolkit/install-toolkit.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="jfrog-artifactory">JFrog Artifactory</h1>
-<h2 id="prereqs">Prereqs</h2>
+<h1 id="cloud-native-toolkit-gitops-install">Cloud-Native Toolkit - GitOps Install</h1>
+<h2 id="overview">Overview</h2>
+<p><a href="https://cloudnativetoolkit.dev">Cloud-Native Toolkit</a> is an open-source collection of assets that provide an environment for developing cloud-native applications for deployment within Red Hat OpenShift. It embodies IBM Garage Method principles and practices for consistently developed applications, incorporating best practices that increase developer velocity for efficient delivery of business value.</p>
+<h3 id="components">Components</h3>
+<p>As the name suggests, the Cloud-Native Toolkit provides a collection of tools that can be used in part or in whole to support the activities of software development life-cycle. The following provides a listing of the assets that make up the Cloud-Native Toolkit:</p>
+<p><img alt="Cloud-Native Toolkit Components" src="../../../images/toolkit/cntk-in-the-toolkit.png" /></p>
+<h3 id="environment-components">Environment components</h3>
+<p>After installation, the environment consists of the following components and developer tools:</p>
 <ul>
-<li>Kubernetes cluster accessible with <code>kubectl</code> CLI</li>
-<li>Install <a href="https://helm.sh/docs/intro/install/">Helm</a></li>
+<li>A Red Hat OpenShift Service development cluster</li>
+<li>A collection of continuous delivery tools deployed into the cluster</li>
+<li>A set of backend services</li>
 </ul>
-<h2 id="supporting-docs">Supporting Docs</h2>
+<p>This diagram illustrates the environment:</p>
+<p><img alt="Typical Cloud-Native Toolkit environment" src="../../../images/toolkit/catalyst-provisioned-environment.png" /></p>
+<p>The diagram shows the components in the environment: the cluster, the deployment target environments, the cloud services, and the tools.</p>
+<p>The following best-of-breed open source software tools are installed in the cluster's <em>tools</em> namespace:</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th align="left">Tool</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Continuous Integration</td>
+<td align="left"><a href="https://tekton.dev/">Tekton CI</a></td>
+<td>Tekton is an emerging tool for Continuous Integration with Kubernetes and OpenShift</td>
+</tr>
+<tr>
+<td>API Contract Testing</td>
+<td align="left"><a href="https://docs.pact.io/pact_broker">Pact</a></td>
+<td>Pact enables API contract testing</td>
+</tr>
+<tr>
+<td>Code Analysis</td>
+<td align="left"><a href="https://docs.sonarqube.org/latest/">SonarQube</a></td>
+<td>SonarQube can scan code and display the results in a dashboard</td>
+</tr>
+<tr>
+<td>Container Image Registry</td>
+<td align="left"><a href="https://cloud.ibm.com/docs/Registry?topic=Registry-getting-started">Container Registry</a></td>
+<td>Stores container images to be deployed</td>
+</tr>
+<tr>
+<td>Artifact Management</td>
+<td align="left"><a href="https://jfrog.com/artifactory/">Artifactory</a></td>
+<td>Artifactory is an artifact storage and Helm chart repository</td>
+</tr>
+<tr>
+<td>Continuous Delivery</td>
+<td align="left"><a href="https://argoproj.github.io/cd/">ArgoCD</a></td>
+<td>ArgoCD support Continuous Delivery with GitOps</td>
+</tr>
+<tr>
+<td>Web IDE</td>
+<td align="left"><a href="https://developers.redhat.com/products/codeready-workspaces/overview">Code Ready Workspace</a></td>
+<td>IDE for editing and managing code in a web browser</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-the-toolkit">Install the Toolkit</h2>
+<h3 id="prereqs">Prereqs</h3>
 <ul>
-<li><a href="https://github.com/jfrog/charts/tree/master/stable/artifactory">Artifactory Helm Chart</a></li>
+<li>OpenShift Cluster available with admin access</li>
+<li><code>docker</code> CLI available on your workstation</li>
+<li><a href="https://github.com/">GitHub</a> user</li>
 </ul>
-<h2 id="artifactory">Artifactory</h2>
-<p>Get the JFrog Helm repository:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm repo add jfrog https://charts.jfrog.io
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>helm repo update jfrog
-</code></pre></div>
-<p>Install the chart:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm upgrade --install artifactory --namespace artifactory jfrog/artifactory --create-namespace
-</code></pre></div>
+<h3 id="on-openshift-console">On OpenShift Console</h3>
+<ol>
+<li>On the OpenShift console, click "Copy login command" on the top right corner:
+    <img alt="OpenShift copy login command" src="../../../images/toolkit/ocp-login-command.jpg" /></li>
+<li>Click "Display Token":
+    <img alt="OpenShift Display Token" src="../../../images/toolkit/ocp-display-token.jpg" /></li>
+<li>Copy the <code>token</code> and <code>server</code> URL available in the provided <code>oc login</code> command</li>
+</ol>
+<h3 id="on-your-workstation">On your workstation</h3>
+<ol>
+<li>Create a <code>cntk</code> directory:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir cntk
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span> cntk
+</code></pre></div></li>
+<li>Install <code>iascable</code> CLI:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl -sL https://iascable.cloudnativetoolkit.dev/install.sh <span class="p">|</span> sh
+</code></pre></div></li>
+<li>Get OpenShift GitOps and Developer Tools Bills of Materials:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -sL https://github.com/cloud-native-toolkit/automation-solutions/releases/download/200-openshift-gitops_v1.0.1/bom.yaml &gt; <span class="m">200</span>-openshift-gitops.yaml
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>curl -sL https://github.com/cloud-native-toolkit/automation-solutions/releases/download/220-dev-tools_v1.0.0/bom.yaml &gt; <span class="m">220</span>-dev-tools.yaml
+</code></pre></div></li>
+<li>Build both BOMs using <code>iascable</code>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>iascable build -i <span class="m">200</span>-openshift-gitops.yaml
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>iascable build -i <span class="m">220</span>-dev-tools.yaml
+</code></pre></div></li>
+<li>Navigate to <code>output</code> directory and open a helper docker container that contains <code>terraform</code> CLI required to run the automation:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span> output
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./launch.sh
+</code></pre></div></li>
+<li>
+<p>In your docker container, create the required environment variables required to run the terraform automation on your OpenShift cluster:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span> <span class="nv">TF_VAR_config_banner_text</span><span class="o">=</span><span class="s2">&quot;Cloud-Native Toolkit&quot;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">export</span> <span class="nv">TF_VAR_gitops_repo_repo</span><span class="o">=</span>&lt;GITOPS_REPOSITORY&gt;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">export</span> <span class="nv">TF_VAR_server_url</span><span class="o">=</span>&lt;OPENSHIFT_SERVER_URL&gt;
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">export</span> <span class="nv">TF_VAR_cluster_login_token</span><span class="o">=</span>&lt;OPENSHIFT_SERVER_TOKEN&gt;
+</code></pre></div></p>
+<details class="info">
+<summary>Help</summary>
+<ul>
+<li><code>TF_VAR_server_url</code> is the OpenShift server URL you retrieved in the <a href="#on-openshift-console">first step</a></li>
+<li><code>TF_VAR_cluster_login_token</code> is the OpenShift login token you retrieved in the <a href="#on-openshift-console">first step</a></li>
+</ul>
+</details>
+</li>
+<li>
+<p>Navigate to <code>200-openshift-gitops</code> terarform module and run the automation:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span> <span class="m">200</span>-openshift-gitops/terraform/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>terraform init
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>terraform apply --auto-approve
+</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">NOTE</p>
+<p>By default, when not providing a <code>gitops_repo_host</code> terraform variable, a <a href="https://gitea.io/en-us/">Gitea</a> instance is being deployed in the cluster to host the GitOps reposirory, to install the developer tools we'll need to retrieve the provisionned Gitea host, username and token.</p>
+</div>
+</li>
+<li>
+<p>We'll now need to login to the OpenShift cluster using the <code>oc login</code> command from <a href="#on-openshift-console">first step</a> to retrieve Gitea credentials to pass to next terraform module:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>oc login --token<span class="o">=</span><span class="si">${</span><span class="nv">LOGIN_TOKEN</span><span class="si">}</span> --server<span class="o">=</span><span class="si">${</span><span class="nv">SERVER_URL</span><span class="si">}</span>
+</code></pre></div></p>
+</li>
+<li>Navigate to <code>220-dev-tools</code> terarform module and run the automation:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span> ../../220-dev-tools/terraform
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">export</span> <span class="nv">TF_VAR_gitops_repo_gitea_host</span><span class="o">=</span><span class="k">$(</span>oc get route -n gitea gitea -o yaml <span class="p">|</span> yq .spec.host<span class="k">)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">export</span> <span class="nv">TF_VAR_gitops_repo_gitea_username</span><span class="o">=</span><span class="k">$(</span>oc get secret -n gitea gitea-access -o yaml <span class="p">|</span> yq .data.username <span class="p">|</span> base64 -d<span class="k">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nb">export</span> <span class="nv">TF_VAR_gitops_repo_gitea_token</span><span class="o">=</span><span class="k">$(</span>oc get secret -n gitea gitea-access -o yaml <span class="p">|</span> yq .data.password <span class="p">|</span> base64 -d<span class="k">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>terraform init
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>terraform apply --auto-approve
+</code></pre></div></li>
+</ol>
+<h3 id="artifactory-initial-setup">Artifactory initial setup</h3>
+<ol>
+<li>Navigate to OpenShift console.</li>
+<li>
+<p>Click this icon</p>
+<p><img alt="OpenShift toolkit menu" src="../../../images/toolkit/ocp-toolkit-menu.jpg" /></p>
+</li>
+<li>
+<p>Click "Artifactory"</p>
+<p><img alt="OpenShift artifcatory" src="../../../images/toolkit/ocp-jfrog.jpg" /></p>
+</li>
+<li>
+<p>Log in using default username <code>admin</code> and password <code>password</code>.</p>
+</li>
+<li>
+<p>Click "Get Started".</p>
+<p><img alt="OpenShift artifcatory getting started" src="../../../images/toolkit/ocp-jfrog-get-started.jpg" /></p>
+</li>
+<li>
+<p>Reset password following Artifactory requirements, and save it somewhere safe (e.g. 1Password password manager). Then click "Next".</p>
+<p><img alt="OpenShift artifcatory reset password" src="../../../images/toolkit/ocp-jfrog-reset-pwd.jpg" /></p>
+</li>
+<li>
+<p>Paste the URL into the Select Base URL form and remove any trailing context roots, similar to the one in this view.</p>
+<p><img alt="OpenShift artifcatory set base URL" src="../../../images/toolkit/ocp-jfrog-base-url.jpg" /></p>
+</li>
+<li>
+<p>The next page in the wizard is the Configure a Proxy Server page. This is to setup a proxy for external resources. You can click Next to skip this step.</p>
+</li>
+<li>The next page in the wizard is the Create Repositories page. Select "Generic", then press "Next".</li>
+<li>The next page in the wizard is the Onboarding Complete page. Press "Finish".</li>
+<li>
+<p>Allow Anonymous Access to Artifactory: Click on the Settings tab on the left menu (the one with the gear icon), and then select Security</p>
+<p><img alt="OpenShift artifcatory anonymous access" src="../../../images/toolkit/ocp-jfrog-anonymous-access.jpg" /></p>
+</li>
+<li>
+<p>Obtain the encrypted password: In the Artifactory console, press the "Welcome, admin" menu button in the top right corner of the console and select "Edit profile"</p>
+<p><img alt="OpenShift artifcatory edit profile" src="../../../images/toolkit/ocp-jfrog-edit-profile.jpg" /></p>
+</li>
+<li>
+<p>In the User Profile: admin page, enter you Artifactory password and press <strong>Unlock</strong>:</p>
+<p><img alt="OpenShift artifcatory unlock edit profile" src="../../../images/toolkit/ocp-jfrog-unlock-edit-profile.jpg" /></p>
+</li>
+<li>
+<p>Below, in the <strong>Authentication Settings</strong> section, is the <strong>Encrypted Password</strong> field Press the <strong>Eye</strong> icon to view the encrypted password and press the <strong>Cut &amp; Paste</strong> icon to copy it:</p>
+<p><img alt="OpenShift artifcatory copy encrypted password" src="../../../images/toolkit/ocp-jfrog-view-apikey.png" /></p>
+</li>
+<li>
+<p>In the OpenShift 4 console, go to <strong>Administrator &gt; Workloads &gt; Secrets</strong>. At the top, select the tools project and filter for <strong>artifactory</strong>. Select <strong>Edit Secret</strong> on <strong>artifactory-access</strong>. Add a key/value for <code>ARTIFACTORY_ENCRYPT</code> and set the value to your encrypt key value:</p>
+<p><img alt="OpenShift artifcatory copy encrypted password" src="../../../images/toolkit/ocp-jfrog-update-secret.jpg" /></p>
+</li>
+</ol>
+<h3 id="sonarqube-initial-setup">Sonarqube initial setup</h3>
+<ol>
+<li>Navigate to OpenShift console.</li>
+<li>
+<p>Click this icon</p>
+<p><img alt="OpenShift toolkit menu" src="../../../images/toolkit/ocp-toolkit-menu.jpg" /></p>
+</li>
+<li>
+<p>Click "Sonarqube".</p>
+</li>
+<li>Log in using default username <code>admin</code> and password <code>admin</code>. </li>
+<li>Reset the default admin password by putting a custom one, save it for next step.</li>
+<li>Create the <code>sonarqube-access</code> secret in OpenShift <code>tools</code> namespace with your newly created admin password:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>oc create secret generic sonarqube-access -n tools --from-literal<span class="o">=</span><span class="nv">SONARQUBE_USER</span><span class="o">=</span>admin --from-literal<span class="o">=</span><span class="nv">SONARQUBE_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">SONARQUBE_PASSWORD</span><span class="si">}</span>
+</code></pre></div></li>
+</ol>
 
 
   
@@ -882,7 +1179,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../ops/nginx-ingress/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NGINX Ingress Controller" rel="prev">
+        <a href="../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -891,20 +1188,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              NGINX Ingress Controller
+              Home
             </div>
           </div>
         </a>
       
       
         
-        <a href="../gitlab/" class="md-footer__link md-footer__link--next" aria-label="Next: GitLab EE" rel="next">
+        <a href="../../../kubernetes/" class="md-footer__link md-footer__link--next" aria-label="Next: Kubernetes - Home" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              GitLab EE
+              Kubernetes - Home
             </div>
           </div>
           <div class="md-footer__button md-icon">
