@@ -2,7 +2,7 @@
 
 This document shows how to deploy an on-prem private GitLab Instance on Kubernetes, using Helm.
 
-## Prereqs
+## Prerequisites
 
 - Kubernetes cluster accessible with `kubectl` CLI
 - Install [Helm](https://helm.sh/docs/intro/install/)

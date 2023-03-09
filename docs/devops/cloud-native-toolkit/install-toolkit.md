@@ -38,7 +38,7 @@ The following best-of-breed open source software tools are installed in the clus
 
 ## Install the Toolkit
 
-### Prereqs
+### Prerequisites
 
 - OpenShift Cluster available with admin access
 - `docker` CLI available on your workstation
@@ -102,7 +102,7 @@ The following best-of-breed open source software tools are installed in the clus
     ```
 
     !!! info "NOTE"
-        By default, when not providing a `gitops_repo_host` terraform variable, a [Gitea](https://gitea.io/en-us/) instance is being deployed in the cluster to host the GitOps reposirory, to install the developer tools we'll need to retrieve the provisionned Gitea host, username and token.
+        By default, when not providing a `gitops_repo_host` terraform variable, a [Gitea](https://gitea.io/en-us/) instance is being deployed in the cluster to host the GitOps repository, to install the developer tools we'll need to retrieve the provisioned Gitea host, username and token.
 
 8. We'll now need to login to the OpenShift cluster using the `oc login` command from [first step](#on-openshift-console) to retrieve Gitea credentials to pass to next terraform module:
     ```sh
@@ -127,43 +127,43 @@ The following best-of-breed open source software tools are installed in the clus
 
 3. Click "Artifactory"
    
-    ![OpenShift artifcatory](../../image/../images/toolkit/ocp-jfrog.jpg)
+    ![OpenShift artifactory](../../image/../images/toolkit/ocp-jfrog.jpg)
 
 4. Log in using default username `admin` and password `password`.
 5. Click "Get Started".
    
-    ![OpenShift artifcatory getting started](../../image/../images/toolkit/ocp-jfrog-get-started.jpg)
+    ![OpenShift artifactory getting started](../../image/../images/toolkit/ocp-jfrog-get-started.jpg)
 
 6. Reset password following Artifactory requirements, and save it somewhere safe (e.g. 1Password password manager). Then click "Next".
    
-    ![OpenShift artifcatory reset password](../../image/../images/toolkit/ocp-jfrog-reset-pwd.jpg)
+    ![OpenShift artifactory reset password](../../image/../images/toolkit/ocp-jfrog-reset-pwd.jpg)
 
 7. Paste the URL into the Select Base URL form and remove any trailing context roots, similar to the one in this view.
    
-    ![OpenShift artifcatory set base URL](../../image/../images/toolkit/ocp-jfrog-base-url.jpg)
+    ![OpenShift artifactory set base URL](../../image/../images/toolkit/ocp-jfrog-base-url.jpg)
 
 8. The next page in the wizard is the Configure a Proxy Server page. This is to setup a proxy for external resources. You can click Next to skip this step.
 9. The next page in the wizard is the Create Repositories page. Select "Generic", then press "Next".
 10. The next page in the wizard is the Onboarding Complete page. Press "Finish".
 11. Allow Anonymous Access to Artifactory: Click on the Settings tab on the left menu (the one with the gear icon), and then select Security
    
-    ![OpenShift artifcatory anonymous access](../../image/../images/toolkit/ocp-jfrog-anonymous-access.jpg)
+    ![OpenShift artifactory anonymous access](../../image/../images/toolkit/ocp-jfrog-anonymous-access.jpg)
 
 12. Obtain the encrypted password: In the Artifactory console, press the "Welcome, admin" menu button in the top right corner of the console and select "Edit profile"
    
-    ![OpenShift artifcatory edit profile](../../image/../images/toolkit/ocp-jfrog-edit-profile.jpg)
+    ![OpenShift artifactory edit profile](../../image/../images/toolkit/ocp-jfrog-edit-profile.jpg)
 
 13. In the User Profile: admin page, enter you Artifactory password and press **Unlock**:
 
-    ![OpenShift artifcatory unlock edit profile](../../image/../images/toolkit/ocp-jfrog-unlock-edit-profile.jpg)
+    ![OpenShift artifactory unlock edit profile](../../image/../images/toolkit/ocp-jfrog-unlock-edit-profile.jpg)
 
 14. Below, in the **Authentication Settings** section, is the **Encrypted Password** field Press the **Eye** icon to view the encrypted password and press the **Cut & Paste** icon to copy it:
 
-    ![OpenShift artifcatory copy encrypted password](../../image/../images/toolkit/ocp-jfrog-view-apikey.png)
+    ![OpenShift artifactory copy encrypted password](../../image/../images/toolkit/ocp-jfrog-view-apikey.png)
 
 15.  In the OpenShift 4 console, go to **Administrator > Workloads > Secrets**. At the top, select the tools project and filter for **artifactory**. Select **Edit Secret** on **artifactory-access**. Add a key/value for `ARTIFACTORY_ENCRYPT` and set the value to your encrypt key value:
 
-    ![OpenShift artifcatory copy encrypted password](../../image/../images/toolkit/ocp-jfrog-update-secret.jpg)
+    ![OpenShift artifactory copy encrypted password](../../image/../images/toolkit/ocp-jfrog-update-secret.jpg)
 
 ### Sonarqube initial setup
 

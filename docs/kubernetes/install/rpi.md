@@ -74,7 +74,7 @@ Apply complete! Resources: 0 added, 0 changed, 32 destroyed.
     ... output ommited ...
     passwd: password updated successfully
     ```
-3. Change hostnames:
+3. Change host names:
     ```sh
     pi@raspberrypi:~ $ sudo -i
     root@raspberrypi:~ $ echo "pi-master" > /etc/hostname

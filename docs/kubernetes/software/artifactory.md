@@ -1,6 +1,6 @@
 # JFrog Artifactory
 
-## Prereqs
+## Prerequisites
 
 - Kubernetes cluster accessible with `kubectl` CLI
 - Install [Helm](https://helm.sh/docs/intro/install/)

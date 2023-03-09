@@ -2,7 +2,7 @@
 
 This document shows how to deploy an on-prem private Docker Registry on Kubernetes, using Helm.
 
-## Prereqs
+## Prerequisites
 
 - Kubernetes cluster accessible with `kubectl` CLI
 - [Helm](https://helm.sh/docs/intro/install/) CLI
@@ -136,7 +136,7 @@ Apply ingress configuration:
 kubectl apply -f ingress.yaml
 ```
 
-## *Optionnal*: Registry access from external K8s cluster
+## *Optional*: Registry access from external K8s cluster
 
 On each worker node of your K8s cluster that will need access to this private registry, put the content of your `ca.pem` in a file `/usr/local/share/ca-certificates/private-docker-registry.crt` and restart your container runtime *e.g.* on Ubuntu with `docker` runtime:
 

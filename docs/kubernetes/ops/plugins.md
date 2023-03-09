@@ -2,7 +2,7 @@
 
 Useful plugins you can install to speed your day to day Kubernetes operations:
 
-## Prereqs
+## Prerequisites
 
 - `kubectl` CLI
 - Kubernetes [krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install/) plugin manager:

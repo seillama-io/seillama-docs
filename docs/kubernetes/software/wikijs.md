@@ -1,8 +1,8 @@
 # Wiki.js
 
-[Wiki.js](https://js.wiki/) is an open source Wiki software that allows you to kake documentation a joy to write using a beautiful and intuitive interface!
+[Wiki.js](https://js.wiki/) is an open source Wiki software that allows you to enjoy writing documentation using a beautiful and intuitive interface!
 
-## Prereqs
+## Prerequisites
 
 - Kubernetes cluster accessible with `kubectl` CLI
 - [Cert Manager](https://cert-manager.io/docs/installation) configured in K8s cluster, with `letsencrypt-prod` [ClusterIssuer](https://cert-manager.io/docs/tutorials/acme/nginx-ingress/#step-6---configure-a-lets-encrypt-issuer) created. 

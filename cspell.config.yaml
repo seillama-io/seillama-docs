@@ -6,10 +6,15 @@ languageSettings:
   - languageId: markdown
     ignoreRegExpList:
       - /^\\s*```[\\s\\S]*?^\\s*```/gm
-words:
-  - mkdocs
-  - wikijs
-  - kubespray
+      - /```[a-z]+(\n*[^`]*\n*)*```/gm
+      - /\`[a-zA-Z-_\. ]+\`/gm
+      - /!?\[.+\]\(.+\)/gm
+dictionaryDefinitions:
+  - name: custom-dictionnary
+    path: ./.cspell/custom-dictionnary.txt
+dictionaries:
+  - custom-dictionnary
 flagWords:
   - hte
   - teh
+caseSensitive: false

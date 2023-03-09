@@ -4,7 +4,7 @@ The [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) is a
 
 The Ingress resource supports Content-based routing and TLS/SSL termination for each hostname.
 
-## Prereqs
+## Prerequisites
 
 - Kubernetes cluster accessible with `kubectl` CLI
 - Install [Helm](https://helm.sh/docs/intro/install/)

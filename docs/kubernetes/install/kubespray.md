@@ -5,7 +5,7 @@ Main docs:
 - [https://kubespray.io/#/docs/getting-started](https://kubespray.io/#/docs/getting-started)
 - [https://kubernetes.io/docs/setup/production-environment/tools/kubespray/](https://kubernetes.io/docs/setup)
 
-### Prereqs
+### Prerequisites
 
 [https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#1-5-meet-the-underlay-requirements](https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#1-5-meet-the-underlay-requirements)
 
@@ -37,7 +37,7 @@ external_cloud_provider: "vsphere"
 
 Edit `inventory/${CLUSTER_NAME}/group_vars/all/vsphere.yml` to update following config variables:
 
-```
+```txt
 ## Values for the external vSphere Cloud Provider
 external_vsphere_vcenter_ip: "vcr72.example.com"
 external_vsphere_vcenter_port: "443"
