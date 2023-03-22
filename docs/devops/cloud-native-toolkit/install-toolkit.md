@@ -43,6 +43,7 @@ The following best-of-breed open-source software tools are installed in the clus
 - OpenShift Cluster available with admin access
 - `docker` CLI available on your workstation
 - [GitHub](https://github.com/) account
+- `yq` CLI [installed](https://github.com/mikefarah/yq/#install) on your workstation
 
 ### On OpenShift Console
 
@@ -167,7 +168,6 @@ The following best-of-breed open-source software tools are installed in the clus
 
 ### Sonarqube initial setup
 
-
 1. Navigate to OpenShift console.
 2. Click this icon
    
@@ -180,3 +180,23 @@ The following best-of-breed open-source software tools are installed in the clus
     ```sh
     oc create secret generic sonarqube-access -n tools --from-literal=SONARQUBE_USER=admin --from-literal=SONARQUBE_PASSWORD=${SONARQUBE_PASSWORD}
     ```
+
+### Add `SETFCAP` capability to pipeline Security Context Constraints
+
+**Note**: This Step is only required if you are running the Toolkit on **OpenShift 4.10+** with **Openshift Pipelines operator < 1.7.2**.
+
+Add `SETFCAP` capability in allowed capability to `pipelines-scc` so cluster tasks can request it:
+
+```sh
+oc patch scc pipelines-scc --type merge -p '{"allowedCapabilities":["SETFCAP"]}'
+```
+
+Update `ibm-build-tag-push` tekton task in tools namespace to request required `SETFCAP` capability, e.g. with task version `3.0.3`:
+
+```sh
+oc get task ibm-build-tag-push-v3-0-3 -n tools -o yaml | yq '.spec.steps[2].securityContext.capabilities.add = ["SETFCAP"]' | oc apply -f -
+```
+
+### Conclusion
+
+At this stage the Cloud-Native Toolkit should be up and running, congratulations!
