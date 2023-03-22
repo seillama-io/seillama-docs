@@ -425,6 +425,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-setfcap-capability-to-pipeline-security-context-constraints" class="md-nav__link">
+    Add SETFCAP capability to pipeline Security Context Constraints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -871,6 +885,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-setfcap-capability-to-pipeline-security-context-constraints" class="md-nav__link">
+    Add SETFCAP capability to pipeline Security Context Constraints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -964,6 +992,7 @@
 <li>OpenShift Cluster available with admin access</li>
 <li><code>docker</code> CLI available on your workstation</li>
 <li><a href="https://github.com/">GitHub</a> account</li>
+<li><code>yq</code> CLI <a href="https://github.com/mikefarah/yq/#install">installed</a> on your workstation</li>
 </ul>
 <h3 id="on-openshift-console">On OpenShift Console</h3>
 <ol>
@@ -1108,6 +1137,16 @@
     <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>oc create secret generic sonarqube-access -n tools --from-literal<span class="o">=</span><span class="nv">SONARQUBE_USER</span><span class="o">=</span>admin --from-literal<span class="o">=</span><span class="nv">SONARQUBE_PASSWORD</span><span class="o">=</span><span class="si">${</span><span class="nv">SONARQUBE_PASSWORD</span><span class="si">}</span>
 </code></pre></div></li>
 </ol>
+<h3 id="add-setfcap-capability-to-pipeline-security-context-constraints">Add <code>SETFCAP</code> capability to pipeline Security Context Constraints</h3>
+<p><strong>Note</strong>: This Step is only required if you are running the Toolkit on <strong>OpenShift 4.10+</strong> with <strong>Openshift Pipelines operator &lt; 1.7.2</strong>.</p>
+<p>Add <code>SETFCAP</code> capability in allowed capability to <code>pipelines-scc</code> so cluster tasks can request it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>oc patch scc pipelines-scc --type merge -p <span class="s1">&#39;{&quot;allowedCapabilities&quot;:[&quot;SETFCAP&quot;]}&#39;</span>
+</code></pre></div>
+<p>Update <code>ibm-build-tag-push</code> tekton task in tools namespace to request required <code>SETFCAP</code> capability, e.g. with task version <code>3.0.3</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>oc get task ibm-build-tag-push-v3-0-3 -n tools -o yaml <span class="p">|</span> yq <span class="s1">&#39;.spec.steps[2].securityContext.capabilities.add = [&quot;SETFCAP&quot;]&#39;</span> <span class="p">|</span> oc apply -f -
+</code></pre></div>
+<h3 id="conclusion">Conclusion</h3>
+<p>At this stage the Cloud-Native Toolkit should be up and running, congratulations!</p>
 
 
   
