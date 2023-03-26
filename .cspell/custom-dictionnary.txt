@@ -17,7 +17,6 @@ Radarr
 Plex
 ovpn
 
-
 # Concepts
 gitops
 roadmap

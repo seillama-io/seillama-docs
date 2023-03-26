@@ -1,4 +1,4 @@
-site_name: Seillama Wiki
+site_name: Seillama Docs
 site_author: Seillama
 repo_name: seillama-docs
 repo_url: https://github.com/seillama-io/seillama-docs
@@ -7,6 +7,7 @@ extra_css:
   - custom.css
 theme:
   name: material
+  custom_dir: material/.overrides
   logo: images/logo.png
   favicon: images/logo.png
   language: en
@@ -14,11 +15,11 @@ theme:
     text: IBM Plex Sans
     #code: IBM Plex Mono
   features:
-    #- navigation.top
+    - navigation.top
     - navigation.instant
     - navigation.tracking
-    #- navigation.tabs
-    #- navigation.tabs.sticky
+    - navigation.tabs
+    - navigation.tabs.sticky
     #- navigation.sections
     #- navigation.expand
     - navigation.prune 
@@ -104,4 +105,4 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/seillama-io
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/seillama
+      link: https://twitter.com/seillama_
