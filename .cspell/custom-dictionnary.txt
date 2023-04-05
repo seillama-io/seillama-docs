@@ -22,3 +22,4 @@ gitops
 roadmap
 schedulable
 daemonless
+CNCF
