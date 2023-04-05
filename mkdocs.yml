@@ -59,11 +59,10 @@ markdown_extensions:
       custom_checkbox: true
 nav:
   - Home: index.md
-  - DevSecOps:
-    - Cloud-Native Toolkit:
-      - devops/cloud-native-toolkit/install-toolkit.md
   - Containers:
     - containers/podman/podman-wsl.md
+  - Linux:
+    - linux/ubuntu-trust-ca.md
   - Kubernetes:
     - Install:
       - kubernetes/install/k3s.md
@@ -80,6 +79,9 @@ nav:
       - kubernetes/software/harbor.md
       - kubernetes/software/gitlab.md
       - kubernetes/software/wikijs.md
+  - DevSecOps:
+    - Cloud-Native Toolkit:
+      - devops/cloud-native-toolkit/install-toolkit.md
 extra:
   consent:
     title: Cookie consent
