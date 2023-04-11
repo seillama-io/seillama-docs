@@ -76,6 +76,7 @@ nav:
       - kubernetes/ops/nginx-ingress.md
     - Self-Hosted Software:
       - kubernetes/software/artifactory.md
+      - kubernetes/software/sonarqube.md
       - kubernetes/software/harbor.md
       - kubernetes/software/gitlab.md
       - kubernetes/software/wikijs.md

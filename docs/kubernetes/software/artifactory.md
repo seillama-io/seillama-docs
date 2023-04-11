@@ -21,5 +21,11 @@ helm repo update jfrog
 Install the chart:
 
 ```sh
-helm upgrade --install artifactory --namespace artifactory jfrog/artifactory --create-namespace
+helm upgrade --install artifactory --namespace artifactory jfrog/artifactory-oss --create-namespace
+```
+
+**Optional**: if running on OpenShift, grant `privileged` SCC to the `default` service account in `artifactory` namespace:
+
+```sh
+oc adm policy add-scc-to-user privileged -z default -n artifactory
 ```
