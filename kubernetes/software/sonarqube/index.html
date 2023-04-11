@@ -15,7 +15,7 @@
     
     
       
-        <title>Docker Registry - Seillama Docs</title>
+        <title>SonarQube - Seillama Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker-registry" class="md-skip">
+        <a href="#sonarqube" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker Registry
+              SonarQube
             
           </span>
         </div>
@@ -584,14 +584,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
       
       
       
@@ -626,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aliases/" class="md-nav__link">
+      <a href="../../ops/aliases/" class="md-nav__link">
         Useful aliases
       </a>
     </li>
@@ -640,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plugins/" class="md-nav__link">
+      <a href="../../ops/plugins/" class="md-nav__link">
         Useful plugins
       </a>
     </li>
@@ -654,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cert-manager/" class="md-nav__link">
+      <a href="../../ops/cert-manager/" class="md-nav__link">
         Cert-Manager
       </a>
     </li>
@@ -666,80 +664,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Docker Registry
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ops/docker-registry/" class="md-nav__link">
         Docker Registry
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generate-tls-certs" class="md-nav__link">
-    Generate TLS certs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-and-deploy-helm-chart" class="md-nav__link">
-    Configure and Deploy Helm Chart
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-ingress" class="md-nav__link">
-    Configure Ingress
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-registry-access-from-external-k8s-cluster" class="md-nav__link">
-    Optional: Registry access from external K8s cluster
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -751,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nginx-ingress/" class="md-nav__link">
+      <a href="../../ops/nginx-ingress/" class="md-nav__link">
         NGINX Ingress Controller
       </a>
     </li>
@@ -770,12 +699,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
       
       
       
@@ -810,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/artifactory/" class="md-nav__link">
+      <a href="../artifactory/" class="md-nav__link">
         JFrog Artifactory
       </a>
     </li>
@@ -822,11 +753,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../software/sonarqube/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SonarQube
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         SonarQube
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-docs" class="md-nav__link">
+    Supporting Docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonarqube_1" class="md-nav__link">
+    SonarQube
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -838,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/harbor/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         Harbor
       </a>
     </li>
@@ -852,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/gitlab/" class="md-nav__link">
+      <a href="../gitlab/" class="md-nav__link">
         GitLab EE
       </a>
     </li>
@@ -866,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/wikijs/" class="md-nav__link">
+      <a href="../wikijs/" class="md-nav__link">
         Wiki.js
       </a>
     </li>
@@ -1010,29 +996,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generate-tls-certs" class="md-nav__link">
-    Generate TLS certs
+  <a href="#supporting-docs" class="md-nav__link">
+    Supporting Docs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-and-deploy-helm-chart" class="md-nav__link">
-    Configure and Deploy Helm Chart
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-ingress" class="md-nav__link">
-    Configure Ingress
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-registry-access-from-external-k8s-cluster" class="md-nav__link">
-    Optional: Registry access from external K8s cluster
+  <a href="#sonarqube_1" class="md-nav__link">
+    SonarQube
   </a>
   
 </li>
@@ -1050,126 +1022,35 @@
               
                 
 
-  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/ops/docker-registry.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/software/sonarqube.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="docker-registry">Docker Registry</h1>
-<p>This document shows how to deploy an on-prem private Docker Registry on Kubernetes, using Helm.</p>
+<h1 id="sonarqube">SonarQube</h1>
+<p><a href="http://www.sonarqube.org/">SonarQube</a> is a self-managed, automatic code review tool that systematically helps you deliver clean code. As a core element of our Sonar solution, SonarQube integrates into your existing workflow and detects issues in your code to help you perform continuous code inspections of your projects. The tool analyses 30+ different programming languages and integrates into your CI pipeline and DevOps platform to ensure that your code meets high-quality standards.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Kubernetes cluster accessible with <code>kubectl</code> CLI</li>
-<li><a href="https://helm.sh/docs/intro/install/">Helm</a> CLI</li>
-<li><a href="https://github.com/cloudflare/cfssl/releases/latest">CFSSL</a> CLI (at least <code>cfssl</code> and <code>cfssljson</code>).</li>
-<li><a href="https://httpd.apache.org/docs/current/programs/htpasswd.html">htpasswd</a> CLI</li>
-<li><a href="https://kubernetes.github.io/ingress-nginx/deploy/">Nginx Ingress Controller</a> installed in the cluster</li>
-<li>Some LB (e.g. HAProxy) is set up to balance <code>registry.&lt;BASE_DOMAIN&gt;</code> to cluster Nginx Ingress Controller load balancer.</li>
+<li>Install <a href="https://helm.sh/docs/intro/install/">Helm</a></li>
 </ul>
-<h2 id="generate-tls-certs">Generate TLS certs</h2>
-<p>Create a working directory <code>$HOME/docker-registry</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir <span class="nv">$HOME</span>/docker-registry
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span> <span class="nv">$HOME</span>/docker-registry
+<h2 id="supporting-docs">Supporting Docs</h2>
+<ul>
+<li><a href="https://bitnami.com/stack/sonarqube/helm">SonarQube Helm Chart</a></li>
+</ul>
+<h2 id="sonarqube_1">SonarQube</h2>
+<p>Get the <code>bitnami</code> Helm repository:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm repo add bitnami https://charts.bitnami.com/bitnami
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>helm repo update bitnami
 </code></pre></div>
-<p>Get the Docker Registry Helm repository:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm repo add twuni https://twuni.github.io/docker-registry.helm
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>helm repo update twuni
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span> <span class="nv">SONARQUBE_PASSWORD</span><span class="o">=</span>&lt;CHANGE_ME&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>helm install sonarqube bitnami/sonarqube -n sonarqube --create-namespace --set <span class="nv">sonarqubePassword</span><span class="o">=</span><span class="si">${</span><span class="nv">SONARQUBE_PASSWORD</span><span class="si">}</span>
 </code></pre></div>
-<p>Create a script <code>registry-tls.sh</code> that will generate TLS CA, certificate and corresponding secrets:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>touch registry-tls.sh
-</code></pre></div>
-<p>Put the following content:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">set</span> -e
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">#############</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">## setup environment</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nv">NAMESPACE</span><span class="o">=</span><span class="si">${</span><span class="nv">NAMESPACE</span><span class="k">:-</span><span class="nv">docker</span><span class="p">-registry</span><span class="si">}</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nv">RELEASE</span><span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="k">:-</span><span class="nv">registry</span><span class="si">}</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nv">DOMAIN</span><span class="o">=</span><span class="si">${</span><span class="nv">DOMAIN</span><span class="k">:-</span><span class="nv">apps</span><span class="p">.k8s.example.com</span><span class="si">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">## stop if variable is unset beyond this point</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">set</span> -u
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">## known expected patterns for SAN</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nv">CERT_SANS</span><span class="o">=</span><span class="s2">&quot;*.</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span><span class="s2">.</span><span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span><span class="s2">,*.</span><span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">#############</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1">## generate default CA config</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>cfssl print-defaults config &gt; ca-config.json
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">## generate a CA</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="nb">echo</span> <span class="s1">&#39;{&quot;CN&quot;:&quot;&#39;</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.<span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span>.ca<span class="s1">&#39;&quot;,&quot;key&quot;:{&quot;algo&quot;:&quot;ecdsa&quot;,&quot;size&quot;:256}}&#39;</span> <span class="p">|</span> <span class="se">\</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  cfssl gencert -initca - <span class="p">|</span> <span class="se">\</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>  cfssljson -bare ca -
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1">## generate certificate</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="nb">echo</span> <span class="s1">&#39;{&quot;CN&quot;:&quot;&#39;</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.<span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span><span class="s1">&#39;&quot;,&quot;key&quot;:{&quot;algo&quot;:&quot;ecdsa&quot;,&quot;size&quot;:256}}&#39;</span> <span class="p">|</span> <span class="se">\</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  cfssl gencert -config<span class="o">=</span>ca-config.json -ca<span class="o">=</span>ca.pem -ca-key<span class="o">=</span>ca-key.pem -profile www -hostname<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CERT_SANS</span><span class="si">}</span><span class="s2">&quot;</span> - <span class="p">|</span><span class="se">\</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>  cfssljson -bare <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="c1">#############</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1">## load certificates into K8s</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>kubectl delete secret <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-tls -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>kubectl delete secret <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-tls-ca -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>kubectl -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span> create secret tls <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-tls <span class="se">\</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>  --cert<span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.pem <span class="se">\</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>  --key<span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-key.pem
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>kubectl -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span> create secret generic <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-tls-ca <span class="se">\</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>  --from-file<span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.<span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span>.crt<span class="o">=</span>ca.pem
-</code></pre></div>
-<p>Run the script, provide a valid base <code>DOMAIN</code> e.g. <code>apps.k8s.example.com</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>chmod u+x registry-tls.sh
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span> <span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_DOMAIN&gt;&quot;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>./registry-tls.sh
-</code></pre></div>
-<h2 id="configure-and-deploy-helm-chart">Configure and Deploy Helm Chart</h2>
-<p>Generate default user and password for registry, provide valid <code>USERNAME</code> and <code>PASSWORD</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>htpasswd -Bbn <span class="si">${</span><span class="nv">USERNAME</span><span class="si">}</span> <span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span> &gt; .htpasswd
-</code></pre></div>
-<p>Install Helm Chart:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>helm upgrade --install registry twuni/docker-registry -n docker-registry --create-namespace --set secrets.htpasswd<span class="o">=</span><span class="k">$(</span>cat .htpasswd<span class="k">)</span>
-</code></pre></div>
-<h2 id="configure-ingress">Configure Ingress</h2>
-<p>Create Ingress file, provide valid TLS <code>hosts</code> and rule <code>host</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># $HOME/docker-registry/ingress.yaml</span><span class="w"></span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span><span class="w"></span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span><span class="w"></span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-ingress</span><span class="w"></span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry</span><span class="w"></span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="nt">nginx.ingress.kubernetes.io/proxy-body-size</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="w"></span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="nt">nginx.ingress.kubernetes.io/proxy-read-timeout</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;600&quot;</span><span class="w"></span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="nt">nginx.ingress.kubernetes.io/proxy-send-timeout</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;600&quot;</span><span class="w"></span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.apps.k8s.example.com</span><span class="w"> </span><span class="c1"># change me</span><span class="w"></span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-tls</span><span class="w"></span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.apps.k8s.example.com</span><span class="w"> </span><span class="c1"># change me</span><span class="w"></span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="nt">http</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">      </span><span class="nt">paths</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="w"></span>
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">        </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span><span class="w"></span>
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">        </span><span class="nt">backend</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">          </span><span class="nt">service</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-docker-registry</span><span class="w"></span>
-<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">            </span><span class="nt">port</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">              </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span><span class="w"></span>
-</code></pre></div>
-<p>Apply ingress configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl apply -f ingress.yaml
-</code></pre></div>
-<h2 id="optional-registry-access-from-external-k8s-cluster"><em>Optional</em>: Registry access from external K8s cluster</h2>
-<p>On each worker node of your K8s cluster that will need access to this private registry, put the content of your <code>ca.pem</code> in a file <code>/usr/local/share/ca-certificates/private-docker-registry.crt</code> and restart your container runtime <em>e.g.</em> on Ubuntu with <code>docker</code> runtime:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo su -
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>cat <span class="s">&lt;&lt;EOF &gt; /usr/local/share/ca-certificates/private-docker-registry.crt</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="s">-----BEGIN CERTIFICATE-----</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="s">...</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="s">-----END CERTIFICATE-----</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="s">EOF</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>sudo update-ca-certificates
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>sudo systemctl restart docker
+<p><strong>Optional</strong>: if running on OpenShift, grant <code>privileged</code> SCC to the <code>default</code> and <code>sonarqube</code> service accounts in <code>sonarqube</code> namespace:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc adm policy add-scc-to-user privileged -z default -n sonarqube
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>oc adm policy add-scc-to-user privileged -z sonarqube -n sonarqube
 </code></pre></div>
 
 
@@ -1241,7 +1122,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../cert-manager/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cert-Manager" rel="prev">
+        <a href="../artifactory/" class="md-footer__link md-footer__link--prev" aria-label="Previous: JFrog Artifactory" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1250,20 +1131,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Cert-Manager
+              JFrog Artifactory
             </div>
           </div>
         </a>
       
       
         
-        <a href="../nginx-ingress/" class="md-footer__link md-footer__link--next" aria-label="Next: NGINX Ingress Controller" rel="next">
+        <a href="../harbor/" class="md-footer__link md-footer__link--next" aria-label="Next: Harbor" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              NGINX Ingress Controller
+              Harbor
             </div>
           </div>
           <div class="md-footer__button md-icon">

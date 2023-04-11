@@ -719,6 +719,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_3">
@@ -797,6 +799,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sonarqube/" class="md-nav__link">
+        SonarQube
+      </a>
     </li>
   
 
@@ -1028,7 +1044,10 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>helm repo update jfrog
 </code></pre></div>
 <p>Install the chart:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm upgrade --install artifactory --namespace artifactory jfrog/artifactory --create-namespace
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm upgrade --install artifactory --namespace artifactory jfrog/artifactory-oss --create-namespace
+</code></pre></div>
+<p><strong>Optional</strong>: if running on OpenShift, grant <code>privileged</code> SCC to the <code>default</code> service account in <code>artifactory</code> namespace:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc adm policy add-scc-to-user privileged -z default -n artifactory
 </code></pre></div>
 
 
@@ -1116,13 +1135,13 @@
       
       
         
-        <a href="../harbor/" class="md-footer__link md-footer__link--next" aria-label="Next: Harbor" rel="next">
+        <a href="../sonarqube/" class="md-footer__link md-footer__link--next" aria-label="Next: SonarQube" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Harbor
+              SonarQube
             </div>
           </div>
           <div class="md-footer__button md-icon">
