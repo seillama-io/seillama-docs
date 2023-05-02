@@ -16,6 +16,7 @@ Sonarr
 Radarr
 Plex
 ovpn
+bitnami
 
 # Concepts
 gitops
