@@ -80,6 +80,7 @@ nav:
       - kubernetes/software/harbor.md
       - kubernetes/software/gitlab.md
       - kubernetes/software/wikijs.md
+      - kubernetes/software/mysql.md
   - DevSecOps:
     - Cloud-Native Toolkit:
       - devops/cloud-native-toolkit/install-toolkit.md
