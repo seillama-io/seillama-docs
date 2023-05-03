@@ -604,6 +604,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_2">
@@ -640,6 +642,20 @@
     <li class="md-nav__item">
       <a href="../../ops/plugins/" class="md-nav__link">
         Useful plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/nfs-provisioner/" class="md-nav__link">
+        NFS Provisioner on K8s
       </a>
     </li>
   
@@ -867,6 +883,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#access-mysql-instance" class="md-nav__link">
+    Access MySQL instance
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1025,6 +1048,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#access-mysql-instance" class="md-nav__link">
+    Access MySQL instance
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1066,6 +1096,16 @@
 </code></pre></div>
 <p><strong>Optional</strong>: if running on OpenShift, grant <code>privileged</code> SCC to the <code>mysql</code> service account in <code>${NAMESPACE}</code> namespace:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc adm policy add-scc-to-user privileged -z mysql -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span>
+</code></pre></div>
+<h2 id="access-mysql-instance">Access MySQL instance</h2>
+<p>Retrieve root password from the created <code>mysql</code> by running the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl get secret mysql -o yaml <span class="p">|</span> yq .data.mysql-root-password <span class="p">|</span> base64 -d
+</code></pre></div>
+<p>Use port forwarding to access MySQL using <code>kubectl port-forward</code> command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl port-forward mysql-0 <span class="m">3306</span>:3306
+</code></pre></div>
+<p>On a second terminal, you can then access your MySQL instance by running the following command (type your root password retrieved in above steps):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mysql -h <span class="m">127</span>.0.0.1 -p
 </code></pre></div>
 
 

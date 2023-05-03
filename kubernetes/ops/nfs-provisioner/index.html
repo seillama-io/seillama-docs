@@ -15,7 +15,7 @@
     
     
       
-        <title>Kubernetes install - Kubespray - Seillama Docs</title>
+        <title>NFS Provisioner on K8s - Seillama Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubernetes-install-kubespray" class="md-skip">
+        <a href="#nfs-provisioner-on-k8s" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kubernetes install - Kubespray
+              NFS Provisioner on K8s
             
           </span>
         </div>
@@ -259,7 +259,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../k3s/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../install/k3s/" class="md-tabs__link md-tabs__link--active">
         Kubernetes
       </a>
     </li>
@@ -501,14 +501,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
       
       
       
@@ -539,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../k3s/" class="md-nav__link">
+      <a href="../../install/k3s/" class="md-nav__link">
         Kubernetes install - K3s
       </a>
     </li>
@@ -551,107 +549,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Kubernetes install - Kubespray
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../install/kubespray/" class="md-nav__link">
         Kubernetes install - Kubespray
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inventory-file" class="md-nav__link">
-    Inventory file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-deployment" class="md-nav__link">
-    Configure Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-cluster" class="md-nav__link">
-    Deploy cluster
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-cluster" class="md-nav__link">
-    Access Cluster
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    Known issues
-  </a>
-  
-    <nav class="md-nav" aria-label="Known issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vsphere-csi-driver" class="md-nav__link">
-    VSphere CSI driver
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-without-storage-option" class="md-nav__link">
-    Install without storage option
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -663,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rpi/" class="md-nav__link">
+      <a href="../../install/rpi/" class="md-nav__link">
         Self-hosting platform on Raspberry Pi - K3s
       </a>
     </li>
@@ -682,12 +584,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
       
       
       
@@ -724,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/aliases/" class="md-nav__link">
+      <a href="../aliases/" class="md-nav__link">
         Useful aliases
       </a>
     </li>
@@ -738,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/plugins/" class="md-nav__link">
+      <a href="../plugins/" class="md-nav__link">
         Useful plugins
       </a>
     </li>
@@ -750,11 +654,147 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ops/nfs-provisioner/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          NFS Provisioner on K8s
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         NFS Provisioner on K8s
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup-nfs-server" class="md-nav__link">
+    Setup NFS Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup NFS Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-nfs-data-mount-optional-but-recommended" class="md-nav__link">
+    Create a NFS data mount (optional but recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-nfs-server" class="md-nav__link">
+    Install NFS Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-configure-firewall" class="md-nav__link">
+    Optional: Configure firewall
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-nfs-client-on-each-kubernetes-node" class="md-nav__link">
+    Install NFS client on each Kubernetes node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-the-nfs-provisioner" class="md-nav__link">
+    Deploy the NFS Provisioner
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy the NFS Provisioner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-based-on-k3s" class="md-nav__link">
+    Setup based on K3S
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-based-on-helm-cli" class="md-nav__link">
+    Setup based on Helm CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-default-storage-class" class="md-nav__link">
+    Set default Storage Class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-nfs-provisioning" class="md-nav__link">
+    Test NFS Provisioning
+  </a>
+  
+    <nav class="md-nav" aria-label="Test NFS Provisioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-persistent-volume-claim" class="md-nav__link">
+    Create a Persistent Volume Claim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-pod" class="md-nav__link">
+    Create Pod
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -766,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/cert-manager/" class="md-nav__link">
+      <a href="../cert-manager/" class="md-nav__link">
         Cert-Manager
       </a>
     </li>
@@ -780,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/docker-registry/" class="md-nav__link">
+      <a href="../docker-registry/" class="md-nav__link">
         Docker Registry
       </a>
     </li>
@@ -794,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ops/nginx-ingress/" class="md-nav__link">
+      <a href="../nginx-ingress/" class="md-nav__link">
         NGINX Ingress Controller
       </a>
     </li>
@@ -1062,58 +1102,98 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#setup-nfs-server" class="md-nav__link">
+    Setup NFS Server
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inventory-file" class="md-nav__link">
-    Inventory file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-deployment" class="md-nav__link">
-    Configure Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-cluster" class="md-nav__link">
-    Deploy cluster
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-cluster" class="md-nav__link">
-    Access Cluster
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    Known issues
-  </a>
-  
-    <nav class="md-nav" aria-label="Known issues">
+    <nav class="md-nav" aria-label="Setup NFS Server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vsphere-csi-driver" class="md-nav__link">
-    VSphere CSI driver
+  <a href="#create-a-nfs-data-mount-optional-but-recommended" class="md-nav__link">
+    Create a NFS data mount (optional but recommended)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-without-storage-option" class="md-nav__link">
-    Install without storage option
+  <a href="#install-nfs-server" class="md-nav__link">
+    Install NFS Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-configure-firewall" class="md-nav__link">
+    Optional: Configure firewall
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-nfs-client-on-each-kubernetes-node" class="md-nav__link">
+    Install NFS client on each Kubernetes node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-the-nfs-provisioner" class="md-nav__link">
+    Deploy the NFS Provisioner
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy the NFS Provisioner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-based-on-k3s" class="md-nav__link">
+    Setup based on K3S
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-based-on-helm-cli" class="md-nav__link">
+    Setup based on Helm CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-default-storage-class" class="md-nav__link">
+    Set default Storage Class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-nfs-provisioning" class="md-nav__link">
+    Test NFS Provisioning
+  </a>
+  
+    <nav class="md-nav" aria-label="Test NFS Provisioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-persistent-volume-claim" class="md-nav__link">
+    Create a Persistent Volume Claim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-pod" class="md-nav__link">
+    Create Pod
   </a>
   
 </li>
@@ -1136,71 +1216,191 @@
               
                 
 
-  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/install/kubespray.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/ops/nfs-provisioner.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="kubernetes-install-kubespray">Kubernetes install - Kubespray</h1>
-<p>Main docs:</p>
+<h1 id="nfs-provisioner-on-k8s">NFS Provisioner on K8s</h1>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>Tested with K3S</p>
+</div>
+<h2 id="setup-nfs-server">Setup NFS Server</h2>
+<h4 id="create-a-nfs-data-mount-optional-but-recommended">Create a NFS data mount (optional but recommended)</h4>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>Setup based on Ubuntu 20.04 using LVM</p>
+</div>
 <ul>
-<li><a href="https://kubespray.io/#/docs/getting-started">https://kubespray.io/#/docs/getting-started</a></li>
-<li><a href="https://kubernetes.io/docs/setup">https://kubernetes.io/docs/setup/production-environment/tools/kubespray/</a></li>
+<li>Add a disk to the VM</li>
+<li>Create a LVM partition on the new disk (GPT)</li>
 </ul>
-<h3 id="prerequisites">Prerequisites</h3>
-<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#1-5-meet-the-underlay-requirements">https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#1-5-meet-the-underlay-requirements</a></p>
-<h3 id="inventory-file">Inventory file</h3>
-<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#2-5-compose-an-inventory-file">https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#2-5-compose-an-inventory-file</a></p>
-<p>Inside bastion:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/kubernetes-sigs/kubespray
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span> kubespray
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">export</span> <span class="nv">CLUSTER_NAME</span><span class="o">=</span><span class="s2">&quot;CLUSTER_NAME&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>cp -r inventory/sample inventory/<span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">declare</span> -a <span class="nv">IPS</span><span class="o">=(</span><span class="m">10</span>.0.0.11 <span class="m">10</span>.0.0.12 <span class="m">10</span>.0.0.13 <span class="m">10</span>.0.0.14 <span class="m">10</span>.0.0.15 <span class="m">10</span>.0.0.16<span class="o">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">CONFIG_FILE</span><span class="o">=</span>inventory/<span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>/hosts.yml python3 contrib/inventory_builder/inventory.py <span class="si">${</span><span class="nv">IPS</span><span class="p">[@]</span><span class="si">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo cfdisk /dev/sdb
 </code></pre></div>
-<h3 id="configure-deployment">Configure Deployment</h3>
-<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#3-5-plan-your-cluster-deployment">https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#3-5-plan-your-cluster-deployment</a></p>
-<p>Edit <code>inventory/${CLUSTER_NAME}/group_vars/all/all.yml</code> to update following config variables:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cloud_provider: &quot;external&quot;
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>external_cloud_provider: &quot;vsphere&quot;
+<ul>
+<li>Create PV/VG/LV and format the LV</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Create the Physical Volume with the newly created partition</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo pvcreate /dev/sdb1
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo pvdisplay
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Create a Volume Group with the newly PV</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>sudo vgcreate data-vg /dev/sdb1
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>sudo vgdisplay
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># # Create a Logcal Volumein the new VG</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>sudo lvdisplay
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>sudo lvcreate -l <span class="m">100</span>%FREE -n data-lv data-vg
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">#Format the new LV</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>sudo mkfs.ext4 /dev/data-vg/data-lv
 </code></pre></div>
-<p>Edit <code>inventory/${CLUSTER_NAME}/group_vars/all/vsphere.yml</code> to update following config variables:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>## Values for the external vSphere Cloud Provider
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>external_vsphere_vcenter_ip: &quot;vcr72.example.com&quot;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>external_vsphere_vcenter_port: &quot;443&quot;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>external_vsphere_insecure: &quot;true&quot;
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>external_vsphere_user: &quot;&lt;VSPHERE_USERNAME&gt;&quot;
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>external_vsphere_password: &quot;&lt;VSPHERE_PASSWORD&gt;&quot;
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>external_vsphere_datacenter: &quot;TEST&quot;
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>external_vsphere_kubernetes_cluster_id: &quot;&lt;CLUSTER_NAME&gt;&quot;
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>## Vsphere version where located VMs
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>external_vsphere_version: &quot;7.0.3&quot;
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>## To use vSphere CSI plugin to provision volumes set this value to true
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>vsphere_csi_enabled: false
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>vsphere_csi_controller_replicas: 1
+<ul>
+<li>Mount the new device</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Create a folder to mount the device</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo mkdir  /export
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo chown nobody:nogroup /export
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sudo chmod <span class="m">775</span> /export
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">#Get the LV Path</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>sudo lvdisplay
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">#  --- Logical volume ---</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">#  LV Path                /dev/data-vg/data-lv</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">#  ...</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># Get the device UUID</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>sudo blkid /dev/data-vg/data-lv
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1">#/dev/data-vg/data-lv: UUID=&quot;0dd3c7f9-d42c-4fb3-9bbb-cbe35d6e4f80&quot; TYPE=&quot;ext4&quot;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># Add device to fstab for automount</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>sudo vim /etc/fstab
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1"># UUID=0dd3c7f9-d42c-4fb3-9bbb-cbe35d6e4f80 /export ext4 defaults 0 1</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="c1"># Mount everything (allow to check if it will mount or not, and be sure the server will reboot :) )</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>sudo mount -a
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="c1">#check if it&#39;s correctly mounted </span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>mount
 </code></pre></div>
-<h3 id="deploy-cluster">Deploy cluster</h3>
-<p><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#4-5-deploy-a-cluster">https://kubernetes.io/docs/setup/production-environment/tools/kubespray/#4-5-deploy-a-cluster</a></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ansible-playbook -i inventory/<span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>/hosts.yml -b -v cluster.yml
+<h4 id="install-nfs-server">Install NFS Server</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Install NFS server package</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo apt install nfs-kernel-server
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Add an export</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>sudo vim /etc/exports
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># /export *(rw,sync,no_subtree_check)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>sudo exportfs -ra
 </code></pre></div>
-<h3 id="access-cluster">Access Cluster</h3>
-<p>Once cluster has been deployed, run following from your local machine to copy kube config file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span>/.kube
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">echo</span> <span class="s2">&quot;get /root/.kube/config </span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> sftp -s <span class="s2">&quot;sudo /usr/lib/openssh/sftp-server&quot;</span> <span class="si">${</span><span class="nv">MASTER_NODE_USERNAME</span><span class="si">}</span>@<span class="si">${</span><span class="nv">MASTER_NODE_IP</span><span class="si">}</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nv">server</span><span class="o">=</span><span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">MASTER_NODE_IP</span><span class="si">}</span><span class="s2">:6443&quot;</span> yq -i <span class="s2">&quot;.clusters[0].cluster.server = env(server)&quot;</span> <span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span><span class="nv">$HOME</span>/.kube/<span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>kubectl get nodes
+<h4 id="optional-configure-firewall">Optional: Configure firewall</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Get NFS Server port</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>rpcinfo -p <span class="p">|</span> grep nfs
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Open port in firewall</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>sudo ufw allow <span class="m">2049</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>sudo ufw status
 </code></pre></div>
-<h3 id="known-issues">Known issues</h3>
-<h4 id="vsphere-csi-driver">VSphere CSI driver</h4>
-<p>We've had an issue with VSphere CSI driver deployment within the cluster, to be looked at...</p>
-<h4 id="install-without-storage-option">Install without storage option</h4>
-<p>When installing using VSphere external provider without VSphere CSI driver, worker nodes are unschedulable due to a <code>taint</code> added to worker nodes specifying that the node is not initialized nor schedulable even though the nodes seem ready, healthy and schedulable. To fix this issue run the following command for each node:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl taint nodes worker-1 node.cloudprovider.kubernetes.io/uninitialized<span class="o">=</span>true:NoSchedule-
+<h2 id="install-nfs-client-on-each-kubernetes-node">Install NFS client on each Kubernetes node</h2>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>Setup based on Ubuntu 20.04 nodes</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo apt install nfs-common -y
+</code></pre></div>
+<h2 id="deploy-the-nfs-provisioner">Deploy the NFS Provisioner</h2>
+<p><a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner</a></p>
+<h4 id="setup-based-on-k3s">Setup based on K3S</h4>
+<ul>
+<li>Create a <code>helmchart-nfs.yaml</code> file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>vim helmchart-nfs.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helm.cattle.io/v1</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmChart</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs-provisioner</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs-subdir-external-provisioner</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="nt">targetNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs-provisioner</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="nt">set</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="nt">nfs.server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.3.13.1</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="nt">nfs.path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/export</span><span class="w"></span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="nt">storageClass.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nfs</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>Create a new <code>nfs-provisioner</code> namespace and apply the yaml file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl create ns nfs-provisioner
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>kubectl -f helmchart-nfs.yaml -n helmchart-nfs.yaml
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>kubectl get pod -n helmchart-nfs.yaml
+</code></pre></div>
+<h4 id="setup-based-on-helm-cli">Setup based on Helm CLI</h4>
+<p>Prerequisites:</p>
+<ul>
+<li>Install Helm CLI: <a href="https://helm.sh/docs/intro/install/">https://helm.sh/docs/intro/install/</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$ kubectl create ns nfs-provisioner
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$ helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner <span class="se">\</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    --set nfs.server<span class="o">=</span><span class="m">10</span>.3.13.1 <span class="se">\</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    --set nfs.path<span class="o">=</span>/export <span class="se">\</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    --set storageClass.name<span class="o">=</span>nfs <span class="se">\</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    -n nfs-provisioner
+</code></pre></div>
+<h3 id="set-default-storage-class">Set default Storage Class</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>kubectl patch sc nfs -p <span class="s1">&#39;{&quot;metadata&quot;: {&quot;annotations&quot;:{&quot;storageclass.kubernetes.io/is-default-class&quot;:&quot;true&quot;}}}&#39;</span>
+</code></pre></div>
+<h2 id="test-nfs-provisioning">Test NFS Provisioning</h2>
+<h4 id="create-a-persistent-volume-claim">Create a Persistent Volume Claim</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl create ns test-prov
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>cat <span class="s">&lt;&lt;EOF | kubectl apply -n test-prov -f -</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="s">kind: PersistentVolumeClaim</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="s">apiVersion: v1</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="s">metadata:</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="s">  name: test-claim</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="s">spec:</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="s">  storageClassName: nfs</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="s">  accessModes:</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="s">    - ReadWriteMany</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="s">  resources:</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="s">    requests:</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="s">      storage: 1Gi</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="s">EOF</span>
+</code></pre></div>
+<h4 id="create-pod">Create Pod</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cat <span class="s">&lt;&lt;EOF | kubectl apply -n test-prov -f -</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="s">apiVersion: apps/v1</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="s">kind: Deployment</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="s">metadata:</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="s">  name: test-pvc</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="s">spec:</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="s">  selector:</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="s">    matchLabels:</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="s">      app: test-pvc</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="s">  strategy:</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="s">    type: Recreate</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="s">  template:</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="s">    metadata:</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="s">      labels:</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="s">        app: test-pvc</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="s">    spec:</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="s">      containers:</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="s">      - name: test-pvc-container</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="s">        image: alpine:3.13</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="s">        command: [ &quot;/bin/sh&quot;, &quot;-c&quot;, &quot;--&quot; ]</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="s">        args: [ &quot;while true; do echo $(hostname) $(date) &gt;&gt; /data/test;sleep 1; done;&quot; ]</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="s">        volumeMounts:</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="s">          - name: vol1</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="s">            mountPath: &quot;/data&quot;</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="s">      volumes:</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="s">        - name: vol1</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="s">          persistentVolumeClaim:</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="s">            claimName: test-claim</span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="s">EOF</span>
 </code></pre></div>
 
 
@@ -1272,7 +1472,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../k3s/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kubernetes install - K3s" rel="prev">
+        <a href="../plugins/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Useful plugins" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1281,20 +1481,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Kubernetes install - K3s
+              Useful plugins
             </div>
           </div>
         </a>
       
       
         
-        <a href="../rpi/" class="md-footer__link md-footer__link--next" aria-label="Next: Self-hosting platform on Raspberry Pi - K3s" rel="next">
+        <a href="../cert-manager/" class="md-footer__link md-footer__link--next" aria-label="Next: Cert-Manager" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Self-hosting platform on Raspberry Pi - K3s
+              Cert-Manager
             </div>
           </div>
           <div class="md-footer__button md-icon">
