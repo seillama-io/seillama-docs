@@ -1,4 +1,4 @@
-# NFS Provisioner on K8s
+# NFS Provisioner
 
 !!! info "Note"
     Tested with K3S
