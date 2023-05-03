@@ -71,6 +71,7 @@ nav:
     - Operations:
       - kubernetes/ops/aliases.md
       - kubernetes/ops/plugins.md
+      - kubernetes/ops/nfs-provisioner.md
       - kubernetes/ops/cert-manager.md
       - kubernetes/ops/docker-registry.md
       - kubernetes/ops/nginx-ingress.md

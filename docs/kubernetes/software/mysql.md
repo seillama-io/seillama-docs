@@ -33,3 +33,23 @@ helm install mysql bitnami/mysql -n ${NAMESPACE}
 ```sh
 oc adm policy add-scc-to-user privileged -z mysql -n ${NAMESPACE}
 ```
+
+## Access MySQL instance
+
+Retrieve root password from the created `mysql` by running the following command:
+
+```sh
+kubectl get secret mysql -o yaml | yq .data.mysql-root-password | base64 -d
+```
+
+Use port forwarding to access MySQL using `kubectl port-forward` command:
+
+```sh
+kubectl port-forward mysql-0 3306:3306
+```
+
+On a second terminal, you can then access your MySQL instance by running the following command (type your root password retrieved in above steps):
+
+```sh
+mysql -h 127.0.0.1 -p
+```
