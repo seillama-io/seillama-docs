@@ -75,7 +75,7 @@ sudo apt install nfs-kernel-server
 
 # Add an export
 sudo vim /etc/exports
-# /export *(rw,sync,no_subtree_check)
+# /export *(rw,sync,no_subtree_check,no_root_squash)
 sudo exportfs -ra
 ```
 
