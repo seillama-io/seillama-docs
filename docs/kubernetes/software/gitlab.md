@@ -13,7 +13,7 @@ This document shows how to deploy an on-prem private GitLab Instance on Kubernet
 - [GitLab EE](https://docs.gitlab.com/ee/install/)
 - [GitLab Runner](https://docs.gitlab.com/runner/install/kubernetes.html)
 
-## GitLab
+## GitLab on K8s
 
 Create a working directory `$HOME/gitlab`:
 
@@ -155,3 +155,57 @@ Wait for runner pod to be up and running:
 ```sh
 watch kubectl get pods -n gitlab
 ```
+
+## Gitlab on OpenShift
+
+Create Gitlab namespace:
+
+```sh
+kubectl create ns gitlab
+```
+
+Create your Gitlab values file:
+
+```yaml
+cat <<EOF > gitlab.values.yaml
+nginx-ingress:
+  enabled: false
+gitlab-runner:
+  install: false
+certmanager-issuer:
+  email: john.doe@example.com #CHANGEME
+global:
+  hosts:
+    domain: apps.openshift.example.com # CHANGEME
+  ingress:
+    class: none
+    annotations:
+      route.openshift.io/termination: edge
+  serviceAccount:
+    enabled: true
+    create: false
+    name: gitlab
+EOF
+```
+
+Grant `privileged` SCC to service accounts used by Gitlab:
+
+```sh
+oc adm policy add-scc-to-user privileged -z=default,gitlab,gitlab-shared-secrets,gitlab-certmanager,gitlab-certmanager-cainjector,gitlab-certmanager-issuer,gitlab-certmanager-webhook,gitlab-prometheus-server,gitlab-redis -n gitlab
+```
+
+Get the Gitlab Helm repository:
+
+```sh
+helm repo add gitlab https://charts.gitlab.io
+helm repo update gitlab
+```
+
+Deploy your Helm chart:
+
+```sh
+helm upgrade --install gitlab gitlab/gitlab \               
+  --timeout 600s --values gitlab.values.yaml
+```
+
+Now grab a cup of :coffee: and wait for Gitlab to be deployed.
