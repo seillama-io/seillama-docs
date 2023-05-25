@@ -833,8 +833,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gitlab" class="md-nav__link">
-    GitLab
+  <a href="#gitlab-on-k8s" class="md-nav__link">
+    GitLab on K8s
   </a>
   
 </li>
@@ -842,6 +842,13 @@
         <li class="md-nav__item">
   <a href="#gitlab-runner" class="md-nav__link">
     GitLab Runner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitlab-on-openshift" class="md-nav__link">
+    Gitlab on OpenShift
   </a>
   
 </li>
@@ -1026,8 +1033,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gitlab" class="md-nav__link">
-    GitLab
+  <a href="#gitlab-on-k8s" class="md-nav__link">
+    GitLab on K8s
   </a>
   
 </li>
@@ -1035,6 +1042,13 @@
         <li class="md-nav__item">
   <a href="#gitlab-runner" class="md-nav__link">
     GitLab Runner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitlab-on-openshift" class="md-nav__link">
+    Gitlab on OpenShift
   </a>
   
 </li>
@@ -1071,7 +1085,7 @@
 <li><a href="https://docs.gitlab.com/ee/install/">GitLab EE</a></li>
 <li><a href="https://docs.gitlab.com/runner/install/kubernetes.html">GitLab Runner</a></li>
 </ul>
-<h2 id="gitlab">GitLab</h2>
+<h2 id="gitlab-on-k8s">GitLab on K8s</h2>
 <p>Create a working directory <code>$HOME/gitlab</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir $HOME/gitlab
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd $HOME/gitlab
@@ -1171,6 +1185,43 @@
 <p>Wait for runner pod to be up and running:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>watch kubectl get pods -n gitlab
 </code></pre></div>
+<h2 id="gitlab-on-openshift">Gitlab on OpenShift</h2>
+<p>Create Gitlab namespace:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>kubectl create ns gitlab
+</code></pre></div>
+<p>Create your Gitlab values file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="l l-Scalar l-Scalar-Plain">cat &lt;&lt;EOF &gt; gitlab.values.yaml</span><span class="w"></span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="l l-Scalar l-Scalar-Plain">nginx-ingress</span><span class="p p-Indicator">:</span><span class="w"></span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nt">gitlab-runner</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="nt">install</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nt">certmanager-issuer</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">john.doe@example.com</span><span class="w"> </span><span class="c1">#CHANGEME</span><span class="w"></span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nt">global</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps.openshift.example.com</span><span class="w"> </span><span class="c1"># CHANGEME</span><span class="w"></span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">  </span><span class="nt">ingress</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">none</span><span class="w"></span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">      </span><span class="nt">route.openshift.io/termination</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edge</span><span class="w"></span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">  </span><span class="nt">serviceAccount</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="nt">create</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gitlab</span><span class="w"></span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="l l-Scalar l-Scalar-Plain">EOF</span><span class="w"></span>
+</code></pre></div>
+<p>Grant <code>privileged</code> SCC to service accounts used by Gitlab:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>oc adm policy add-scc-to-user privileged -z<span class="o">=</span>default,gitlab,gitlab-shared-secrets,gitlab-certmanager,gitlab-certmanager-cainjector,gitlab-certmanager-issuer,gitlab-certmanager-webhook,gitlab-prometheus-server,gitlab-redis -n gitlab
+</code></pre></div>
+<p>Get the Gitlab Helm repository:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>helm repo add gitlab https://charts.gitlab.io
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>helm repo update gitlab
+</code></pre></div>
+<p>Deploy your Helm chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>helm upgrade --install gitlab gitlab/gitlab <span class="se">\ </span>              
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  --timeout 600s --values gitlab.values.yaml
+</code></pre></div>
+<p>Now grab a cup of <img alt="☕" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2615.svg" title=":coffee:" /> and wait for Gitlab to be deployed.</p>
 
 
   
