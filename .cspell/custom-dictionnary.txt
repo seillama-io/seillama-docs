@@ -17,6 +17,7 @@ Radarr
 Plex
 ovpn
 bitnami
+dnsmasq
 
 # Concepts
 gitops

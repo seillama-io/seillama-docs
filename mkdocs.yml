@@ -63,6 +63,7 @@ nav:
     - containers/podman/podman-wsl.md
   - Linux:
     - linux/ubuntu-trust-ca.md
+    - linux/rhel-dns-server.md
   - Kubernetes:
     - Install:
       - kubernetes/install/k3s.md
