@@ -75,6 +75,7 @@ nav:
       - kubernetes/ops/cert-manager.md
       - kubernetes/ops/docker-registry.md
       - kubernetes/ops/nginx-ingress.md
+      - kubernetes/ops/image-pull-secrets.md
     - Self-Hosted Software:
       - kubernetes/software/artifactory.md
       - kubernetes/software/sonarqube.md
