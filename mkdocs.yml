@@ -86,6 +86,9 @@ nav:
   - DevSecOps:
     - Cloud-Native Toolkit:
       - devops/cloud-native-toolkit/install-toolkit.md
+  - Software:
+    - Hashicorp Vault:
+      - software/vault/delete-key.md
 extra:
   consent:
     title: Cookie consent
