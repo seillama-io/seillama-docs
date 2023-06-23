@@ -26,3 +26,5 @@ schedulable
 daemonless
 CNCF
 toomanyrequests
+NOPASSWD
+Passwordless
