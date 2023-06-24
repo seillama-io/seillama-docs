@@ -236,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../linux/ubuntu-trust-ca/" class="md-tabs__link">
+      <a href="../../../linux/dns-server-bind/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -450,6 +450,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3">
@@ -463,6 +467,34 @@
           Linux
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/dns-server-bind/" class="md-nav__link">
+        Private DNS server using BIND
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/pwdless-sudo/" class="md-nav__link">
+        Passwordless sudo on Ubuntu
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1196,7 +1228,7 @@
 </ul>
 <h3 id="master-node">Master Node</h3>
 <p>Run the K3s install script from master node:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl -sfL https://get.k3s.io <span class="p">|</span> sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl -sfL https://get.k3s.io <span class="p">|</span> <span class="nv">K3S_KUBECONFIG_MODE</span><span class="o">=</span><span class="s2">&quot;644&quot;</span> sh -
 </code></pre></div>
 <p>Once the install is done, fetch node token to add nodes to the cluster and copy it for next step:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo cat /var/lib/rancher/k3s/server/node-token
