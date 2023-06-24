@@ -10,7 +10,7 @@ Main docs:
 Run the K3s install script from master node:
 
 ```sh
-curl -sfL https://get.k3s.io | sh
+curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE="644" sh -
 ```
 
 Once the install is done, fetch node token to add nodes to the cluster and copy it for next step:

@@ -62,6 +62,8 @@ nav:
   - Containers:
     - containers/podman/podman-wsl.md
   - Linux:
+    - linux/dns-server-bind.md
+    - linux/pwdless-sudo.md
     - linux/ubuntu-trust-ca.md
     - linux/rhel-dns-server.md
   - Kubernetes:
