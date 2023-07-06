@@ -31,3 +31,5 @@ CNCF
 toomanyrequests
 overfitting
 Geospatial
+NOPASSWD
+Passwordless

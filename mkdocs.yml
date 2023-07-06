@@ -65,6 +65,8 @@ nav:
   - Containers:
     - containers/podman/podman-wsl.md
   - Linux:
+    - linux/dns-server-bind.md
+    - linux/pwdless-sudo.md
     - linux/ubuntu-trust-ca.md
     - linux/rhel-dns-server.md
   - Kubernetes:
@@ -89,6 +91,9 @@ nav:
   - DevSecOps:
     - Cloud-Native Toolkit:
       - devops/cloud-native-toolkit/install-toolkit.md
+  - Software:
+    - Hashicorp Vault:
+      - software/vault/delete-key.md
 extra:
   consent:
     title: Cookie consent
