@@ -18,6 +18,9 @@ Plex
 ovpn
 bitnami
 dnsmasq
+CUDA
+OOTB
+watsonx
 
 # Concepts
 gitops
@@ -26,3 +29,5 @@ schedulable
 daemonless
 CNCF
 toomanyrequests
+overfitting
+Geospatial

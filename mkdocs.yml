@@ -59,6 +59,9 @@ markdown_extensions:
       custom_checkbox: true
 nav:
   - Home: index.md
+  - AI:
+    - ai/cuda-rhel.md
+    - ai/foundation-models.md
   - Containers:
     - containers/podman/podman-wsl.md
   - Linux:
