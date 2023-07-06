@@ -1,5 +1,7 @@
 # Foundation models
 
+Download this section as a [mindmap](https://github.com/seillama-io/seillama-docs/releases/latest/download/foundation-models.pdf)!
+
 ## Overview
 
 - Pre-trained on **unlabeled datasets**
