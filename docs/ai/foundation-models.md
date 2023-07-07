@@ -1,6 +1,6 @@
 # Foundation models
 
-Download this section as a [mindmap](https://github.com/seillama-io/seillama-docs/releases/latest/download/foundation-models.pdf)!
+Download this section as a [mindmap](https://github.com/seillama-io/seillama-docs/releases/download/v0.1.36/foundation-models.pdf)!
 
 ## Overview
 
