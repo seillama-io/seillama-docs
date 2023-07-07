@@ -21,6 +21,7 @@ dnsmasq
 CUDA
 OOTB
 watsonx
+firewalld
 
 # Concepts
 gitops

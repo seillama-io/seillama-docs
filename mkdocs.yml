@@ -69,6 +69,7 @@ nav:
     - linux/pwdless-sudo.md
     - linux/ubuntu-trust-ca.md
     - linux/rhel-dns-server.md
+    - linux/open-port-firewalld-rhel.md
   - Kubernetes:
     - Install:
       - kubernetes/install/k3s.md
