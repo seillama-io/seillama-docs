@@ -70,6 +70,7 @@ nav:
     - linux/ubuntu-trust-ca.md
     - linux/rhel-dns-server.md
     - linux/open-port-firewalld-rhel.md
+    - linux/lvm-volume.md
   - Kubernetes:
     - Install:
       - kubernetes/install/k3s.md
