@@ -15,7 +15,7 @@
     
     
       
-        <title>Private DNS server using BIND - Seillama Docs</title>
+        <title>Resize Proxmox Linux VM disk - Seillama Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#private-dns-server-using-bind" class="md-skip">
+        <a href="#resize-proxmox-linux-vm-disk" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Private DNS server using BIND
+              Resize Proxmox Linux VM disk
             
           </span>
         </div>
@@ -254,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../dns-server-bind/" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -564,21 +564,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../dns-server-bind/" class="md-nav__link">
         Private DNS server using BIND
       </a>
-      
     </li>
   
 
@@ -658,11 +648,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../resize-disks-proxmox/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Resize Proxmox Linux VM disk
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Resize Proxmox Linux VM disk
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-docs" class="md-nav__link">
+    Supporting Docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resizing-guest-disk" class="md-nav__link">
+    Resizing guest disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enlarge-the-partitions-in-the-virtual-disk" class="md-nav__link">
+    Enlarge the partition(s) in the virtual disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enlarge-the-filesystems-in-the-partitions-on-the-virtual-disk" class="md-nav__link">
+    Enlarge the filesystem(s) in the partitions on the virtual disk
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1275,6 +1327,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-docs" class="md-nav__link">
+    Supporting Docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resizing-guest-disk" class="md-nav__link">
+    Resizing guest disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enlarge-the-partitions-in-the-virtual-disk" class="md-nav__link">
+    Enlarge the partition(s) in the virtual disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enlarge-the-filesystems-in-the-partitions-on-the-virtual-disk" class="md-nav__link">
+    Enlarge the filesystem(s) in the partitions on the virtual disk
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1286,73 +1374,43 @@
               
                 
 
-  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/linux/dns-server-bind.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/linux/resize-disks-proxmox.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="private-dns-server-using-bind">Private DNS server using BIND</h1>
-<p>To set up a private DNS server on Linux using BIND (Berkeley Internet Name Domain), you can follow these steps:</p>
-<ol>
-<li>
-<p>Update the package lists and install BIND by running the following commands in the terminal:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt update
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo apt install bind9
-</code></pre></div></p>
-</li>
-<li>
-<p>Configure BIND by editing the main configuration file <code>/etc/bind/named.conf.options</code>. Open the file using a text editor:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo vim /etc/bind/named.conf.options
-</code></pre></div></p>
-</li>
-<li>
-<p>Inside the file, you can modify the options section to include the IP addresses of your DNS server. You can add the following lines at the end of the options section:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>forwarders {
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    8.8.8.8;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    8.8.4.4;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>};
+<h1 id="resize-proxmox-linux-vm-disk">Resize Proxmox Linux VM disk</h1>
+<h2 id="supporting-docs">Supporting Docs</h2>
+<ul>
+<li><a href="https://pve.proxmox.com/wiki/Resize_disks">Resize disks</a></li>
+</ul>
+<h2 id="resizing-guest-disk">Resizing guest disk</h2>
+<p>On pve shell:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>qm list <span class="c1"># Find VM id</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>qm resize &lt;vmid&gt; &lt;disk&gt; &lt;size&gt; <span class="c1"># e.g. qm disk resize 201 scsi1 +4T</span>
 </code></pre></div>
-These IP addresses are Google's public DNS servers, which will be used as forwarders for external DNS queries if your DNS server doesn't have the necessary information.</p>
-</li>
-<li>
-<p>Create a new zone file for your domain. Zone files contain the DNS records for a specific domain. In this example, we will create a zone file for a domain named "example.com":
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo vim /etc/bind/named.conf.local
+<h2 id="enlarge-the-partitions-in-the-virtual-disk">Enlarge the partition(s) in the virtual disk</h2>
+<p>On linux VM shell:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo fdisk -l
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo parted /dev/sdb
 </code></pre></div>
-Add the following lines to the file:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>zone &quot;example.com&quot; {
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    type master;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    file &quot;/etc/bind/db.example.com&quot;;
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>};
-</code></pre></div></p>
-</li>
-<li>
-<p>Create the zone file <code>/etc/bind/db.example.com</code> and add the necessary DNS records. Replace "your_IP_address" with the IP address of your DNS server:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo vim /etc/bind/db.example.com
+<p>Resize the partition 1 (LVM PV) to occupy the whole remaining space of the hard drive):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">(</span>parted<span class="o">)</span> print
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Warning: Not all of the space available to /dev/sdb appears to be used, you can
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>fix the GPT to use all of the space <span class="o">(</span>an extra <span class="m">268435456</span> blocks<span class="o">)</span> or <span class="k">continue</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>with the current setting? 
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Fix/Ignore? F
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="o">(</span>parted<span class="o">)</span> resizepart <span class="m">1</span> <span class="m">100</span>%
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="o">(</span>parted<span class="o">)</span> print
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="o">(</span>parted<span class="o">)</span> quit
 </code></pre></div>
-Add the following lines to the file:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$TTL 86400
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>@       IN      SOA     ns1.example.com. admin.example.com. (
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                       2023062401     ; Serial
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>                       3600           ; Refresh
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>                       1800           ; Retry
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>                       604800         ; Expire
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>                       86400 )        ; Minimum TTL
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>@       IN      NS      ns1.example.com.
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>ns1     IN      A       your_IP_address
-</code></pre></div></p>
-</li>
-<li>
-<p>Restart the BIND service to apply the changes:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo service bind9 restart
-</code></pre></div></p>
-</li>
-<li>
-<p>Configure your DNS client machines to use your private DNS server. You can usually do this by modifying the DNS server settings in the network configuration of each client.</p>
-</li>
-</ol>
-<p>That's it! You have now set up a private DNS server using BIND on Linux. You can add additional DNS records to the zone file to suit your needs. Remember to replace "example.com" with your actual domain name and "your_IP_address" with the IP address of your DNS server.</p>
+<h2 id="enlarge-the-filesystems-in-the-partitions-on-the-virtual-disk">Enlarge the filesystem(s) in the partitions on the virtual disk</h2>
+<p>On linux VM shell:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo pvresize /dev/sdb1
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo lvdisplay
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo lvresize --extents +100%FREE --resizefs /dev/hdd-vg/hdd-lv
+</code></pre></div>
 
 
   
@@ -1423,7 +1481,7 @@ Add the following lines to the file:
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../containers/podman/podman-wsl/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Podman on Windows Subsystem for Linux" rel="prev">
+        <a href="../lvm-volume/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Create LVM volume" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1432,20 +1490,20 @@ Add the following lines to the file:
               <span class="md-footer__direction">
                 Previous
               </span>
-              Install Podman on Windows Subsystem for Linux
+              Create LVM volume
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pwdless-sudo/" class="md-footer__link md-footer__link--next" aria-label="Next: Passwordless sudo on Ubuntu" rel="next">
+        <a href="../../kubernetes/install/k3s/" class="md-footer__link md-footer__link--next" aria-label="Next: Kubernetes install - K3s" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Passwordless sudo on Ubuntu
+              Kubernetes install - K3s
             </div>
           </div>
           <div class="md-footer__button md-icon">

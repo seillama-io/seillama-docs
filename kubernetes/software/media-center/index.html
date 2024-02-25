@@ -15,7 +15,7 @@
     
     
       
-        <title>Docker Registry - Seillama Docs</title>
+        <title>Self-hosted media center on K8s - Seillama Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker-registry" class="md-skip">
+        <a href="#self-hosted-media-center-on-k8s" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker Registry
+              Self-hosted media center on K8s
             
           </span>
         </div>
@@ -787,14 +787,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       
       
@@ -831,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../../ops/tools/" class="md-nav__link">
         Useful Tools
       </a>
     </li>
@@ -845,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nfs-provisioner/" class="md-nav__link">
+      <a href="../../ops/nfs-provisioner/" class="md-nav__link">
         NFS Provisioner
       </a>
     </li>
@@ -859,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cert-manager/" class="md-nav__link">
+      <a href="../../ops/cert-manager/" class="md-nav__link">
         Cert-Manager
       </a>
     </li>
@@ -871,80 +869,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Docker Registry
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ops/docker-registry/" class="md-nav__link">
         Docker Registry
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generate-tls-certs" class="md-nav__link">
-    Generate TLS certs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-and-deploy-helm-chart" class="md-nav__link">
-    Configure and Deploy Helm Chart
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-ingress" class="md-nav__link">
-    Configure Ingress
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-registry-access-from-external-k8s-cluster" class="md-nav__link">
-    Optional: Registry access from external K8s cluster
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -956,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nginx-ingress/" class="md-nav__link">
+      <a href="../../ops/nginx-ingress/" class="md-nav__link">
         NGINX Ingress Controller
       </a>
     </li>
@@ -970,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../image-pull-secrets/" class="md-nav__link">
+      <a href="../../ops/image-pull-secrets/" class="md-nav__link">
         Add image pull secret on K8s
       </a>
     </li>
@@ -989,12 +918,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
       
       
       
@@ -1033,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/artifactory/" class="md-nav__link">
+      <a href="../artifactory/" class="md-nav__link">
         JFrog Artifactory
       </a>
     </li>
@@ -1047,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/sonarqube/" class="md-nav__link">
+      <a href="../sonarqube/" class="md-nav__link">
         SonarQube
       </a>
     </li>
@@ -1061,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/harbor/" class="md-nav__link">
+      <a href="../harbor/" class="md-nav__link">
         Harbor
       </a>
     </li>
@@ -1075,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/gitlab/" class="md-nav__link">
+      <a href="../gitlab/" class="md-nav__link">
         GitLab EE
       </a>
     </li>
@@ -1089,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/wikijs/" class="md-nav__link">
+      <a href="../wikijs/" class="md-nav__link">
         Wiki.js
       </a>
     </li>
@@ -1103,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/mysql/" class="md-nav__link">
+      <a href="../mysql/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -1115,11 +1046,136 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../software/media-center/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Self-hosted media center on K8s
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Self-hosted media center on K8s
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helm-repo" class="md-nav__link">
+    Helm repo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-environment-variables" class="md-nav__link">
+    Setup environment variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-base-resources" class="md-nav__link">
+    Create base resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bittorrent-client" class="md-nav__link">
+    BitTorrent client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flaresolverr" class="md-nav__link">
+    Flaresolverr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prowlarr" class="md-nav__link">
+    Prowlarr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonarr" class="md-nav__link">
+    Sonarr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radarr" class="md-nav__link">
+    Radarr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    Jellyfin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jellyseerr" class="md-nav__link">
+    Jellyseerr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jellystat" class="md-nav__link">
+    Jellystat
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1343,6 +1399,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     Prerequisites
   </a>
@@ -1350,29 +1413,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generate-tls-certs" class="md-nav__link">
-    Generate TLS certs
+  <a href="#helm-repo" class="md-nav__link">
+    Helm repo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-and-deploy-helm-chart" class="md-nav__link">
-    Configure and Deploy Helm Chart
+  <a href="#setup-environment-variables" class="md-nav__link">
+    Setup environment variables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-ingress" class="md-nav__link">
-    Configure Ingress
+  <a href="#create-base-resources" class="md-nav__link">
+    Create base resources
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional-registry-access-from-external-k8s-cluster" class="md-nav__link">
-    Optional: Registry access from external K8s cluster
+  <a href="#bittorrent-client" class="md-nav__link">
+    BitTorrent client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flaresolverr" class="md-nav__link">
+    Flaresolverr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prowlarr" class="md-nav__link">
+    Prowlarr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonarr" class="md-nav__link">
+    Sonarr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radarr" class="md-nav__link">
+    Radarr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    Jellyfin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jellyseerr" class="md-nav__link">
+    Jellyseerr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jellystat" class="md-nav__link">
+    Jellystat
   </a>
   
 </li>
@@ -1390,127 +1502,233 @@
               
                 
 
-  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/ops/docker-registry.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/software/media-center.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="docker-registry">Docker Registry</h1>
-<p>This document shows how to deploy an on-prem private Docker Registry on Kubernetes, using Helm.</p>
+<h1 id="self-hosted-media-center-on-k8s">Self-hosted media center on K8s</h1>
+<h2 id="overview">Overview</h2>
+<ul>
+<li><strong>FlareSolverr</strong>: proxy server to bypass Cloudflare protection.</li>
+<li><strong>qflood</strong>: qBittorrent client with Flood UI.</li>
+<li><strong>FlareSolverr</strong>: Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.</li>
+<li><strong>Prowlarr</strong> Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.</li>
+<li><strong>Sonarr</strong>: tv series collection manager for Usenet and BitTorrent users.</li>
+<li><strong>Radarr</strong>: movie collection manager for Usenet and BitTorrent users.</li>
+<li><strong>Jellyfin</strong>: Free Software Media System that puts you in control of managing and streaming your media.</li>
+<li><strong>Jellyseerr</strong>: fork of Overseerr with support for Jellyfin and Emby. It can be used to manage requests for your media library.</li>
+<li><strong>Jellystat</strong>: A free and open source Statistics App for Jellyfin.</li>
+</ul>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Kubernetes cluster accessible with <code>kubectl</code> CLI</li>
-<li><a href="https://helm.sh/docs/intro/install/">Helm</a> CLI</li>
-<li><a href="https://github.com/cloudflare/cfssl/releases/latest">CFSSL</a> CLI (at least <code>cfssl</code> and <code>cfssljson</code>).</li>
-<li><a href="https://httpd.apache.org/docs/current/programs/htpasswd.html">htpasswd</a> CLI</li>
-<li><a href="https://kubernetes.github.io/ingress-nginx/deploy/">Nginx Ingress Controller</a> installed in the cluster</li>
-<li>Some LB (e.g. HAProxy) is set up to balance <code>registry.&lt;BASE_DOMAIN&gt;</code> to cluster Nginx Ingress Controller load balancer.</li>
+<li>Kubernetes cluster running on <code>amd64</code> (because of TrueCharts dependency) accessible with <code>kubectl</code> CLI</li>
+<li><strong>Note</strong>: Tested on K3s cluster with default <code>traefik</code> ONI.</li>
+<li>Install <a href="https://helm.sh/docs/intro/install/">Helm</a></li>
 </ul>
-<h2 id="generate-tls-certs">Generate TLS certs</h2>
-<p>Create a working directory <code>$HOME/docker-registry</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir <span class="nv">$HOME</span>/docker-registry
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span> <span class="nv">$HOME</span>/docker-registry
+<h2 id="helm-repo">Helm repo</h2>
+<p>Get the <a href="https://truecharts.org/">TrueCharts</a> Helm repository:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm repo add truecharts https://charts.truecharts.org
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>helm repo update truecharts
 </code></pre></div>
-<p>Get the Docker Registry Helm repository:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm repo add twuni https://twuni.github.io/docker-registry.helm
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>helm repo update twuni
+<h2 id="setup-environment-variables">Setup environment variables</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span> <span class="nv">MEDIA_NAMESPACE</span><span class="o">=</span><span class="s2">&quot;media-center&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span> <span class="nv">STORAGE_CLASS</span><span class="o">=</span><span class="s2">&quot;nfs-hdd&quot;</span> <span class="c1"># changeme</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">export</span> <span class="nv">MEDIA_VOLUME_SIZE</span><span class="o">=</span><span class="s2">&quot;4Ti&quot;</span> <span class="c1"># changeme</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">export</span> <span class="nv">LB_IP</span><span class="o">=</span><span class="s2">&quot;192.168.1.81&quot;</span> <span class="c1"># changeme</span>
 </code></pre></div>
-<p>Create a script <code>registry-tls.sh</code> that will generate TLS CA, certificate and corresponding secrets:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>touch registry-tls.sh
+<h2 id="create-base-resources">Create base resources</h2>
+<p>Create namespace:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl create ns <span class="si">${</span><span class="nv">MEDIA_NAMESPACE</span><span class="si">}</span>
 </code></pre></div>
-<p>Put the following content:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">set</span> -e
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">#############</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">## setup environment</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nv">NAMESPACE</span><span class="o">=</span><span class="si">${</span><span class="nv">NAMESPACE</span><span class="k">:-</span><span class="nv">docker</span><span class="p">-registry</span><span class="si">}</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nv">RELEASE</span><span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="k">:-</span><span class="nv">registry</span><span class="si">}</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nv">DOMAIN</span><span class="o">=</span><span class="si">${</span><span class="nv">DOMAIN</span><span class="k">:-</span><span class="nv">apps</span><span class="p">.k8s.example.com</span><span class="si">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">## stop if variable is unset beyond this point</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">set</span> -u
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">## known expected patterns for SAN</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nv">CERT_SANS</span><span class="o">=</span><span class="s2">&quot;*.</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span><span class="s2">.</span><span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span><span class="s2">,*.</span><span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">#############</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1">## generate default CA config</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>cfssl print-defaults config &gt; ca-config.json
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">## generate a CA</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="nb">echo</span> <span class="s1">&#39;{&quot;CN&quot;:&quot;&#39;</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.<span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span>.ca<span class="s1">&#39;&quot;,&quot;key&quot;:{&quot;algo&quot;:&quot;ecdsa&quot;,&quot;size&quot;:256}}&#39;</span> <span class="p">|</span> <span class="se">\</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  cfssl gencert -initca - <span class="p">|</span> <span class="se">\</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>  cfssljson -bare ca -
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1">## generate certificate</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="nb">echo</span> <span class="s1">&#39;{&quot;CN&quot;:&quot;&#39;</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.<span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span><span class="s1">&#39;&quot;,&quot;key&quot;:{&quot;algo&quot;:&quot;ecdsa&quot;,&quot;size&quot;:256}}&#39;</span> <span class="p">|</span> <span class="se">\</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  cfssl gencert -config<span class="o">=</span>ca-config.json -ca<span class="o">=</span>ca.pem -ca-key<span class="o">=</span>ca-key.pem -profile www -hostname<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">CERT_SANS</span><span class="si">}</span><span class="s2">&quot;</span> - <span class="p">|</span><span class="se">\</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>  cfssljson -bare <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="c1">#############</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1">## load certificates into K8s</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>kubectl delete secret <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-tls -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>kubectl delete secret <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-tls-ca -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>kubectl -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span> create secret tls <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-tls <span class="se">\</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>  --cert<span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.pem <span class="se">\</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>  --key<span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-key.pem
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>kubectl -n <span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span> create secret generic <span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>-tls-ca <span class="se">\</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>  --from-file<span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.<span class="si">${</span><span class="nv">DOMAIN</span><span class="si">}</span>.crt<span class="o">=</span>ca.pem
+<p>Create PVC:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cat <span class="s">&lt;&lt;EOF | kubectl apply -f -</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s">apiVersion: v1</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s">kind: PersistentVolumeClaim</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s">metadata:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="s">  name: media-pvc</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="s">  namespace: ${MEDIA_NAMESPACE}</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="s">spec:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="s">  storageClassName: ${STORAGE_CLASS}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="s">  resources:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="s">    requests:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="s">      storage: ${MEDIA_VOLUME_SIZE}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="s">  volumeMode: Filesystem</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="s">  accessModes:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="s">    - ReadWriteMany</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="s">EOF</span>
 </code></pre></div>
-<p>Run the script, provide a valid base <code>DOMAIN</code> e.g. <code>apps.k8s.example.com</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>chmod u+x registry-tls.sh
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span> <span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">&quot;&lt;YOUR_DOMAIN&gt;&quot;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>./registry-tls.sh
+<h2 id="bittorrent-client">BitTorrent client</h2>
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cat <span class="s">&lt;&lt;EOF &gt; qflood.values.yaml</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="s">ingress:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="s">  main:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="s">    hosts:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="s">    - host: qflood.${LB_IP}.nip.io</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s">      paths:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s">      - path: /</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="s">    integrations:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="s">      traefik:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="s">        enabled: false</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="s">operator:</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="s">  verify:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="s">    enabled: false</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="s">persistence:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="s">  media:</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="s">    existingClaim: media-pvc</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="s">    mountPath: &quot;/media&quot;</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="s">EOF</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>helm install qflood truecharts/qflood --values qflood.values.yaml --namespace <span class="si">${</span><span class="nv">MEDIA_NAMESPACE</span><span class="si">}</span>
 </code></pre></div>
-<h2 id="configure-and-deploy-helm-chart">Configure and Deploy Helm Chart</h2>
-<p>Generate default user and password for registry, provide valid <code>USERNAME</code> and <code>PASSWORD</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>htpasswd -Bbn <span class="si">${</span><span class="nv">USERNAME</span><span class="si">}</span> <span class="si">${</span><span class="nv">PASSWORD</span><span class="si">}</span> &gt; .htpasswd
+<p>After install you should be able to reach your Flood UI on your local network at <code>qflood.${LB_IP}.nip.io</code>.</p>
+<h2 id="flaresolverr">Flaresolverr</h2>
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>helm install flaresolverr truecharts/flaresolverr
 </code></pre></div>
-<p>Install Helm Chart:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>helm upgrade --install registry twuni/docker-registry -n docker-registry --create-namespace --set secrets.htpasswd<span class="o">=</span><span class="k">$(</span>cat .htpasswd<span class="k">)</span>
+<h2 id="prowlarr">Prowlarr</h2>
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cat <span class="s">&lt;&lt;EOF &gt; prowlarr.values.yaml</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="s">ingress:</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="s">  main:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="s">    hosts:</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="s">    - host: prowlarr.${LB_IP}.nip.io</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="s">      paths:</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="s">      - path: /</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="s">    integrations:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="s">      traefik:</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="s">        enabled: false</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="s">operator:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="s">  verify:</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="s">    enabled: false</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="s">EOF</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>helm install prowlarr truecharts/prowlarr --values prowlarr.values.yaml --namespace <span class="si">${</span><span class="nv">MEDIA_NAMESPACE</span><span class="si">}</span>
 </code></pre></div>
-<h2 id="configure-ingress">Configure Ingress</h2>
-<p>Create Ingress file, provide valid TLS <code>hosts</code> and rule <code>host</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># $HOME/docker-registry/ingress.yaml</span><span class="w"></span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span><span class="w"></span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span><span class="w"></span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-ingress</span><span class="w"></span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry</span><span class="w"></span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="nt">nginx.ingress.kubernetes.io/proxy-body-size</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="w"></span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="nt">nginx.ingress.kubernetes.io/proxy-read-timeout</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;600&quot;</span><span class="w"></span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="nt">nginx.ingress.kubernetes.io/proxy-send-timeout</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;600&quot;</span><span class="w"></span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="nt">ingressClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span><span class="w"></span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">  </span><span class="nt">tls</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.apps.k8s.example.com</span><span class="w"> </span><span class="c1"># change me</span><span class="w"></span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-tls</span><span class="w"></span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.apps.k8s.example.com</span><span class="w"> </span><span class="c1"># change me</span><span class="w"></span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="nt">http</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">      </span><span class="nt">paths</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/</span><span class="w"></span>
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">        </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span><span class="w"></span>
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">        </span><span class="nt">backend</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">          </span><span class="nt">service</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry-docker-registry</span><span class="w"></span>
-<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">            </span><span class="nt">port</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">              </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span><span class="w"></span>
+<p>After install you should be able to reach your Prowlarr instance on your local network at <code>prowlarr.${LB_IP}.nip.io</code>.</p>
+<h2 id="sonarr">Sonarr</h2>
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cat <span class="s">&lt;&lt;EOF &gt; sonarr.values.yaml</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="s">ingress:</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="s">  main:</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="s">    hosts:</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="s">    - host: sonarr.${LB_IP}.nip.io</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="s">      paths:</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="s">      - path: /</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="s">    integrations:</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="s">      traefik:</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="s">        enabled: false</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="s">operator:</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="s">  verify:</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="s">    enabled: false</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="s">persistence:</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="s">  media:</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="s">    existingClaim: media-pvc</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="s">    mountPath: &quot;/media&quot;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="s">EOF</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>helm install sonarr truecharts/sonarr --values sonarr.values.yaml --namespace <span class="si">${</span><span class="nv">MEDIA_NAMESPACE</span><span class="si">}</span>
 </code></pre></div>
-<p>Apply ingress configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl apply -f ingress.yaml
+<p>After install you should be able to reach your Sonarr instance on your local network at <code>sonarr.${LB_IP}.nip.io</code>.</p>
+<h2 id="radarr">Radarr</h2>
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cat <span class="s">&lt;&lt;EOF &gt; radarr.values.yaml</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="s">ingress:</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="s">  main:</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="s">    hosts:</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="s">    - host: radarr.${LB_IP}.nip.io</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="s">      paths:</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="s">      - path: /</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="s">    integrations:</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="s">      traefik:</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="s">        enabled: false</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="s">operator:</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="s">  verify:</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="s">    enabled: false</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="s">persistence:</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="s">  media:</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="s">    existingClaim: media-pvc</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="s">    mountPath: &quot;/media&quot;</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="s">EOF</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>helm install radarr truecharts/radarr --values radarr.values.yaml --namespace <span class="si">${</span><span class="nv">MEDIA_NAMESPACE</span><span class="si">}</span>
 </code></pre></div>
-<h2 id="optional-registry-access-from-external-k8s-cluster"><em>Optional</em>: Registry access from external K8s cluster</h2>
-<p>On each worker node of your K8s cluster that will need access to this private registry, put the content of your <code>ca.pem</code> in a file <code>/usr/local/share/ca-certificates/private-docker-registry.crt</code> and restart your container runtime <em>e.g.</em> on Ubuntu with <code>docker</code> runtime:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo su -
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>cat <span class="s">&lt;&lt;EOF &gt; /usr/local/share/ca-certificates/private-docker-registry.crt</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="s">-----BEGIN CERTIFICATE-----</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="s">...</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="s">-----END CERTIFICATE-----</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="s">EOF</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>sudo update-ca-certificates
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>sudo systemctl restart docker
+<p>After install you should be able to reach your Radarr instance on your local network at <code>radarr.${LB_IP}.nip.io</code>.</p>
+<p>You can now configure Radarr:
+- In Prowlarr UI, </p>
+<h2 id="jellyfin">Jellyfin</h2>
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cat <span class="s">&lt;&lt;EOF &gt; jf.values.yaml</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="s">ingress:</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="s">  main:</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="s">    hosts:</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="s">    - host: jf.${LB_IP}.nip.io</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="s">      paths:</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="s">      - path: /</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="s">    integrations:</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="s">      traefik:</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="s">        enabled: false</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="s">operator:</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="s">  verify:</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="s">    enabled: false</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="s">persistence:</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="s">  media:</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="s">    existingClaim: media-pvc</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="s">    mountPath: &quot;/media&quot;</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="s">EOF</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>helm install jellyfin truecharts/jellyfin --values jf.values.yaml --namespace <span class="si">${</span><span class="nv">MEDIA_NAMESPACE</span><span class="si">}</span>
 </code></pre></div>
+<p>After install you should be able to reach your Jellyfin instance on your local network at <code>jf.${LB_IP}.nip.io</code>.</p>
+<h2 id="jellyseerr">Jellyseerr</h2>
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cat <span class="s">&lt;&lt;EOF &gt; jellyseerr.values.yaml</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="s">ingress:</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="s">  main:</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="s">    hosts:</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="s">    - host: jellyseerr.${LB_IP}.nip.io</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="s">      paths:</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="s">      - path: /</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="s">    integrations:</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="s">      traefik:</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="s">        enabled: false</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="s">operator:</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="s">  verify:</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="s">    enabled: false</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="s">EOF</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>helm install jellyseerr truecharts/jellyseerr --values jellyseerr.values.yaml --namespace <span class="si">${</span><span class="nv">MEDIA_NAMESPACE</span><span class="si">}</span>
+</code></pre></div>
+<p>After install you should be able to reach your Jellyseerr instance on your local network at <code>jellyseerr.${LB_IP}.nip.io</code>.</p>
+<p>Configure Jellyseerr:
+- Open UI at <code>jellyseerr.${LB_IP}.nip.io</code>.
+- Connect using your Jellyfin server and account.
+- Setup connection to Radarr and Sonarr.</p>
+<h2 id="jellystat">Jellystat</h2>
+<p>Install the chart:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>cat <span class="s">&lt;&lt;EOF &gt; jellystat.values.yaml</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="s">ingress:</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="s">  main:</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="s">    enabled: true</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="s">    hosts:</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="s">    - host: jellystat.${LB_IP}.nip.io</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="s">      paths:</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="s">      - path: /</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="s">    integrations:</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="s">      traefik:</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="s">        enabled: false</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="s">operator:</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="s">  verify:</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="s">    enabled: false</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="s">EOF</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>helm install jellystat truecharts/jellystat --values jellystat.values.yaml --namespace <span class="si">${</span><span class="nv">MEDIA_NAMESPACE</span><span class="si">}</span>
+</code></pre></div>
+<p>After install you should be able to reach your Jellystat instance on your local network at <code>jellystat.${LB_IP}.nip.io</code>.</p>
 
 
   
@@ -1581,7 +1799,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../cert-manager/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cert-Manager" rel="prev">
+        <a href="../mysql/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MySQL" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1590,20 +1808,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Cert-Manager
+              MySQL
             </div>
           </div>
         </a>
       
       
         
-        <a href="../nginx-ingress/" class="md-footer__link md-footer__link--next" aria-label="Next: NGINX Ingress Controller" rel="next">
+        <a href="../../../devops/cloud-native-toolkit/install-toolkit/" class="md-footer__link md-footer__link--next" aria-label="Next: Cloud-Native Toolkit - GitOps Install" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              NGINX Ingress Controller
+              Cloud-Native Toolkit - GitOps Install
             </div>
           </div>
           <div class="md-footer__button md-icon">
