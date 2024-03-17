@@ -274,3 +274,139 @@ helm install jellystat truecharts/jellystat --values jellystat.values.yaml --nam
 ```
 
 After install you should be able to reach your Jellystat instance on your local network at `jellystat.${LB_IP}.nip.io`.
+
+## Optional: BitTorrent + VPN setup
+
+### Prerequisites
+
+- Download a wireguard configuration from your VPN provider.
+- Create a `qbittorrent-config` PVC.
+- Use your existing `media-pvc` PVC (or whatever one you use).
+
+### Setup
+
+1. Create a `qbt-wg.yaml` file with the following template updated with your wireguard configuration and ingress hostname:
+2. Run `kubectl apply -f qbt-wg.yaml -n media-center`
+3. Once deployed, navigate to your qbittorrent UI? go to **settings** >  **Advanced** > **Network interface:** and select the `wg0` interface.
+4. You can validate that qbittorrent is using the VPN interface by using the magnet link from [whatismyip.net](https://www.whatismyip.net/tools/torrent-ip-checker/index.php) and checking the IP that's returned.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: wg-conf
+type: Opaque
+stringData:
+  wg0.conf: |
+    # PLACE YOUR WIREGUARD CONFIG HERE
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qbt-wg
+spec:
+  selector:
+    matchLabels:
+      app: qbt-wg
+  template:
+    metadata:
+      labels:
+        app: qbt-wg
+    spec:
+      volumes:
+      - name: wg-conf
+        secret:
+          secretName: wg-conf
+      - name: qbt-conf
+        persistentVolumeClaim:
+          claimName: qbittorrent-config
+      - name: media
+        persistentVolumeClaim:
+          claimName: media-pvc
+      containers:
+      - name: wireguard
+        image: lscr.io/linuxserver/wireguard:latest
+        env:
+        - name: TZ
+          value: Europe/Paris
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "200m"
+        volumeMounts:
+        - name: wg-conf
+          mountPath: /config/wg_confs
+        ports:
+        - containerPort: 51820
+          name: main
+          protocol: UDP
+        securityContext:
+          privileged: true
+          capabilities:
+            add:
+            - NET_ADMIN
+      - name: qbittorrent
+        image: lscr.io/linuxserver/qbittorrent:latest
+        env:
+        - name: TZ
+          value: Europe/Paris
+        - name: WEBUI_PORT
+          value: "8080"
+        - name: TORRENTING_PORT
+          value: "6881"
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "1"
+          requests:
+            memory: "128Mi"
+            cpu: "200m"
+        volumeMounts:
+        - name: qbt-conf
+          mountPath: /config
+        - name: media
+          mountPath: /media
+        ports:
+        - containerPort: 8080
+          name: main
+          protocol: TCP
+        - containerPort: 6881
+          name: torrent
+          protocol: TCP
+        - containerPort: 6881
+          name: torrentudp
+          protocol: UDP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: qbt-wg-web
+spec:
+  selector:
+    app: qbt-wg
+  ports:
+  - port: 8080
+    targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: qbt-wg-web
+  labels:
+    name: qbt-wg-web
+spec:
+  rules:
+  - host: qbt.example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: qbt-wg-web
+            port: 
+              number: 8080
+```

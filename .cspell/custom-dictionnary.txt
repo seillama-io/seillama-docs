@@ -29,6 +29,7 @@ Jellyseerr
 Overseerr
 Emby
 Jellystat
+qbittorrent
 
 # Concepts
 gitops
