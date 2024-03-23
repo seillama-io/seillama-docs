@@ -275,138 +275,79 @@ helm install jellystat truecharts/jellystat --values jellystat.values.yaml --nam
 
 After install you should be able to reach your Jellystat instance on your local network at `jellystat.${LB_IP}.nip.io`.
 
-## Optional: BitTorrent + VPN setup
+## *Optional*: BitTorrent client + VPN setup
 
 ### Prerequisites
 
-- Download a wireguard configuration from your VPN provider.
-- Create a `qbittorrent-config` PVC.
-- Use your existing `media-pvc` PVC (or whatever one you use).
+- Download a wireguard configuration from your VPN provider. 
+  - **Note**: the following example is done with ProtonVPN that supports both wireguard and port forwarding for fast seeding.
+- Use your existing `media-pvc` PVC (or whatever name you use for it).
 
 ### Setup
 
-1. Create a `qbt-wg.yaml` file with the following template updated with your wireguard configuration and ingress hostname:
-2. Run `kubectl apply -f qbt-wg.yaml -n media-center`
-3. Once deployed, navigate to your qbittorrent UI? go to **settings** >  **Advanced** > **Network interface:** and select the `wg0` interface.
-4. You can validate that qbittorrent is using the VPN interface by using the magnet link from [whatismyip.net](https://www.whatismyip.net/tools/torrent-ip-checker/index.php) and checking the IP that's returned.
-
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: wg-conf
-type: Opaque
-stringData:
-  wg0.conf: |
-    # PLACE YOUR WIREGUARD CONFIG HERE
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: qbt-wg
-spec:
-  selector:
-    matchLabels:
-      app: qbt-wg
-  template:
-    metadata:
-      labels:
-        app: qbt-wg
-    spec:
-      volumes:
-      - name: wg-conf
-        secret:
-          secretName: wg-conf
-      - name: qbt-conf
-        persistentVolumeClaim:
-          claimName: qbittorrent-config
-      - name: media
-        persistentVolumeClaim:
-          claimName: media-pvc
-      containers:
-      - name: wireguard
-        image: lscr.io/linuxserver/wireguard:latest
+1. Create a `qbittorrent.values.yaml` file with the following template updated with your wireguard configuration and ingress hostname:
+    ```sh
+    export QBIT_PASSWORD=<changeme>
+    cat <<EOF > qbittorrent.values.yaml
+    addons:
+      vpn:
+        config: |
+          # PUT YOUR WIREGUARD CONFIG HERE
         env:
-        - name: TZ
-          value: Europe/Paris
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
-          requests:
-            memory: "128Mi"
-            cpu: "200m"
-        volumeMounts:
-        - name: wg-conf
-          mountPath: /config/wg_confs
-        ports:
-        - containerPort: 51820
-          name: main
-          protocol: UDP
-        securityContext:
-          privileged: true
-          capabilities:
-            add:
-            - NET_ADMIN
-      - name: qbittorrent
-        image: lscr.io/linuxserver/qbittorrent:latest
-        env:
-        - name: TZ
-          value: Europe/Paris
-        - name: WEBUI_PORT
-          value: "8080"
-        - name: TORRENTING_PORT
-          value: "6881"
-        resources:
-          limits:
-            memory: "1Gi"
-            cpu: "1"
-          requests:
-            memory: "128Mi"
-            cpu: "200m"
-        volumeMounts:
-        - name: qbt-conf
-          mountPath: /config
-        - name: media
-          mountPath: /media
-        ports:
-        - containerPort: 8080
-          name: main
-          protocol: TCP
-        - containerPort: 6881
-          name: torrent
-          protocol: TCP
-        - containerPort: 6881
-          name: torrentudp
-          protocol: UDP
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: qbt-wg-web
-spec:
-  selector:
-    app: qbt-wg
-  ports:
-  - port: 8080
-    targetPort: 8080
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: qbt-wg-web
-  labels:
-    name: qbt-wg-web
-spec:
-  rules:
-  - host: qbt.example.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: qbt-wg-web
-            port: 
-              number: 8080
-```
+          VPN_SERVICE_PROVIDER: custom
+          VPN_TYPE: wireguard
+          VPN_PORT_FORWARDING: on
+          VPN_PORT_FORWARDING_PROVIDER: protonvpn
+        excludedNetworks_IPv4:
+        - 192.168.1.0/24 # Replace with your local network CIDR
+        type: gluetun
+    ingress:
+      main:
+        enabled: true
+        hosts:
+        - host: qbit.${LB_IP}.nip.io
+          paths:
+          - path: /
+        integrations:
+          traefik:
+            enabled: false
+    metrics:
+      main:
+        enabled: false
+    operator:
+      verify:
+        enabled: false
+    persistence:
+      config:
+        enabled: true
+        mountPath: /config
+      media:
+        enabled: true
+        existingClaim: media-pvc
+        mountPath: /media
+    qbitportforward:
+      QBT_PASSWORD: ${QBIT_PASSWORD}
+      QBT_USERNAME: admin
+      enabled: true
+    EOF
+    ```
+2. Install the Helm chart:
+    ```sh
+    helm install qbittorrent truecharts/qbittorrent --values qbittorrent.values.yaml
+    ```
+3. Once deployed, update the `qbittorrent` deployment to edit the `mountPath` of the `vpnconfig` in the `qbittorrent-vpn` (Gluetun) container as follow:
+    ```sh
+    - mountPath: /gluetun/wireguard/wg0.conf
+      name: vpnconfig
+      subPath: vpn.conf
+    ```
+4. After checking that `qbittorrent` pod successfully running, navigate to your qbittorrent UI at `qbit.${LB_IP}.nip.io`, login with temporary admin password found in the `qbittorrent` pod logs, and go to **settings** > **Web UI** to update `admin` password and set it to `${QBIT_PASSWORD}`.
+5. Now wait for `qbittorrent-qbitportforward` job to complete, then go back to  your qBittorrent UI **settings** to update the settings:
+   1. In **Downloads**, your downloads and torrents folders to target your media volume, e.g.:
+      ![QbitTorrent downloads settings](../../images/media-center/qbit-downloads.png)
+   2. In **Connection** you check that the listening port is correct by comparing it with the one returned by your `qbittorrent-gluetun` service (`curl http://qbittorrent-gluetun:8000/v1/openvpn/portforwarded` from K8s namespace network).
+      ![QbitTorrent Connection settings](../../images/media-center/qbit-connection.png)
+   3. In **BitTorrent** make sure `Enable Local Peer Discovery to find more peers` is disabled.
+   4. In **Advanced** > **Network interface:** select the `tun0` interface.
+      ![QbitTorrent advanced settings](../../images/media-center/qbit-advanced.png)
+6. You can validate that qbittorrent is using the VPN interface by using the magnet link from [whatismyip.net](https://www.whatismyip.net/tools/torrent-ip-checker/index.php) and checking the IP that's returned.

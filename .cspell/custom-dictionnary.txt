@@ -30,6 +30,8 @@ Overseerr
 Emby
 Jellystat
 qbittorrent
+Gluetun
+qbit
 
 # Concepts
 gitops
