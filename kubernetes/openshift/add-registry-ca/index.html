@@ -10,19 +10,19 @@
         <meta name="author" content="Seillama">
       
       
-      <link rel="icon" href="../../images/logo.png">
+      <link rel="icon" href="../../../images/logo.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.4">
     
     
       
-        <title>Private DNS server using BIND - Seillama Docs</title>
+        <title>Trust Registry CA - Seillama Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6b80c2a2.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -38,9 +38,9 @@
       
     
     
-      <link rel="stylesheet" href="../../custom.css">
+      <link rel="stylesheet" href="../../../custom.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#private-dns-server-using-bind" class="md-skip">
+        <a href="#adding-certificate-authorities-to-the-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +96,9 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Seillama Docs" class="md-header__button md-logo" aria-label="Seillama Docs" data-md-component="logo">
+    <a href="../../.." title="Seillama Docs" class="md-header__button md-logo" aria-label="Seillama Docs" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Private DNS server using BIND
+              Trust Registry CA
             
           </span>
         </div>
@@ -205,7 +205,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -220,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../ai/cuda-rhel/" class="md-tabs__link">
+      <a href="../../../ai/cuda-rhel/" class="md-tabs__link">
         AI
       </a>
     </li>
@@ -236,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../containers/podman/podman-wsl/" class="md-tabs__link">
+      <a href="../../../containers/podman/podman-wsl/" class="md-tabs__link">
         Containers
       </a>
     </li>
@@ -246,15 +246,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../linux/dns-server-bind/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -264,6 +262,8 @@
         
   
   
+    
+  
 
 
   
@@ -275,7 +275,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../kubernetes/install/k3s/" class="md-tabs__link">
+      <a href="../../install/k3s/" class="md-tabs__link md-tabs__link--active">
         Kubernetes
       </a>
     </li>
@@ -298,7 +298,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../devops/cloud-native-toolkit/install-toolkit/" class="md-tabs__link">
+      <a href="../../../devops/cloud-native-toolkit/install-toolkit/" class="md-tabs__link">
         DevSecOps
       </a>
     </li>
@@ -321,7 +321,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../software/vault/delete-key/" class="md-tabs__link">
+      <a href="../../../software/vault/delete-key/" class="md-tabs__link">
         Software
       </a>
     </li>
@@ -357,9 +357,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Seillama Docs" class="md-nav__button md-logo" aria-label="Seillama Docs" data-md-component="logo">
+    <a href="../../.." title="Seillama Docs" class="md-nav__button md-logo" aria-label="Seillama Docs" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     Seillama Docs
@@ -387,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -434,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/cuda-rhel/" class="md-nav__link">
+      <a href="../../../ai/cuda-rhel/" class="md-nav__link">
         Install Nvidia CUDA on RHEL
       </a>
     </li>
@@ -448,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/foundation-models/" class="md-nav__link">
+      <a href="../../../ai/foundation-models/" class="md-nav__link">
         Foundation models
       </a>
     </li>
@@ -500,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/podman/podman-wsl/" class="md-nav__link">
+      <a href="../../../containers/podman/podman-wsl/" class="md-nav__link">
         Install Podman on Windows Subsystem for Linux
       </a>
     </li>
@@ -520,14 +520,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -564,21 +562,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../linux/dns-server-bind/" class="md-nav__link">
         Private DNS server using BIND
       </a>
-      
     </li>
   
 
@@ -590,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pwdless-sudo/" class="md-nav__link">
+      <a href="../../../linux/pwdless-sudo/" class="md-nav__link">
         Passwordless sudo on Ubuntu
       </a>
     </li>
@@ -604,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu-trust-ca/" class="md-nav__link">
+      <a href="../../../linux/ubuntu-trust-ca/" class="md-nav__link">
         Ubuntu: trust a new Certificate Authority
       </a>
     </li>
@@ -618,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rhel-dns-server/" class="md-nav__link">
+      <a href="../../../linux/rhel-dns-server/" class="md-nav__link">
         Update DNS server configuration on RHEL
       </a>
     </li>
@@ -632,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open-port-firewalld-rhel/" class="md-nav__link">
+      <a href="../../../linux/open-port-firewalld-rhel/" class="md-nav__link">
         Open port on RHEL with firewalld
       </a>
     </li>
@@ -646,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lvm-volume/" class="md-nav__link">
+      <a href="../../../linux/lvm-volume/" class="md-nav__link">
         Create LVM volume
       </a>
     </li>
@@ -660,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resize-disks-proxmox/" class="md-nav__link">
+      <a href="../../../linux/resize-disks-proxmox/" class="md-nav__link">
         Resize Proxmox Linux VM disk
       </a>
     </li>
@@ -680,12 +668,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -752,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/install/k3s/" class="md-nav__link">
+      <a href="../../install/k3s/" class="md-nav__link">
         Kubernetes install - K3s
       </a>
     </li>
@@ -766,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/install/kubespray/" class="md-nav__link">
+      <a href="../../install/kubespray/" class="md-nav__link">
         Kubernetes install - Kubespray
       </a>
     </li>
@@ -780,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/install/rpi/" class="md-nav__link">
+      <a href="../../install/rpi/" class="md-nav__link">
         Self-hosting platform on Raspberry Pi - K3s
       </a>
     </li>
@@ -841,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/ops/tools/" class="md-nav__link">
+      <a href="../../ops/tools/" class="md-nav__link">
         Useful Tools
       </a>
     </li>
@@ -855,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/ops/nfs-provisioner/" class="md-nav__link">
+      <a href="../../ops/nfs-provisioner/" class="md-nav__link">
         NFS Provisioner
       </a>
     </li>
@@ -869,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/ops/cert-manager/" class="md-nav__link">
+      <a href="../../ops/cert-manager/" class="md-nav__link">
         Cert-Manager
       </a>
     </li>
@@ -883,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/ops/docker-registry/" class="md-nav__link">
+      <a href="../../ops/docker-registry/" class="md-nav__link">
         Docker Registry
       </a>
     </li>
@@ -897,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/ops/nginx-ingress/" class="md-nav__link">
+      <a href="../../ops/nginx-ingress/" class="md-nav__link">
         NGINX Ingress Controller
       </a>
     </li>
@@ -911,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/ops/image-pull-secrets/" class="md-nav__link">
+      <a href="../../ops/image-pull-secrets/" class="md-nav__link">
         Add image pull secret on K8s
       </a>
     </li>
@@ -974,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/software/artifactory/" class="md-nav__link">
+      <a href="../../software/artifactory/" class="md-nav__link">
         JFrog Artifactory
       </a>
     </li>
@@ -988,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/software/sonarqube/" class="md-nav__link">
+      <a href="../../software/sonarqube/" class="md-nav__link">
         SonarQube
       </a>
     </li>
@@ -1002,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/software/harbor/" class="md-nav__link">
+      <a href="../../software/harbor/" class="md-nav__link">
         Harbor
       </a>
     </li>
@@ -1016,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/software/gitlab/" class="md-nav__link">
+      <a href="../../software/gitlab/" class="md-nav__link">
         GitLab EE
       </a>
     </li>
@@ -1030,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/software/wikijs/" class="md-nav__link">
+      <a href="../../software/wikijs/" class="md-nav__link">
         Wiki.js
       </a>
     </li>
@@ -1044,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/software/mysql/" class="md-nav__link">
+      <a href="../../software/mysql/" class="md-nav__link">
         MySQL
       </a>
     </li>
@@ -1058,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kubernetes/software/media-center/" class="md-nav__link">
+      <a href="../../software/media-center/" class="md-nav__link">
         Self-hosted media center on K8s
       </a>
     </li>
@@ -1077,12 +1067,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
       
       
       
@@ -1107,11 +1099,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../kubernetes/openshift/add-registry-ca/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Trust Registry CA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Trust Registry CA
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1198,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/cloud-native-toolkit/install-toolkit/" class="md-nav__link">
+      <a href="../../../devops/cloud-native-toolkit/install-toolkit/" class="md-nav__link">
         Cloud-Native Toolkit - GitOps Install
       </a>
     </li>
@@ -1287,7 +1327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/vault/delete-key/" class="md-nav__link">
+      <a href="../../../software/vault/delete-key/" class="md-nav__link">
         Delete Hashicorp Vault key
       </a>
     </li>
@@ -1328,6 +1368,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
+    Procedure
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1339,73 +1401,25 @@
               
                 
 
-  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/linux/dns-server-bind.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/openshift/add-registry-ca.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="private-dns-server-using-bind">Private DNS server using BIND</h1>
-<p>To set up a private DNS server on Linux using BIND (Berkeley Internet Name Domain), you can follow these steps:</p>
-<ol>
-<li>
-<p>Update the package lists and install BIND by running the following commands in the terminal:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt update
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo apt install bind9
-</code></pre></div></p>
-</li>
-<li>
-<p>Configure BIND by editing the main configuration file <code>/etc/bind/named.conf.options</code>. Open the file using a text editor:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo vim /etc/bind/named.conf.options
-</code></pre></div></p>
-</li>
-<li>
-<p>Inside the file, you can modify the options section to include the IP addresses of your DNS server. You can add the following lines at the end of the options section:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>forwarders {
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    8.8.8.8;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    8.8.4.4;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>};
+<h1 id="adding-certificate-authorities-to-the-cluster">Adding certificate authorities to the cluster</h1>
+<p>You can add certificate authorities (CA) to the cluster for use when pushing and pulling images with the following procedure.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You must have access to the public certificates of the registry, usually a <code>hostname/ca.crt</code> file located in the <code>/etc/docker/certs.d/</code> directory.</p>
+<h2 id="procedure">Procedure</h2>
+<p>Create a <code>ConfigMap</code> in the <code>openshift-config</code> namespace containing the trusted certificates for the registries that use self-signed certificates. For each CA file, ensure the key in the ConfigMap is the hostname of the registry in the hostname[..port] format:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc create configmap registry-cas -n openshift-config <span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--from-file<span class="o">=</span>myregistry.corp.com..5000<span class="o">=</span>/etc/docker/certs.d/myregistry.corp.com:5000/ca.crt <span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--from-file<span class="o">=</span>otherregistry.com<span class="o">=</span>/etc/docker/certs.d/otherregistry.com/ca.crt
 </code></pre></div>
-These IP addresses are Google's public DNS servers, which will be used as forwarders for external DNS queries if your DNS server doesn't have the necessary information.</p>
-</li>
-<li>
-<p>Create a new zone file for your domain. Zone files contain the DNS records for a specific domain. In this example, we will create a zone file for a domain named "example.com":
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo vim /etc/bind/named.conf.local
+<p>Update the cluster image configuration:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>oc patch image.config.openshift.io/cluster --patch <span class="s1">&#39;{&quot;spec&quot;:{&quot;additionalTrustedCA&quot;:{&quot;name&quot;:&quot;registry-cas&quot;}}}&#39;</span> --type<span class="o">=</span>merge
 </code></pre></div>
-Add the following lines to the file:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>zone &quot;example.com&quot; {
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    type master;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    file &quot;/etc/bind/db.example.com&quot;;
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>};
-</code></pre></div></p>
-</li>
-<li>
-<p>Create the zone file <code>/etc/bind/db.example.com</code> and add the necessary DNS records. Replace "your_IP_address" with the IP address of your DNS server:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo vim /etc/bind/db.example.com
-</code></pre></div>
-Add the following lines to the file:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$TTL 86400
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>@       IN      SOA     ns1.example.com. admin.example.com. (
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                       2023062401     ; Serial
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>                       3600           ; Refresh
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>                       1800           ; Retry
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>                       604800         ; Expire
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>                       86400 )        ; Minimum TTL
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>@       IN      NS      ns1.example.com.
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>ns1     IN      A       your_IP_address
-</code></pre></div></p>
-</li>
-<li>
-<p>Restart the BIND service to apply the changes:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo service bind9 restart
-</code></pre></div></p>
-</li>
-<li>
-<p>Configure your DNS client machines to use your private DNS server. You can usually do this by modifying the DNS server settings in the network configuration of each client.</p>
-</li>
-</ol>
-<p>That's it! You have now set up a private DNS server using BIND on Linux. You can add additional DNS records to the zone file to suit your needs. Remember to replace "example.com" with your actual domain name and "your_IP_address" with the IP address of your DNS server.</p>
 
 
   
@@ -1476,7 +1490,7 @@ Add the following lines to the file:
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../containers/podman/podman-wsl/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Podman on Windows Subsystem for Linux" rel="prev">
+        <a href="../../software/media-center/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Self-hosted media center on K8s" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1485,20 +1499,20 @@ Add the following lines to the file:
               <span class="md-footer__direction">
                 Previous
               </span>
-              Install Podman on Windows Subsystem for Linux
+              Self-hosted media center on K8s
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pwdless-sudo/" class="md-footer__link md-footer__link--next" aria-label="Next: Passwordless sudo on Ubuntu" rel="next">
+        <a href="../../../devops/cloud-native-toolkit/install-toolkit/" class="md-footer__link md-footer__link--next" aria-label="Next: Cloud-Native Toolkit - GitOps Install" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Passwordless sudo on Ubuntu
+              Cloud-Native Toolkit - GitOps Install
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1604,10 +1618,10 @@ Add the following lines to the file:
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);console.log(new FormData(form)),__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.indexes", "content.action.edit", "content.action.view", "content.code.copy"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.indexes", "content.action.edit", "content.action.view", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.2ab50757.min.js"></script>
       
     
   </body>
