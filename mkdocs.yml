@@ -90,6 +90,8 @@ nav:
       - kubernetes/software/gitlab.md
       - kubernetes/software/wikijs.md
       - kubernetes/software/mysql.md
+    - OpenShift:
+      - Trust Registry CA: kubernetes/openshift/add-registry-ca.md
   - DevSecOps:
     - Cloud-Native Toolkit:
       - devops/cloud-native-toolkit/install-toolkit.md
