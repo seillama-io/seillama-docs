@@ -71,6 +71,7 @@ nav:
     - linux/rhel-dns-server.md
     - linux/open-port-firewalld-rhel.md
     - linux/lvm-volume.md
+    - linux/resize-disks-proxmox.md
   - Kubernetes:
     - Install:
       - kubernetes/install/k3s.md
@@ -90,6 +91,7 @@ nav:
       - kubernetes/software/gitlab.md
       - kubernetes/software/wikijs.md
       - kubernetes/software/mysql.md
+      - kubernetes/software/media-center.md
     - OpenShift:
       - Trust Registry CA: kubernetes/openshift/add-registry-ca.md
   - DevSecOps:

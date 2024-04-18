@@ -22,6 +22,16 @@ CUDA
 OOTB
 watsonx
 firewalld
+qflood
+Prowlarr
+Jellyfin
+Jellyseerr
+Overseerr
+Emby
+Jellystat
+qbittorrent
+Gluetun
+qbit
 
 # Concepts
 gitops
