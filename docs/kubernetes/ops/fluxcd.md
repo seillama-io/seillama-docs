@@ -41,37 +41,115 @@ flux bootstrap github \
   --personal
 ```
 
-## Encrypting secrets using Hashicorp Vault
+## Encrypting secrets using OpenPGP
 
-Prerequisites:
-- [Hashicorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault) instance created and accessible at `$VAULT_ADDR`.
-
-Provide required `VAULT_ADDR` and `VAULT_TOKEN` environment variables:
+Generate a GPG/OpenPGP key with no passphrase (`%no-protection`):
 
 ```sh
-export VAULT_ADDR=https://vault.example.com # changeme
-export VAULT_TOKEN=hvs.qsj...dfqs # changeme
+export KEY_NAME="cluster0.yourdomain.com"
+export KEY_COMMENT="flux secrets"
+
+gpg --batch --full-generate-key <<EOF
+%no-protection
+Key-Type: 1
+Key-Length: 4096
+Subkey-Type: 1
+Subkey-Length: 4096
+Expire-Date: 0
+Name-Comment: ${KEY_COMMENT}
+Name-Real: ${KEY_NAME}
+EOF
 ```
 
-Create an encryption key that you are going to use to encrypt your K8s secrets (**or** use an existing one), e.g. `fluxcd-sops-key`:
+The above configuration creates an rsa4096 key that does not expire. For a full list of options to consider for your environment, see [Unattended GPG key generation](https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html).
+
+Retrieve the GPG key fingerprint (second row of the sec column):
 
 ```sh
-vault write sops/keys/fluxcd-sops-key type=rsa-4096
+gpg --list-secret-keys ${KEY_NAME}
 ```
 
-Create a secret the vault token, the key name must be `sops.vault-token` to be detected as a vault token:
+Export the public and private keypair from your local GPG keyring and create a Kubernetes secret named `sops-gpg` in the `flux-system` namespace:
 
 ```sh
-echo $VAULT_TOKEN | kubectl create secret generic sops-hcvault \
+gpg --export-secret-keys ${KEY_NAME} |
+kubectl create secret generic sops-gpg \
 --namespace=flux-system \
---from-file=sops.vault-token=/dev/stdin
+--from-file=sops.asc=/dev/stdin
 ```
 
-Use sops to encrypt a Kubernetes Secret:
+**Note**: It’s a good idea to back up this secret-key/K8s-Secret with a password manager or offline storage.
+
+### Configure in-cluster secrets decryption
+
+Create a kustomization for reconciling the secrets on the cluster:
 
 ```sh
-sops --hc-vault-transit $VAULT_ADDR/v1/sops/keys/fluxcd-sops-key --encrypt \
---encrypted-regex '^(data|stringData)$' --in-place basic-auth.yaml
+flux create kustomization my-secrets \
+--source=flux-system \
+--path=./clusters/cluster0 \
+--prune=true \
+--interval=10m \
+--decryption-provider=sops \
+--decryption-secret=sops-gpg
 ```
 
-And finally set the decryption secret in the Flux `Kustomization` to `sops-hcvault`.
+**Note** that the `sops-gpg` can contain more than one key, SOPS will try to decrypt the secrets by iterating over all the private keys until it finds one that works.
+
+### Optional: Export the public key into the Git directory 
+
+Commit the public key to the repository so that team members who clone the repo can encrypt new files:
+
+```sh
+gpg --export --armor ${KEY_NAME} > ./clusters/cluster0/.sops.pub.asc
+```
+
+Check the file contents to ensure it’s the public key before adding it to the repo and committing.
+
+```sh
+git add ./clusters/cluster0/.sops.pub.asc
+git commit -am 'Share GPG public key for secrets generation'
+```
+
+Team members can then import this key when they pull the Git repository:
+
+```sh
+gpg --import ./clusters/cluster0/.sops.pub.asc
+```
+
+**Note**: The public key is sufficient for creating brand new files. The secret key is required for decrypting and editing existing files because SOPS computes a MAC on all values. When using solely the public key to add or remove a field, the whole file should be deleted and recreated.
+
+### Encrypting secrets using OpenPGP 
+
+Generate a Kubernetes secret manifest with `kubectl`:
+
+```sh
+kubectl -n default create secret generic basic-auth \
+--from-literal=user=admin \
+--from-literal=password=change-me \
+--dry-run=client \
+-o yaml > basic-auth.yaml
+```
+
+Encrypt the secret with SOPS using your GPG key:
+
+```sh
+sops encrypt --in-place --pgp ${PUB_KEY_FP} basic-auth.yaml
+```
+
+You can now commit the encrypted secret to your Git repository.
+
+**Note**: Note that you shouldn’t apply the encrypted secrets onto the cluster with kubectl. SOPS encrypted secrets are designed to be consumed by kustomize-controller.
+
+## Quick examples
+
+### Create Helm Release
+
+```sh
+❯ flux create hr open-webui \               
+    --target-namespace=chat \
+    --source=HelmRepository/open-webui \
+    --chart=open-webui \
+    --values=../charts/open-webui.values.yaml \ 
+    --chart-version="6.4.0" --export > ./apps/k8s-home/chat/open-webui.release.yaml
+```
