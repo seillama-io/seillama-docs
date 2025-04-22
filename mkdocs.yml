@@ -72,6 +72,7 @@ nav:
     - linux/open-port-firewalld-rhel.md
     - linux/lvm-volume.md
     - linux/resize-disks-proxmox.md
+    - linux/gpu-passthru-proxmox.md
   - Kubernetes:
     - Install:
       - kubernetes/install/k3s.md
@@ -84,6 +85,8 @@ nav:
       - kubernetes/ops/docker-registry.md
       - kubernetes/ops/nginx-ingress.md
       - kubernetes/ops/image-pull-secrets.md
+      - kubernetes/ops/fluxcd.md
+      - kubernetes/ops/intel-gpu-plugin.md
     - Self-Hosted Software:
       - kubernetes/software/artifactory.md
       - kubernetes/software/sonarqube.md

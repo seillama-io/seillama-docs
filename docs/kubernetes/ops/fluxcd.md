@@ -69,7 +69,7 @@ Retrieve the GPG key fingerprint (second row of the sec column):
 gpg --list-secret-keys ${KEY_NAME}
 ```
 
-Export the public and private keypair from your local GPG keyring and create a Kubernetes secret named `sops-gpg` in the `flux-system` namespace:
+Export the public and private key pair from your local GPG keyring and create a Kubernetes secret named `sops-gpg` in the `flux-system` namespace:
 
 ```sh
 gpg --export-secret-keys ${KEY_NAME} |

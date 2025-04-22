@@ -32,6 +32,9 @@ Jellystat
 qbittorrent
 Gluetun
 qbit
+kustomization
+kustomize
+Proxmox
 
 # Concepts
 gitops
@@ -45,3 +48,4 @@ Geospatial
 NOPASSWD
 Passwordless
 mountpoint
+passthru

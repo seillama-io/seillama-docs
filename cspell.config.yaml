@@ -5,9 +5,9 @@ language: en
 languageSettings:
   - languageId: markdown
     ignoreRegExpList:
-      - /^\\s*```[\\s\\S]*?^\\s*```/gm
+      - /^\\s*```(.|\\n)+?^\\s*```/gm
       - /```[a-z]+(\n*[^`]*\n*)*```/gm
-      - /\`[a-zA-Z-_\. ]+\`/gm
+      - /\`.*\`/gm
       - /!?\[.+\]\(.+\)/gm
 dictionaryDefinitions:
   - name: custom-dictionnary
