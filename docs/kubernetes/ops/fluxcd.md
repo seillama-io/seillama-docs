@@ -147,8 +147,8 @@ You can now commit the encrypted secret to your Git repository.
 
 ```sh
 ❯ flux create hr open-webui \               
-    --target-namespace=chat \
-    --source=HelmRepository/open-webui \
+    --namespace=chat \
+    --source=HelmRepository/open-webui.flux-system \
     --chart=open-webui \
     --values=../charts/open-webui.values.yaml \ 
     --chart-version="6.4.0" --export > ./apps/k8s-home/chat/open-webui.release.yaml
