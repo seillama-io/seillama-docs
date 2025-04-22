@@ -1656,8 +1656,8 @@
 <h2 id="quick-examples">Quick examples</h2>
 <h3 id="create-helm-release">Create Helm Release</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>❯ flux create hr open-webui <span class="se">\ </span>              
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    --target-namespace<span class="o">=</span>chat <span class="se">\</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    --source<span class="o">=</span>HelmRepository/open-webui <span class="se">\</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    --namespace<span class="o">=</span>chat <span class="se">\</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    --source<span class="o">=</span>HelmRepository/open-webui.flux-system <span class="se">\</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    --chart<span class="o">=</span>open-webui <span class="se">\</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    --values<span class="o">=</span>../charts/open-webui.values.yaml <span class="se">\ </span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    --chart-version<span class="o">=</span><span class="s2">&quot;6.4.0&quot;</span> --export &gt; ./apps/k8s-home/chat/open-webui.release.yaml
