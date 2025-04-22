@@ -262,6 +262,8 @@
         
   
   
+    
+  
 
 
   
@@ -273,7 +275,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../install/k3s/" class="md-tabs__link">
+      <a href="../../install/k3s/" class="md-tabs__link md-tabs__link--active">
         Kubernetes
       </a>
     </li>
@@ -542,6 +544,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4">
@@ -654,6 +658,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/gpu-passthru-proxmox/" class="md-nav__link">
+        Intel iGPU passthru to Proxmox VM
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -666,12 +684,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -785,15 +805,21 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
       
       
       
+        
+          
+        
+          
         
           
         
@@ -899,6 +925,136 @@
     <li class="md-nav__item">
       <a href="../image-pull-secrets/" class="md-nav__link">
         Add image pull secret on K8s
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Enable Infra GitOps with FluxCD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Enable Infra GitOps with FluxCD
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encrypting-secrets-using-openpgp" class="md-nav__link">
+    Encrypting secrets using OpenPGP
+  </a>
+  
+    <nav class="md-nav" aria-label="Encrypting secrets using OpenPGP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-in-cluster-secrets-decryption" class="md-nav__link">
+    Configure in-cluster secrets decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-export-the-public-key-into-the-git-directory" class="md-nav__link">
+    Optional: Export the public key into the Git directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-secrets-using-openpgp_1" class="md-nav__link">
+    Encrypting secrets using OpenPGP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-examples" class="md-nav__link">
+    Quick examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-helm-release" class="md-nav__link">
+    Create Helm Release
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intel-gpu-plugin/" class="md-nav__link">
+        Intel GPU plugin on Kubernetes
       </a>
     </li>
   
@@ -1335,9 +1491,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#encrypting-secrets-using-hashicorp-vault" class="md-nav__link">
-    Encrypting secrets using Hashicorp Vault
+  <a href="#encrypting-secrets-using-openpgp" class="md-nav__link">
+    Encrypting secrets using OpenPGP
   </a>
+  
+    <nav class="md-nav" aria-label="Encrypting secrets using OpenPGP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-in-cluster-secrets-decryption" class="md-nav__link">
+    Configure in-cluster secrets decryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-export-the-public-key-into-the-git-directory" class="md-nav__link">
+    Optional: Export the public key into the Git directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-secrets-using-openpgp_1" class="md-nav__link">
+    Encrypting secrets using OpenPGP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-examples" class="md-nav__link">
+    Quick examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-helm-release" class="md-nav__link">
+    Create Helm Release
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1387,26 +1590,78 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  --path<span class="o">=</span>./clusters/my-cluster <span class="se">\</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  --personal
 </code></pre></div>
-<h2 id="encrypting-secrets-using-hashicorp-vault">Encrypting secrets using Hashicorp Vault</h2>
-<p>Prerequisites:
-- <a href="https://developer.hashicorp.com/vault/docs/what-is-vault">Hashicorp Vault</a> instance created and accessible at <code>$VAULT_ADDR</code>.</p>
-<p>Provide required <code>VAULT_ADDR</code> and <code>VAULT_TOKEN</code> environment variables:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span> <span class="nv">VAULT_ADDR</span><span class="o">=</span>https://vault.example.com <span class="c1"># changeme</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span> <span class="nv">VAULT_TOKEN</span><span class="o">=</span>hvs.qsj...dfqs <span class="c1"># changeme</span>
+<h2 id="encrypting-secrets-using-openpgp">Encrypting secrets using OpenPGP</h2>
+<p>Generate a GPG/OpenPGP key with no passphrase (<code>%no-protection</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span> <span class="nv">KEY_NAME</span><span class="o">=</span><span class="s2">&quot;cluster0.yourdomain.com&quot;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span> <span class="nv">KEY_COMMENT</span><span class="o">=</span><span class="s2">&quot;flux secrets&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>gpg --batch --full-generate-key <span class="s">&lt;&lt;EOF</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="s">%no-protection</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="s">Key-Type: 1</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s">Key-Length: 4096</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s">Subkey-Type: 1</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="s">Subkey-Length: 4096</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="s">Expire-Date: 0</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="s">Name-Comment: ${KEY_COMMENT}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="s">Name-Real: ${KEY_NAME}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="s">EOF</span>
 </code></pre></div>
-<p>Create an encryption key that you are going to use to encrypt your K8s secrets (<strong>or</strong> use an existing one), e.g. <code>fluxcd-sops-key</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>vault write sops/keys/fluxcd-sops-key <span class="nv">type</span><span class="o">=</span>rsa-4096
+<p>The above configuration creates an rsa4096 key that does not expire. For a full list of options to consider for your environment, see <a href="https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html">Unattended GPG key generation</a>.</p>
+<p>Retrieve the GPG key fingerprint (second row of the sec column):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gpg --list-secret-keys <span class="si">${</span><span class="nv">KEY_NAME</span><span class="si">}</span>
 </code></pre></div>
-<p>Create a secret the vault token, the key name must be <code>sops.vault-token</code> to be detected as a vault token:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">echo</span> <span class="nv">$VAULT_TOKEN</span> <span class="p">|</span> kubectl create secret generic sops-hcvault <span class="se">\</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>--namespace<span class="o">=</span>flux-system <span class="se">\</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>--from-file<span class="o">=</span>sops.vault-token<span class="o">=</span>/dev/stdin
+<p>Export the public and private key pair from your local GPG keyring and create a Kubernetes secret named <code>sops-gpg</code> in the <code>flux-system</code> namespace:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gpg --export-secret-keys <span class="si">${</span><span class="nv">KEY_NAME</span><span class="si">}</span> <span class="p">|</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kubectl create secret generic sops-gpg <span class="se">\</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>--namespace<span class="o">=</span>flux-system <span class="se">\</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>--from-file<span class="o">=</span>sops.asc<span class="o">=</span>/dev/stdin
 </code></pre></div>
-<p>Use sops to encrypt a Kubernetes Secret:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sops --hc-vault-transit <span class="nv">$VAULT_ADDR</span>/v1/sops/keys/fluxcd-sops-key --encrypt <span class="se">\</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>--encrypted-regex <span class="s1">&#39;^(data|stringData)$&#39;</span> --in-place basic-auth.yaml
+<p><strong>Note</strong>: It’s a good idea to back up this secret-key/K8s-Secret with a password manager or offline storage.</p>
+<h3 id="configure-in-cluster-secrets-decryption">Configure in-cluster secrets decryption</h3>
+<p>Create a kustomization for reconciling the secrets on the cluster:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>flux create kustomization my-secrets <span class="se">\</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>--source<span class="o">=</span>flux-system <span class="se">\</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>--path<span class="o">=</span>./clusters/cluster0 <span class="se">\</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>--prune<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>--interval<span class="o">=</span>10m <span class="se">\</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>--decryption-provider<span class="o">=</span>sops <span class="se">\</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>--decryption-secret<span class="o">=</span>sops-gpg
 </code></pre></div>
-<p>And finally set the decryption secret in the Flux <code>Kustomization</code> to <code>sops-hcvault</code>.</p>
+<p><strong>Note</strong> that the <code>sops-gpg</code> can contain more than one key, SOPS will try to decrypt the secrets by iterating over all the private keys until it finds one that works.</p>
+<h3 id="optional-export-the-public-key-into-the-git-directory">Optional: Export the public key into the Git directory</h3>
+<p>Commit the public key to the repository so that team members who clone the repo can encrypt new files:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>gpg --export --armor <span class="si">${</span><span class="nv">KEY_NAME</span><span class="si">}</span> &gt; ./clusters/cluster0/.sops.pub.asc
+</code></pre></div>
+<p>Check the file contents to ensure it’s the public key before adding it to the repo and committing.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git add ./clusters/cluster0/.sops.pub.asc
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git commit -am <span class="s1">&#39;Share GPG public key for secrets generation&#39;</span>
+</code></pre></div>
+<p>Team members can then import this key when they pull the Git repository:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>gpg --import ./clusters/cluster0/.sops.pub.asc
+</code></pre></div>
+<p><strong>Note</strong>: The public key is sufficient for creating brand new files. The secret key is required for decrypting and editing existing files because SOPS computes a MAC on all values. When using solely the public key to add or remove a field, the whole file should be deleted and recreated.</p>
+<h3 id="encrypting-secrets-using-openpgp_1">Encrypting secrets using OpenPGP</h3>
+<p>Generate a Kubernetes secret manifest with <code>kubectl</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl -n default create secret generic basic-auth <span class="se">\</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>--from-literal<span class="o">=</span><span class="nv">user</span><span class="o">=</span>admin <span class="se">\</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>--from-literal<span class="o">=</span><span class="nv">password</span><span class="o">=</span>change-me <span class="se">\</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>--dry-run<span class="o">=</span>client <span class="se">\</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>-o yaml &gt; basic-auth.yaml
+</code></pre></div>
+<p>Encrypt the secret with SOPS using your GPG key:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sops encrypt --in-place --pgp <span class="si">${</span><span class="nv">PUB_KEY_FP</span><span class="si">}</span> basic-auth.yaml
+</code></pre></div>
+<p>You can now commit the encrypted secret to your Git repository.</p>
+<p><strong>Note</strong>: Note that you shouldn’t apply the encrypted secrets onto the cluster with kubectl. SOPS encrypted secrets are designed to be consumed by kustomize-controller.</p>
+<h2 id="quick-examples">Quick examples</h2>
+<h3 id="create-helm-release">Create Helm Release</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>❯ flux create hr open-webui <span class="se">\ </span>              
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    --target-namespace<span class="o">=</span>chat <span class="se">\</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    --source<span class="o">=</span>HelmRepository/open-webui <span class="se">\</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    --chart<span class="o">=</span>open-webui <span class="se">\</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    --values<span class="o">=</span>../charts/open-webui.values.yaml <span class="se">\ </span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    --chart-version<span class="o">=</span><span class="s2">&quot;6.4.0&quot;</span> --export &gt; ./apps/k8s-home/chat/open-webui.release.yaml
+</code></pre></div>
 
 
   
@@ -1472,6 +1727,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../image-pull-secrets/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Add image pull secret on K8s" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Add image pull secret on K8s
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../intel-gpu-plugin/" class="md-footer__link md-footer__link--next" aria-label="Next: Intel GPU plugin on Kubernetes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Intel GPU plugin on Kubernetes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
