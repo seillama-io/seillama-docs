@@ -1451,12 +1451,12 @@
 <ol>
 <li>
 <p>Create or update your flat file with a user name and hashed password:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>htpasswd <span class="se">\-</span>c <span class="se">\-</span>B <span class="se">\-</span>b &lt;/path/to/users.htpasswd<span class="se">\&gt;</span> &lt;username<span class="se">\&gt;</span> &lt;password<span class="se">\&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>htpasswd -c -B -b &lt;/path/to/users.htpasswd&gt; &lt;username&gt; &lt;password&gt;
 </code></pre></div>
 </li>
 <li>
 <p>Continue to add or update credentials to the file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>htpasswd <span class="se">\-</span>B <span class="se">\-</span>b &lt;/path/to/users.htpasswd<span class="se">\&gt;</span> &lt;user<span class="se">\_</span>name<span class="se">\&gt;</span> &lt;password<span class="se">\&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>htpasswd -B -b &lt;/path/to/users.htpasswd&gt; &lt;user_name&gt; &lt;password&gt;
 </code></pre></div>
 </li>
 </ol>
@@ -1470,7 +1470,7 @@
 <ul>
 <li>
 <p>Create a <code>Secret</code> object that contains the <code>htpasswd</code> users file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc create secret generic htpass-secret --from-file<span class="se">\=</span>htpasswd<span class="se">\=</span>&lt;path<span class="se">\_</span>to<span class="se">\_</span>users.htpasswd<span class="se">\&gt;</span> <span class="se">\-</span>n openshift-config
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc create secret generic htpass-secret --from-file<span class="o">=</span><span class="nv">htpasswd</span><span class="o">=</span>&lt;path_to_users.htpasswd&gt; -n openshift-config
 </code></pre></div>
 </li>
 </ul>
