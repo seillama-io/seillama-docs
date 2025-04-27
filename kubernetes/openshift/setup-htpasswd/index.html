@@ -15,7 +15,7 @@
     
     
       
-        <title>Kubernetes install - K3s - Seillama Docs</title>
+        <title>Configuring an `htpasswd` identity provider in OpenShift - Seillama Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubernetes-install-k3s" class="md-skip">
+        <a href="#configuring-an-htpasswd-identity-provider-in-openshift" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kubernetes install - K3s
+              Configuring an `htpasswd` identity provider in OpenShift
             
           </span>
         </div>
@@ -262,8 +262,6 @@
         
   
   
-    
-  
 
 
   
@@ -275,7 +273,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../install/k3s/" class="md-tabs__link">
         Kubernetes
       </a>
     </li>
@@ -684,14 +682,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -722,14 +718,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
       
       
       
@@ -758,66 +752,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Kubernetes install - K3s
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../install/k3s/" class="md-nav__link">
         Kubernetes install - K3s
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#master-node" class="md-nav__link">
-    Master Node
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worker-nodes" class="md-nav__link">
-    Worker Node(s)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-cluster" class="md-nav__link">
-    Access Cluster
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -829,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../kubespray/" class="md-nav__link">
+      <a href="../../install/kubespray/" class="md-nav__link">
         Kubernetes install - Kubespray
       </a>
     </li>
@@ -843,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rpi/" class="md-nav__link">
+      <a href="../../install/rpi/" class="md-nav__link">
         Self-hosting platform on Raspberry Pi - K3s
       </a>
     </li>
@@ -1206,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../openshift/add-registry-ca/" class="md-nav__link">
+      <a href="../add-registry-ca/" class="md-nav__link">
         Trust Registry CA
       </a>
     </li>
@@ -1446,22 +1385,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#master-node" class="md-nav__link">
-    Master Node
+  <a href="#content" class="md-nav__link">
+    Content
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#worker-nodes" class="md-nav__link">
-    Worker Node(s)
+  <a href="#creating-the-htpasswd-file" class="md-nav__link">
+    Creating the htpasswd file
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#access-cluster" class="md-nav__link">
-    Access Cluster
+  <a href="#creating-the-htpasswd-secret" class="md-nav__link">
+    Creating the htpasswd secret
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-the-htpasswd-identity-provider-to-your-cluster" class="md-nav__link">
+    Adding the htpasswd identity provider to your cluster
   </a>
   
 </li>
@@ -1479,37 +1425,71 @@
               
                 
 
-  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/install/k3s.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/seillama-io/seillama-docs/edit/main/docs/kubernetes/openshift/setup-htpasswd.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="kubernetes-install-k3s">Kubernetes install - K3s</h1>
-<p>Main docs:</p>
+<h1 id="configuring-an-htpasswd-identity-provider-in-openshift">Configuring an <code>htpasswd</code> identity provider in OpenShift</h1>
+<p>Configure the <code>htpasswd</code> identity provider to allow users to log in to OpenShift Container Platform with credentials from an <code>htpasswd</code> file.</p>
+<h2 id="content">Content</h2>
 <ul>
-<li><a href="https://k3s.io/">https://k3s.io/</a></li>
-<li><a href="https://docs.k3s.io/quick-start">https://docs.k3s.io/quick-start</a></li>
+<li><a href="#configuring-an-htpasswd-identity-provider-in-openshift">Configuring an <code>htpasswd</code> identity provider in OpenShift</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#creating-the-htpasswd-file">Creating the <code>htpasswd</code> file</a></li>
+<li><a href="#creating-the-htpasswd-secret">Creating the <code>htpasswd</code> secret</a></li>
+<li><a href="#adding-the-htpasswd-identity-provider-to-your-cluster">Adding the <code>htpasswd</code> identity provider to your cluster</a></li>
 </ul>
-<h3 id="master-node">Master Node</h3>
-<p>Run the K3s install script from master node:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl -sfL https://get.k3s.io <span class="p">|</span> <span class="nv">K3S_KUBECONFIG_MODE</span><span class="o">=</span><span class="s2">&quot;644&quot;</span> sh -
+<h2 id="creating-the-htpasswd-file">Creating the <code>htpasswd</code> file</h2>
+<p>To use the <code>htpasswd</code> identity provider, you must generate a flat file that contains the user names and passwords for your cluster by using <a href="http://httpd.apache.org/docs/2.4/programs/htpasswd.html"><code>htpasswd</code></a>.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Have access to the <code>htpasswd</code> utility. On Red Hat Enterprise Linux this is available by installing the <code>httpd-tools</code> package.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Create or update your flat file with a user name and hashed password:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>htpasswd <span class="se">\-</span>c <span class="se">\-</span>B <span class="se">\-</span>b &lt;/path/to/users.htpasswd<span class="se">\&gt;</span> &lt;username<span class="se">\&gt;</span> &lt;password<span class="se">\&gt;</span>
 </code></pre></div>
-<p>Once the install is done, fetch node token to add nodes to the cluster and copy it for next step:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo cat /var/lib/rancher/k3s/server/node-token
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>K100f4662d45c9160374695...dbcc53a11::server:b108c...bcb17c
+</li>
+<li>
+<p>Continue to add or update credentials to the file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>htpasswd <span class="se">\-</span>B <span class="se">\-</span>b &lt;/path/to/users.htpasswd<span class="se">\&gt;</span> &lt;user<span class="se">\_</span>name<span class="se">\&gt;</span> &lt;password<span class="se">\&gt;</span>
 </code></pre></div>
-<h3 id="worker-nodes">Worker Node(s)</h3>
-<p>Run the K3s install script from each worker node:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -sfL https://get.k3s.io <span class="p">|</span> <span class="nv">K3S_URL</span><span class="o">=</span>https://<span class="si">${</span><span class="nv">K3S_MASTER_NODE_IP</span><span class="si">}</span>:6443 <span class="nv">K3S_TOKEN</span><span class="o">=</span><span class="si">${</span><span class="nv">K3S_NODE_TOKEN</span><span class="si">}</span> sh -
+</li>
+</ol>
+<h2 id="creating-the-htpasswd-secret">Creating the <code>htpasswd</code> secret</h2>
+<p>To use the <code>htpasswd</code> identity provider, you must define a secret that contains the <code>htpasswd</code> user file.</p>
+<p><strong>Prerequisites</strong></p>
+<ul>
+<li>Create an <code>htpasswd</code> file.</li>
+</ul>
+<p><strong>Procedure</strong></p>
+<ul>
+<li>
+<p>Create a <code>Secret</code> object that contains the <code>htpasswd</code> users file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>oc create secret generic htpass-secret --from-file<span class="se">\=</span>htpasswd<span class="se">\=</span>&lt;path<span class="se">\_</span>to<span class="se">\_</span>users.htpasswd<span class="se">\&gt;</span> <span class="se">\-</span>n openshift-config
 </code></pre></div>
-<h3 id="access-cluster">Access Cluster</h3>
-<p>Once cluster has been deployed, run following from your local workstation to copy kube config file from master node:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span> <span class="nv">$HOME</span>/.kube
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span> <span class="s2">&quot;get /etc/rancher/k3s/k3s.yaml </span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> sftp -s <span class="s2">&quot;sudo /usr/lib/openssh/sftp-server&quot;</span> <span class="si">${</span><span class="nv">MASTER_NODE_USERNAME</span><span class="si">}</span>@<span class="si">${</span><span class="nv">MASTER_NODE_IP</span><span class="si">}</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">server</span><span class="o">=</span><span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">MASTER_NODE_IP</span><span class="si">}</span><span class="s2">:6443&quot;</span> yq -i <span class="s2">&quot;.clusters[0].cluster.server = env(server)&quot;</span> <span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span><span class="nv">$HOME</span>/.kube/<span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>kubectl get nodes
+</li>
+</ul>
+<h2 id="adding-the-htpasswd-identity-provider-to-your-cluster">Adding the <code>htpasswd</code> identity provider to your cluster</h2>
+<p>The following custom resource (CR) shows the parameters and acceptable values for an <code>htpasswd</code> identity provider.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="l l-Scalar l-Scalar-Plain">cat &lt;&lt;EOF | oc apply -f -</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config.openshift.io/v1</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAuth</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cluster</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">spec</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">identityProviders</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">htpasswd</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">mappingMethod</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claim</span><span class="w"> </span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTPasswd</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">htpasswd</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nt">fileData</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">htpass-secret</span><span class="w"> </span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="l l-Scalar l-Scalar-Plain">EOF</span><span class="w"></span>
 </code></pre></div>
 
 
@@ -1576,42 +1556,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../../linux/gpu-passthru-proxmox/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Intel iGPU passthru to Proxmox VM" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Intel iGPU passthru to Proxmox VM
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../kubespray/" class="md-footer__link md-footer__link--next" aria-label="Next: Kubernetes install - Kubespray" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Kubernetes install - Kubespray
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
