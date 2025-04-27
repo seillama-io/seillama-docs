@@ -97,6 +97,7 @@ nav:
       - kubernetes/software/media-center.md
     - OpenShift:
       - Trust Registry CA: kubernetes/openshift/add-registry-ca.md
+      - htpasswd IdP on OpenShift: docs/kubernetes/openshift/setup-htpasswd.md
   - DevSecOps:
     - Cloud-Native Toolkit:
       - devops/cloud-native-toolkit/install-toolkit.md
