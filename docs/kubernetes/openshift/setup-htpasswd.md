@@ -23,13 +23,13 @@ To use the `htpasswd` identity provider, you must generate a flat file that cont
 1.  Create or update your flat file with a user name and hashed password:
 
     ```sh
-    htpasswd \-c \-B \-b </path/to/users.htpasswd\> <username\> <password\>
+    htpasswd -c -B -b </path/to/users.htpasswd> <username> <password>
     ```    
 
 2.  Continue to add or update credentials to the file:
 
     ```sh
-    htpasswd \-B \-b </path/to/users.htpasswd\> <user\_name\> <password\>
+    htpasswd -B -b </path/to/users.htpasswd> <user_name> <password>
     ```
 
 ## Creating the `htpasswd` secret
@@ -45,7 +45,7 @@ To use the `htpasswd` identity provider, you must define a secret that contains 
 *   Create a `Secret` object that contains the `htpasswd` users file:
     
     ```sh
-    oc create secret generic htpass-secret --from-file\=htpasswd\=<path\_to\_users.htpasswd\> \-n openshift-config
+    oc create secret generic htpass-secret --from-file=htpasswd=<path_to_users.htpasswd> -n openshift-config
     ```    
 
 ## Adding the `htpasswd` identity provider to your cluster
