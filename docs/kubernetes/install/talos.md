@@ -298,27 +298,3 @@ If such result appear, then congratulations your Traefik ingress controller is p
 ```sh
 traefik-xxxxxxxxxx-xxxxx                1/1     Running   0                1s
 ```
-
-/github/workspace/docs/kubernetes/install/talos.md:20:14 - Unknown word (adress)
-/github/workspace/docs/kubernetes/install/talos.md:22:73 - Unknown word (adress)
-/github/workspace/docs/kubernetes/install/talos.md:23:65 - Unknown word (adress)
-/github/workspace/docs/kubernetes/install/talos.md:23:82 - Unknown word (Freebox)
-/github/workspace/docs/kubernetes/install/talos.md:27:66 - Unknown word (functionnal)
-/github/workspace/docs/kubernetes/install/talos.md:29:5 - Unknown word (Talosctl)
-/github/workspace/docs/kubernetes/install/talos.md:41:39 - Unknown word (adress)
-/github/workspace/docs/kubernetes/install/talos.md:55:3 - Unknown word (controlplane)
-/github/workspace/docs/kubernetes/install/talos.md:57:3 - Unknown word (talosconfig)
-/github/workspace/docs/kubernetes/install/talos.md:61:21 - Unknown word (controlplane)
-/github/workspace/docs/kubernetes/install/talos.md:63:21 - Unknown word (talosconfig)
-/github/workspace/docs/kubernetes/install/talos.md:66:1 - Unknown word (Optionnal)
-/github/workspace/docs/kubernetes/install/talos.md:141:5 - Unknown word (Optionnal)
-/github/workspace/docs/kubernetes/install/talos.md:192:66 - Unknown word (metallb)
-/github/workspace/docs/kubernetes/install/talos.md:199:12 - Unknown word (metallb)
-/github/workspace/docs/kubernetes/install/talos.md:206:11 - Unknown word (metallb)
-/github/workspace/docs/kubernetes/install/talos.md:251:50 - Unknown word (metallb)
-/github/workspace/docs/kubernetes/install/talos.md:258:5 - Unknown word (Traefik)
-/github/workspace/docs/kubernetes/install/talos.md:260:59 - Unknown word (traefik)
-/github/workspace/docs/kubernetes/install/talos.md:266:12 - Unknown word (Traefik)
-
-/github/workspace/docs/kubernetes/install/talos.md:273:11 - Unknown word (Traefik)
-/github/workspace/docs/kubernetes/install/talos.md:296:50 - Unknown word (traefik)
