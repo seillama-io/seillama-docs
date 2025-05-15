@@ -17,14 +17,14 @@ Requirements:
 3. Create a VM booting with the image (`Create VM > OS > ISO image`)
 4. Boot the machine
 
-## Static IP adress setup for your VM
+## Static IP address setup for your VM
 
-1. From your Proxmox instance using the web interface: retrieve the MAC adress of your new VM running on Talos OS (`Datacenter > pve > YOUR_VM_INSTANCE > Hardware > Network device (net0)`)
-2. From you router, assign a static IP to your VM using its MAC adress (e.g from Freebox OS: `Freebox settings > DHCP > Static leases > Add a DHCP static lease`)
+1. From your Proxmox instance using the web interface: retrieve the MAC address of your new VM running on Talos OS (`Datacenter > pve > YOUR_VM_INSTANCE > Hardware > Network device (net0)`)
+2. From you router, assign a static IP to your VM using its MAC address (e.g from Freebox OS: `Freebox settings > DHCP > Static leases > Add a DHCP static lease`)
 
 ## Cluster setup
 
-During this step, we will setup our Talos cluster to run a fully functionnal Kubernetes cluster.
+During this step, we will setup our Talos cluster to run a fully functional Kubernetes cluster.
 
 ### Talosctl installation
 
@@ -38,7 +38,7 @@ brew install siderolabs/tap/talosctl
 
 Set environment variables:
 * `CLUSTER_NAME` is an arbitrary name, used as a label in your local client configuration. It should be unique in the configuration on your local workstation.
-* `CONTROL_PLANE_IP` is the static IP adress you assigned to your VM above, which will serve as the control plane of your Talos cluster.
+* `CONTROL_PLANE_IP` is the static IP address you assigned to your VM above, which will serve as the control plane of your Talos cluster.
 
 ```sh
 export CLUSTER_NAME=home-lab
@@ -52,18 +52,18 @@ talosctl gen config $CLUSTER_NAME https://${CONTROL_PLANE_IP}:6443
 ```
 
 You should then have the following output, as Three files are created in your current directory:
-* controlplane.yaml: Configuration file to apply to your Talos cluster control plane node
-* worker.yaml: Configuration file to apply to each of your Talos cluster worker nodes (we won't use it in this documentation)
-* talosconfig: Configuration of your talos cluster
+* `controlplane.yaml`: Configuration file to apply to your Talos cluster control plane node
+* `worker.yaml`: Configuration file to apply to each of your Talos cluster worker nodes (we won't use it in this documentation)
+* `talosconfig`: Configuration of your talos cluster
 
-```
+```sh
 generating PKI and tokens
 created /Users/user/controlplane.yaml
 created /Users/user/worker.yaml
 created /Users/user/talosconfig
 ```
 
-Optionnal: You can update your local workstation Talos clusters configuration (`.talos/config`) with `./talosconfig` content so it handle newly created Talos cluster.
+Optional: You can update your local workstation Talos clusters configuration (`.talos/config`) with `./talosconfig` content so it handle newly created Talos cluster.
 
 ```yaml
 context: <your-cluster-name>
@@ -138,7 +138,7 @@ kube-system   kube-proxy-xxxxx                           1/1     Running   0    
 kube-system   kube-scheduler-talos-xxx-xxx               1/1     Running   0                1s
 ```
 
-## *Optionnal*: Kubernetes cluster initial setup
+## *Optional*: Kubernetes cluster initial setup
 
 In this section we'll setup our kubernetes cluster to be fully prepared to run applications (metrics, ingress etc.).
 
@@ -257,7 +257,7 @@ metallb-speaker-xxxxx                              1/1     Running   0          
 
 ### Traefik ingress controller
 
-To handle the routing within your cluster, we will deploy traefik as the default/main ingress controller.
+To handle the routing within your cluster, we will deploy Traefik as the default/main ingress controller.
 
 Doc:
 - [https://v2.doc.traefik.io/traefik/](https://v2.doc.traefik.io/traefik/)
@@ -293,8 +293,32 @@ EOF
 kubectl get pods -n kube-system | grep ^traefik
 ```
 
-If such result appear, then congratulations your traefik ingress controller is properly running:
+If such result appear, then congratulations your Traefik ingress controller is properly running:
 
 ```sh
 traefik-xxxxxxxxxx-xxxxx                1/1     Running   0                1s
 ```
+
+/github/workspace/docs/kubernetes/install/talos.md:20:14 - Unknown word (adress)
+/github/workspace/docs/kubernetes/install/talos.md:22:73 - Unknown word (adress)
+/github/workspace/docs/kubernetes/install/talos.md:23:65 - Unknown word (adress)
+/github/workspace/docs/kubernetes/install/talos.md:23:82 - Unknown word (Freebox)
+/github/workspace/docs/kubernetes/install/talos.md:27:66 - Unknown word (functionnal)
+/github/workspace/docs/kubernetes/install/talos.md:29:5 - Unknown word (Talosctl)
+/github/workspace/docs/kubernetes/install/talos.md:41:39 - Unknown word (adress)
+/github/workspace/docs/kubernetes/install/talos.md:55:3 - Unknown word (controlplane)
+/github/workspace/docs/kubernetes/install/talos.md:57:3 - Unknown word (talosconfig)
+/github/workspace/docs/kubernetes/install/talos.md:61:21 - Unknown word (controlplane)
+/github/workspace/docs/kubernetes/install/talos.md:63:21 - Unknown word (talosconfig)
+/github/workspace/docs/kubernetes/install/talos.md:66:1 - Unknown word (Optionnal)
+/github/workspace/docs/kubernetes/install/talos.md:141:5 - Unknown word (Optionnal)
+/github/workspace/docs/kubernetes/install/talos.md:192:66 - Unknown word (metallb)
+/github/workspace/docs/kubernetes/install/talos.md:199:12 - Unknown word (metallb)
+/github/workspace/docs/kubernetes/install/talos.md:206:11 - Unknown word (metallb)
+/github/workspace/docs/kubernetes/install/talos.md:251:50 - Unknown word (metallb)
+/github/workspace/docs/kubernetes/install/talos.md:258:5 - Unknown word (Traefik)
+/github/workspace/docs/kubernetes/install/talos.md:260:59 - Unknown word (traefik)
+/github/workspace/docs/kubernetes/install/talos.md:266:12 - Unknown word (Traefik)
+
+/github/workspace/docs/kubernetes/install/talos.md:273:11 - Unknown word (Traefik)
+/github/workspace/docs/kubernetes/install/talos.md:296:50 - Unknown word (traefik)

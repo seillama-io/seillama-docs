@@ -35,6 +35,10 @@ qbit
 kustomization
 kustomize
 Proxmox
+Freebox
+Talosctl
+metallb
+Traefik
 
 # Concepts
 gitops
