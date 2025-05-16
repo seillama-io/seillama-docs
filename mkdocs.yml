@@ -78,6 +78,7 @@ nav:
       - kubernetes/install/k3s.md
       - kubernetes/install/kubespray.md
       - kubernetes/install/rpi.md
+      - kubernetes/install/talos.md
     - Operations:
       - kubernetes/ops/tools.md
       - kubernetes/ops/nfs-provisioner.md
