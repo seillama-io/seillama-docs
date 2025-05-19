@@ -1112,6 +1112,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#optional-start-using-harbor" class="md-nav__link">
+    Optional: Start using Harbor
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional: Start using Harbor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-to-created-registry" class="md-nav__link">
+    Login to created registry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-pull-secret-in-k8sopenshift" class="md-nav__link">
+    Create pull secret in K8s/OpenShift
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1482,6 +1509,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#optional-start-using-harbor" class="md-nav__link">
+    Optional: Start using Harbor
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional: Start using Harbor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login-to-created-registry" class="md-nav__link">
+    Login to created registry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-pull-secret-in-k8sopenshift" class="md-nav__link">
+    Create pull secret in K8s/OpenShift
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1531,7 +1585,21 @@
 </code></pre></div></li>
 </ol>
 <p>After a successful deployment and if your ingress strategy is properly configured you should be able to access your Harbor instance at <code>https://core.harbor.example.com</code>. To login you will find the <code>admin</code> password by running the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl get secret -n harbor harbor-core -o yaml <span class="p">|</span> yq .data.HARBOR_ADMIN_PASSWORD <span class="p">|</span> base64 -d
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span> <span class="nv">HARBOR_ADMIN_PASSWORD</span><span class="o">=</span><span class="k">$(</span>kubectl get secret -n harbor harbor-core -o yaml <span class="p">|</span> yq .data.HARBOR_ADMIN_PASSWORD <span class="p">|</span> base64 -d<span class="k">)</span>
+</code></pre></div>
+<h2 id="optional-start-using-harbor"><em>Optional</em>: Start using Harbor</h2>
+<h3 id="login-to-created-registry">Login to created registry</h3>
+<p>E.g. with <code>skopeo</code>, use <code>admin</code> as user and <code>${HARBOR_ADMIN_PASSWORD}</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>skopeo login --tls-verify<span class="o">=</span><span class="nb">false</span> core.<span class="si">${</span><span class="nv">HARBOR_DOMAIN</span><span class="si">}</span>
+</code></pre></div>
+<p>To test and push a sample image, you can run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>skopeo copy --tls-verify<span class="o">=</span><span class="nb">false</span> docker://docker.io/busybox:latest docker://core.<span class="si">${</span><span class="nv">HARBOR_DOMAIN</span><span class="si">}</span>/library/busybox:latest --override-arch amd64 --override-os linux
+</code></pre></div>
+<h3 id="create-pull-secret-in-k8sopenshift">Create pull secret in K8s/OpenShift</h3>
+<p>E.g. with docker config file accessible at <code>~/.config/containers/auth.json</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl create secret generic registry-config -n ci-tools <span class="se">\</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    --from-file<span class="o">=</span>.dockerconfigjson<span class="o">=</span><span class="nv">$HOME</span>/.config/containers/auth.json <span class="se">\</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    --type<span class="o">=</span>kubernetes.io/dockerconfigjson
 </code></pre></div>
 
 
