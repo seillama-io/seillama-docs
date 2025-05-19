@@ -36,5 +36,31 @@
 After a successful deployment and if your ingress strategy is properly configured you should be able to access your Harbor instance at `https://core.harbor.example.com`. To login you will find the `admin` password by running the following command:
 
 ```sh
-kubectl get secret -n harbor harbor-core -o yaml | yq .data.HARBOR_ADMIN_PASSWORD | base64 -d
+export HARBOR_ADMIN_PASSWORD=$(kubectl get secret -n harbor harbor-core -o yaml | yq .data.HARBOR_ADMIN_PASSWORD | base64 -d)
+```
+
+## *Optional*: Start using Harbor
+
+### Login to created registry
+
+E.g. with `skopeo`, use `admin` as user and `${HARBOR_ADMIN_PASSWORD}`:
+
+```sh
+skopeo login --tls-verify=false core.${HARBOR_DOMAIN}
+```
+
+To test and push a sample image, you can run:
+
+```sh
+skopeo copy --tls-verify=false docker://docker.io/busybox:latest docker://core.${HARBOR_DOMAIN}/library/busybox:latest --override-arch amd64 --override-os linux
+```
+
+### Create pull secret in K8s/OpenShift
+
+E.g. with docker config file accessible at `~/.config/containers/auth.json`:
+
+```sh
+kubectl create secret generic registry-config -n ci-tools \
+    --from-file=.dockerconfigjson=$HOME/.config/containers/auth.json \
+    --type=kubernetes.io/dockerconfigjson
 ```
